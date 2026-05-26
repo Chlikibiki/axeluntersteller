@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Grain } from "./Grain";
+import { CineMedia } from "@/components/motion/CineMedia";
 
 interface EditorialImageProps {
   src: string;
@@ -20,7 +21,7 @@ export function EditorialImage({
   aspect,
 }: EditorialImageProps) {
   return (
-    <div className={cn("relative overflow-hidden bg-black", aspect, className)}>
+    <CineMedia rootClassName={cn(aspect, className)}>
       <Image
         src={src}
         alt={alt}
@@ -30,6 +31,6 @@ export function EditorialImage({
         sizes="(max-width: 768px) 100vw, 50vw"
       />
       <Grain />
-    </div>
+    </CineMedia>
   );
 }

@@ -15,20 +15,28 @@ export function PartnerTrust() {
       aria-label="Marques partenaires"
     >
       <Atmosphere variant="ink" />
-      <div className="leather-whisper absolute inset-0" aria-hidden />
+      <div className="leather-whisper absolute inset-0 max-md:opacity-20" aria-hidden />
 
-      <div className="section-padding relative z-[1] py-16 md:py-28 lg:py-32">
-        <Reveal pace="fade" className="mx-auto mb-12 max-w-lg text-center md:mb-16">
+      <div className="section-padding relative z-[1] py-10 md:py-28 lg:py-32">
+        <Reveal pace="fade" className="mb-6 md:mb-16">
           <p className="eyebrow">Références</p>
+          <p className="m-impact mt-3 max-w-xs">
+            Des maisons qui nous confient leur exigence.
+          </p>
         </Reveal>
 
-        <Reveal pace="slow">
+        <div className="m-rail md:mx-0 md:block md:overflow-visible md:px-0">
           <ul
-            className="mx-auto grid max-w-[1200px] grid-cols-2 items-center gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 md:gap-x-6 md:gap-y-12 lg:grid-cols-7"
+            className="flex min-w-max gap-12 md:mx-auto md:grid md:min-w-0 md:max-w-[1200px] md:grid-cols-4 md:gap-x-6 md:gap-y-12 lg:grid-cols-7"
             role="list"
+            data-cine-stagger
           >
             {PARTNER_LOGOS.map((partner) => (
-              <li key={partner.id} className="flex items-center justify-center">
+              <li
+                key={partner.id}
+                data-cine-stagger-item
+                className="m-rail-item flex w-[42vw] max-w-[11rem] items-center justify-center opacity-0 md:w-auto md:max-w-none"
+              >
                 <PartnerLogo
                   variant="wall"
                   partnerId={partner.id}
@@ -41,13 +49,11 @@ export function PartnerTrust() {
               </li>
             ))}
           </ul>
-        </Reveal>
+        </div>
 
-        <Reveal pace="fade" delay={0.12}>
-          <p className="mx-auto mt-12 max-w-md text-center text-[0.65rem] font-light tracking-[0.28em] text-starlight-muted/80 uppercase md:mt-20">
-            {copy.tagline}
-          </p>
-        </Reveal>
+        <p className="mt-8 text-[0.6rem] font-light tracking-[0.26em] text-starlight-muted/75 uppercase md:mt-20 md:text-center md:text-[0.65rem]">
+          {copy.tagline}
+        </p>
       </div>
 
       <p className="sr-only">{copy.disclaimer}</p>

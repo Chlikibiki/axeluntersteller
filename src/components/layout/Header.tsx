@@ -33,7 +33,7 @@ export function Header() {
           "fixed top-0 right-0 left-0 z-50 transition-all duration-500",
           scrolled
             ? "border-b border-starlight-border bg-black/80 py-5 backdrop-blur-md"
-            : "bg-transparent py-8 md:py-10"
+            : "bg-transparent py-5 md:py-10"
         )}
       >
         <div className="section-padding flex items-center justify-between">

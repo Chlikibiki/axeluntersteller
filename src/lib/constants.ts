@@ -36,7 +36,9 @@ export { HERO_IMAGES, CONTACT_HERO_IMAGE, LOGO, PARTNER_LOGOS, TRUST_IMAGE };
 export const HERO_COPY = {
   eyebrow: "Manufacture de cuir · Europe",
   established: "Depuis 1987 · Allemagne · Tunisie",
-  headline: ["LE CUIR,", "NOTRE HÉRITAGE,", "NOTRE SIGNATURE."],
+  headline: ["Le cuir,", "Notre héritage,", "Votre signature."],
+  manifesto:
+    "Notre héritage façonne la matière. Votre vision en devient la signature.",
   subhead:
     "Depuis 1987, nous sélectionnons les plus belles peaux et les transformons en cuirs d'exception. Pour les maisons qui exigent l'excellence.",
   ctaPrimary: "Démarrer un projet",

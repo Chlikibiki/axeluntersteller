@@ -18,11 +18,12 @@ export function Testimonials() {
   return (
     <SectionShell
       atmosphere="elevated"
-      spacing="default"
+      spacing="editorial"
       aria-labelledby="testimonials-heading"
     >
-      <div className="flex items-end justify-between gap-8">
-        <Reveal>
+      <div className="flex items-end justify-between gap-4">
+        <Reveal pace="slow">
+          <p className="eyebrow mb-3">Parole</p>
           <h2
             id="testimonials-heading"
             className="heading-lg text-starlight-cream"
@@ -30,44 +31,44 @@ export function Testimonials() {
             {SECTION_COPY.testimonials.title}
           </h2>
         </Reveal>
-        <div className="flex shrink-0 gap-3">
+        <div className="flex shrink-0 gap-2">
           <button
             type="button"
             onClick={prev}
-            className="flex size-12 items-center justify-center border border-starlight-border text-starlight-cream transition-colors hover:border-starlight-cream"
+            className="flex size-10 items-center justify-center border border-starlight-border text-starlight-cream transition-colors hover:border-starlight-cream md:size-12"
             aria-label={UI.aria.prevTestimonial}
           >
-            <ChevronLeft size={18} strokeWidth={1} />
+            <ChevronLeft size={16} strokeWidth={1} />
           </button>
           <button
             type="button"
             onClick={next}
-            className="flex size-12 items-center justify-center border border-starlight-border text-starlight-cream transition-colors hover:border-starlight-cream"
+            className="flex size-10 items-center justify-center border border-starlight-border text-starlight-cream transition-colors hover:border-starlight-cream md:size-12"
             aria-label={UI.aria.nextTestimonial}
           >
-            <ChevronRight size={18} strokeWidth={1} />
+            <ChevronRight size={16} strokeWidth={1} />
           </button>
         </div>
       </div>
 
-      <div className="relative mt-16 min-h-[200px] md:mt-24">
+      <div className="relative mt-8 min-h-[9rem] md:mt-16 md:min-h-[200px]">
         <AnimatePresence mode="wait">
           <motion.blockquote
             key={index}
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-5xl"
           >
-            <p className="heading-statement text-balance text-starlight-cream">
+            <p className="text-[1.2rem] font-extralight leading-[1.22] tracking-[-0.025em] text-starlight-cream md:heading-statement md:text-balance">
               &ldquo;{current.quote}&rdquo;
             </p>
-            <footer className="mt-12">
+            <footer className="mt-6 md:mt-12">
               <cite className="label-caps not-italic text-starlight-cream">
                 {current.role}
               </cite>
-              <span className="label-caps mt-2 block text-starlight-muted">
+              <span className="label-caps mt-1 block text-starlight-muted md:mt-2">
                 {current.industry}
               </span>
             </footer>

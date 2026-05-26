@@ -47,7 +47,7 @@ export default function RootLayout({
         <SmoothScroll>
           <PageLoader />
           <Header />
-          <main>{children}</main>
+          <main className="max-md:overflow-x-clip">{children}</main>
           <Footer />
         </SmoothScroll>
       </body>

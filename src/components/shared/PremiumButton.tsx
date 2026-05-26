@@ -19,7 +19,7 @@ export function PremiumButton({
   external,
 }: PremiumButtonProps) {
   const base =
-    "inline-flex items-center justify-center px-10 py-4 text-xs font-medium uppercase tracking-[0.2em] transition-all duration-300";
+    "inline-flex items-center justify-center px-8 py-3.5 text-[0.625rem] font-medium uppercase tracking-[0.22em] transition-all duration-500 md:px-10 md:py-4 md:text-xs md:tracking-[0.2em]";
 
   const variants = {
     primary: "bg-starlight-cream text-black hover:bg-white",

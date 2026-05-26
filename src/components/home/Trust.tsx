@@ -9,6 +9,7 @@ import {
   SECTION_COPY,
   UI,
 } from "@/lib/constants";
+import { CineMedia } from "@/components/motion/CineMedia";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionShell } from "@/components/shared/SectionShell";
 
@@ -52,12 +53,12 @@ function AnimatedMetric({
   }, [value, isNumeric]);
 
   return (
-    <div ref={ref}>
-      <p className="font-display text-5xl font-extralight text-starlight-cream md:text-6xl lg:text-7xl">
+    <div ref={ref} className="m-rail-item w-[38vw] min-w-[7.5rem] max-w-[9rem] md:w-auto md:min-w-0 md:max-w-none">
+      <p className="font-display text-4xl font-extralight text-starlight-cream md:text-6xl lg:text-7xl">
         {display}
         {suffix}
       </p>
-      <p className="label-caps mt-4">{label}</p>
+      <p className="label-caps mt-2 md:mt-4">{label}</p>
     </div>
   );
 }
@@ -67,61 +68,94 @@ export function Trust() {
     <SectionShell
       id="trust"
       atmosphere="depth"
-      spacing="spacious"
+      spacing="editorial"
       aria-labelledby="trust-heading"
     >
-      <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.9fr)] lg:gap-16 xl:gap-24">
-        <Reveal pace="slow" className="min-w-0">
-          <h2
-            id="trust-heading"
-            className="heading-lg max-w-3xl text-starlight-cream"
-          >
-            {SECTION_COPY.trust.title}
-          </h2>
-          <div className="mt-8 max-w-xl space-y-6">
-            {SECTION_COPY.trust.body.map((paragraph, index) => (
-              <p key={index} className="body-large">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </Reveal>
+      <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.9fr)] lg:items-center lg:gap-16 xl:gap-24">
+        <div className="order-1 min-w-0 lg:order-none">
+          <Reveal pace="slow">
+            <p className="eyebrow mb-3 md:mb-4">Héritage</p>
+            <h2
+              id="trust-heading"
+              className="heading-lg max-w-3xl text-starlight-cream"
+            >
+              {SECTION_COPY.trust.title}
+            </h2>
+            <p className="m-impact mt-4">
+              Savoir-faire européen au service des maisons les plus exigeantes.
+            </p>
+          </Reveal>
 
-        <Reveal pace="slow" delay={0.12} className="flex justify-center lg:justify-end">
-          <figure className="trust-editorial-frame group relative w-full max-w-sm lg:max-w-none lg:py-4">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-black lg:min-h-[min(72vh,640px)] lg:aspect-[4/5]">
+          <Reveal pace="fade" className="order-3 mt-6 lg:order-none lg:mt-8">
+            <div className="m-stack-text max-w-xl">
+              {SECTION_COPY.trust.body.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className={
+                    index === 1
+                      ? "body-premium text-starlight-metal/90"
+                      : "body-large"
+                  }
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal
+          pace="material"
+          delay={0.08}
+          className="order-2 lg:order-none lg:flex lg:justify-end"
+        >
+          <figure className="trust-editorial-frame m-bleed md:m-0 md:max-w-none lg:py-4">
+            <CineMedia
+              rootClassName="m-cine-frame aspect-[4/5] rounded-none md:aspect-[4/5] md:rounded-sm lg:min-h-[min(72vh,640px)]"
+              strength={0.04}
+              scaleFrom={1.04}
+              scrub={1.4}
+            >
               <Image
                 src={TRUST_IMAGE}
                 alt={UI.images.trustArtisan}
                 fill
-                className="trust-editorial-image object-cover object-[center_38%] transition-transform duration-[1.4s] ease-out group-hover:scale-[1.04]"
-                sizes="(max-width: 1024px) 90vw, 42vw"
-                priority={false}
+                className="trust-editorial-image object-cover object-[center_38%]"
+                sizes="(max-width: 1024px) 100vw, 42vw"
               />
-              <div className="trust-editorial-warmth absolute inset-0" aria-hidden />
-              <div className="trust-editorial-vignette absolute inset-0" aria-hidden />
-            </div>
+            </CineMedia>
+            <div
+              className="trust-editorial-warmth pointer-events-none absolute inset-0 md:rounded-sm"
+              aria-hidden
+            />
+            <div
+              className="trust-editorial-vignette pointer-events-none absolute inset-0 md:rounded-sm"
+              aria-hidden
+            />
           </figure>
         </Reveal>
       </div>
 
-      <div className="mt-20 grid grid-cols-2 gap-12 border-t border-starlight-border pt-16 sm:grid-cols-3 md:mt-28 lg:grid-cols-5 md:gap-8 md:pt-20">
-        {TRUST_METRICS.map((metric, i) => (
-          <Reveal key={metric.label} delay={i * 0.06}>
+      <div className="mt-8 border-t border-starlight-border pt-8 md:mt-20 md:pt-16 lg:mt-28 lg:pt-20">
+        <div className="m-rail md:grid md:grid-cols-3 md:gap-8 lg:grid-cols-5 lg:gap-6">
+          {TRUST_METRICS.map((metric) => (
             <AnimatedMetric
+              key={metric.label}
               value={metric.value}
               suffix={metric.suffix}
               label={metric.label}
             />
-          </Reveal>
-        ))}
+          ))}
+        </div>
       </div>
 
-      <Reveal className="mt-24 md:mt-32">
-        <p className="heading-statement max-w-5xl text-balance text-starlight-cream/90">
-          {HERO_STATEMENT}
-        </p>
-      </Reveal>
+      <p
+        data-cine-reveal
+        data-cine-y="16"
+        className="heading-statement mt-10 hidden max-w-5xl text-balance text-starlight-cream/90 opacity-0 md:mt-24 md:block lg:mt-32"
+      >
+        {HERO_STATEMENT}
+      </p>
     </SectionShell>
   );
 }

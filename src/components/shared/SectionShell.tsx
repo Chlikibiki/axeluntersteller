@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { Atmosphere, type AtmosphereVariant } from "@/components/shared/Atmosphere";
 
 type SectionTone = "bg" | "surface";
-type SectionSpacing = "default" | "spacious" | "tight";
+type SectionSpacing = "default" | "spacious" | "tight" | "editorial";
 
 interface SectionShellProps {
   children: React.ReactNode;
@@ -27,6 +27,7 @@ const spacingClasses: Record<SectionSpacing, string> = {
   default: "section-y",
   spacious: "section-y-spacious",
   tight: "section-y-tight",
+  editorial: "section-y-editorial",
 };
 
 export function SectionShell({

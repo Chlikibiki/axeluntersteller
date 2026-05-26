@@ -12,26 +12,33 @@ export function FinalCTA() {
     <SectionShell
       id="contact-cta"
       atmosphere="void"
-      spacing="spacious"
+      spacing="editorial"
       aria-labelledby="cta-heading"
     >
-      <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+      <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:gap-24">
         <Reveal pace="slow">
+          <p className="eyebrow mb-3">Commencer</p>
           <h2
             id="cta-heading"
             className="heading-lg text-balance text-starlight-cream"
           >
             {cta.title}
           </h2>
-          <p className="body-large mt-8 max-w-md">{cta.body}</p>
+          <p className="m-impact mt-4 md:hidden">
+            Décrivez votre projet. Nous écoutons d&apos;abord.
+          </p>
+          <p className="body-large mt-4 hidden max-w-md md:mt-8 md:block">
+            {cta.body}
+          </p>
 
-          <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-2.5 sm:mt-12 sm:flex-row sm:gap-4">
             <PremiumButton
               href={`mailto:${SITE.email}`}
               variant="secondary"
               external
+              className="w-full sm:w-auto"
             >
-              <span className="flex items-center gap-2">
+              <span className="flex items-center justify-center gap-2">
                 <Mail size={16} strokeWidth={1} />
                 {cta.email}
               </span>
@@ -40,21 +47,22 @@ export function FinalCTA() {
               href={`https://wa.me/${SITE.whatsapp}`}
               variant="ghost"
               external
+              className="w-full sm:w-auto"
             >
-              <span className="flex items-center gap-2">
+              <span className="flex items-center justify-center gap-2">
                 <MessageCircle size={16} strokeWidth={1} />
                 {cta.whatsapp}
               </span>
             </PremiumButton>
           </div>
 
-          <p className="body-premium mt-16 max-w-sm text-starlight-muted">
+          <p className="body-premium mt-8 max-w-sm text-starlight-muted md:mt-16">
             {cta.guarantee}
           </p>
         </Reveal>
 
-        <Reveal pace="slow" delay={0.1}>
-          <div className="border border-starlight-border bg-starlight-surface p-8 md:p-12">
+        <Reveal pace="slow" delay={0.08}>
+          <div className="border border-starlight-border bg-starlight-surface/80 p-6 md:bg-starlight-surface md:p-12">
             <InquiryForm variant="compact" showFileUpload={false} />
           </div>
         </Reveal>

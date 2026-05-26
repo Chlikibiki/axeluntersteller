@@ -3,28 +3,36 @@ import { CAPABILITIES, SECTION_COPY, UI } from "@/lib/constants";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionShell } from "@/components/shared/SectionShell";
 import { Grain } from "@/components/shared/Grain";
+import { CineMedia } from "@/components/motion/CineMedia";
 
 export function Capabilities() {
   return (
     <SectionShell
       id="capabilities"
       atmosphere="elevated"
-      spacing="default"
+      spacing="editorial"
       aria-labelledby="capabilities-heading"
     >
-      <Reveal pace="slow">
+      <Reveal pace="material">
+        <p className="eyebrow mb-3">Savoir-faire</p>
         <h2
           id="capabilities-heading"
           className="heading-lg max-w-3xl text-starlight-cream"
         >
           {SECTION_COPY.capabilities.title}
         </h2>
-        <p className="body-large mt-8 max-w-xl">
+        <p className="m-impact mt-4 md:hidden">
+          Cinq disciplines. Une seule exigence.
+        </p>
+        <p className="body-large mt-4 hidden max-w-xl md:block">
           {SECTION_COPY.capabilities.body}
         </p>
       </Reveal>
 
-      <div className="relative mt-20 aspect-[21/9] min-h-[280px] overflow-hidden md:mt-28">
+      <CineMedia
+        rootClassName="m-bleed m-cine-frame mt-8 aspect-[16/10] md:mt-16 md:aspect-[21/9] md:min-h-[280px]"
+        strength={0.04}
+      >
         <Image
           src={CAPABILITIES[0].image}
           alt={UI.images.capability(CAPABILITIES[0].title)}
@@ -33,21 +41,28 @@ export function Capabilities() {
           sizes="100vw"
         />
         <Grain />
-      </div>
+      </CineMedia>
 
-      <ul className="mt-20 divide-y divide-starlight-border md:mt-28">
+      <ul
+        className="mt-8 divide-y divide-starlight-border md:mt-24"
+        data-cine-stagger
+      >
         {CAPABILITIES.map((cap, i) => (
-          <Reveal key={cap.id} delay={i * 0.04}>
-            <li className="grid gap-6 py-12 md:grid-cols-12 md:items-baseline md:py-16">
-              <span className="font-display text-4xl font-extralight text-starlight-muted md:col-span-2 md:text-5xl">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="heading-md text-starlight-cream md:col-span-4">
+          <li
+            key={cap.id}
+            data-cine-stagger-item
+            className="grid grid-cols-[3rem_1fr] gap-x-4 gap-y-1 py-7 opacity-0 md:grid-cols-12 md:items-baseline md:gap-6 md:py-14"
+          >
+            <span className="font-display text-3xl font-extralight text-starlight-muted md:col-span-2 md:text-5xl">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div className="md:col-span-10">
+              <h3 className="text-lg font-extralight text-starlight-cream md:heading-md">
                 {cap.title}
               </h3>
-              <p className="body-premium md:col-span-6">{cap.description}</p>
-            </li>
-          </Reveal>
+              <p className="body-premium mt-2 md:mt-3">{cap.description}</p>
+            </div>
+          </li>
         ))}
       </ul>
     </SectionShell>

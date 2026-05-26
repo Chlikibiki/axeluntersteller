@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CinematicMotion } from "@/components/motion/CinematicMotion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,12 +12,14 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
     const lenis = new Lenis({
-      duration: 1.4,
+      duration: isMobile ? 1.15 : 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       smoothWheel: true,
-      touchMultiplier: 1.5,
+      touchMultiplier: isMobile ? 1.1 : 1.5,
     });
 
     lenisRef.current = lenis;
@@ -57,5 +60,10 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <CinematicMotion />
+    </>
+  );
 }

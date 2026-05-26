@@ -2,16 +2,18 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { EASE } from "@/lib/motion";
 
-type RevealPace = "default" | "slow" | "fade";
+type RevealPace = "default" | "slow" | "fade" | "material";
 
 const paceConfig: Record<
   RevealPace,
   { y: number; duration: number; opacityFrom: number }
 > = {
-  default: { y: 28, duration: 1.05, opacityFrom: 0 },
-  slow: { y: 20, duration: 1.45, opacityFrom: 0 },
-  fade: { y: 8, duration: 1.65, opacityFrom: 0 },
+  default: { y: 28, duration: 1.15, opacityFrom: 0 },
+  slow: { y: 22, duration: 1.55, opacityFrom: 0 },
+  fade: { y: 10, duration: 1.75, opacityFrom: 0 },
+  material: { y: 36, duration: 1.85, opacityFrom: 0 },
 };
 
 interface RevealProps {
@@ -36,10 +38,10 @@ export function Reveal({
 
   return (
     <Component
-      className={cn(className)}
+      className={cn("gpu-layer", className)}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, margin: "-60px" }}
+      viewport={{ once, margin: "-50px", amount: 0.12 }}
       variants={{
         hidden: { opacity: opacityFrom, y },
         visible: {
@@ -48,7 +50,7 @@ export function Reveal({
           transition: {
             duration,
             delay,
-            ease: [0.22, 1, 0.36, 1],
+            ease: EASE.out,
           },
         },
       }}
