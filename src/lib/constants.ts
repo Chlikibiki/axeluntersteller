@@ -1,12 +1,12 @@
 import { IMAGE_ALTS } from "./visual-direction";
 import {
   CAPABILITY_IMAGES,
-  CRAFT_IMAGES,
   HERO_IMAGES,
   MACRO_GALLERY_IMAGES,
   CONTACT_HERO_IMAGE,
   LOGO,
   TRUST_IMAGE,
+  LOCAL,
 } from "./images";
 import { PARTNER_LOGOS } from "./partner-logos";
 
@@ -58,46 +58,33 @@ export const HERO_COPY = {
 } as const;
 
 export const SECTION_COPY = {
-  trust: {
-    label: "Héritage",
-    title: "Créateurs d'excellence",
-    body: [
-      "Depuis 1987, le geste façonne la matière pour les maisons les plus exigeantes. Allemagne, Tunisie : une même exigence, du prototype à la série.",
-    ],
-    bodyExtended:
-      "Nos ateliers couvrent plus de 5 000 m² dédiés à la fabrication et au contrôle qualité.",
-    tags: ["Atelier allemand", "Sur mesure", "Maisons internationales"],
-  },
-  production: {
-    label: "Réalisations",
-    title: "Fabriqué ici. Porté ailleurs.",
-    body: "Ce qui quitte notre atelier est conçu pour les marques, jamais pour l'étalage.",
-    tag: "Référence atelier",
-    cta: "Nous écrire",
-  },
-  macro: {
-    label: "Gros plan",
-    title: "Le langage du cuir.",
+  manufacture: {
+    label: "Manufacture",
+    title: "Starlight, manufacture de cuir.",
+    body: "Depuis 1987, nous développons et produisons des accessoires cuir pour les maisons internationales. Deux sites, une exigence : prototype validé, série tenue, qualité contrôlée.",
   },
   capabilities: {
-    label: "Savoir-faire",
-    title: "Nos spécialités cuir.",
-    body: "Du premier prototype à la série, des pièces pensées pour durer.",
-    tag: "Production atelier",
+    label: "Produits",
+    title: "Ce que nous fabriquons.",
+    body: "Cinq familles de produits, une même discipline de fabrication.",
   },
-  craft: {
-    label: "L'atelier",
-    title: "Là où la main tranche.",
-    body: "La machine aide. Le jugement reste humain.",
+  materials: {
+    label: "Matières",
+    title: "Matières & finitions.",
+    body: "Cuir, couture, tranches, quincaillerie : chaque détail est pensé pour la durée et la constance en série.",
+  },
+  atelier: {
+    label: "Atelier",
+    title: "L'atelier, au quotidien.",
+    body: "Artisans, machines, tables de coupe et contrôle manuel. Une fabrication réelle, sans mise en scène.",
   },
   process: {
     label: "Méthode",
-    title: "Cinq gestes. Une fin.",
-    body: "Simple, lent, sans détour.",
+    title: "Cinq étapes. Un même niveau d'exigence.",
   },
   partners: {
-    title: "Ils nous confient leur fabrication.",
-    body: "Depuis 1987, nous fabriquons pour des marques internationales exigeantes.",
+    title: "Des maisons qui exigent la constance.",
+    body: "Références internationales en marque blanche et sous licence.",
     disclaimer:
       "Noms cités à titre de référence. Toutes les marques appartiennent à leurs propriétaires.",
   },
@@ -118,9 +105,9 @@ export const SECTION_COPY = {
     established: "Depuis 1987 · Allemagne · Tunisie",
   },
   cta: {
-    label: "Commencer",
-    title: "Tout commence en silence.",
-    body: "Décrivez ce que vous imaginez. Nous écoutons d'abord.",
+    label: "Contact",
+    title: "Parler à l'atelier.",
+    body: "Décrivez votre projet, vos volumes et vos contraintes. Nous répondons avec précision.",
     formTitle: "Votre message",
     guaranteeLabel: "Réponse",
     guarantee:
@@ -182,11 +169,71 @@ export const UI = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Réalisations", href: "/#production" },
-  { label: "Savoir-faire", href: "/#capabilities" },
-  { label: "Atelier", href: "/#craftsmanship" },
+  { label: "Manufacture", href: "/#manufacture" },
+  { label: "Produits", href: "/#products" },
+  { label: "Méthode", href: "/#process" },
   { label: "Partenaires", href: "/#partners" },
   { label: "Contact", href: "/contact" },
+] as const;
+
+export const MANUFACTURE_PILLARS = [
+  "Depuis 1987",
+  "Allemagne · Tunisie",
+  "+5 000 m² fabrication & stockage",
+  "Développement prototype → série",
+  "Fabrication artisanale & mécanisée",
+  "Contrôle qualité manuel",
+] as const;
+
+export const MANUFACTURE_GALLERY = [
+  {
+    src: LOCAL.workshop,
+    alt: IMAGE_ALTS.workshop,
+  },
+  {
+    src: LOCAL.processCut,
+    alt: IMAGE_ALTS.craft.cutting,
+  },
+  {
+    src: LOCAL.processStitch,
+    alt: IMAGE_ALTS.craft.stitching,
+  },
+] as const;
+
+export const MATERIALS_GALLERY = [
+  { src: LOCAL.leather, alt: IMAGE_ALTS.leatherTexture, label: "Cuir" },
+  { src: LOCAL.detail, alt: IMAGE_ALTS.craft.stitching, label: "Couture" },
+  { src: LOCAL.belt, alt: IMAGE_ALTS.belt, label: "Tranche" },
+  { src: LOCAL.processFinish, alt: IMAGE_ALTS.craft.finishing, label: "Finition" },
+  { src: LOCAL.heroPhoto, alt: IMAGE_ALTS.heroPrimary, label: "Quincaillerie" },
+  { src: LOCAL.processStitch, alt: IMAGE_ALTS.trustArtisan, label: "Grain" },
+] as const;
+
+export const ATELIER_SCENES = [
+  {
+    src: LOCAL.workshop,
+    alt: IMAGE_ALTS.workshop,
+    title: "Atelier principal",
+    caption: "Lumière chaude, organisation rigoureuse, production en série maîtrisée.",
+  },
+  {
+    src: LOCAL.processCut,
+    alt: IMAGE_ALTS.craft.cutting,
+    title: "Découpe",
+    caption: "Tables de coupe, gabarits et précision millimétrique.",
+  },
+  {
+    src: LOCAL.processStitch,
+    alt: IMAGE_ALTS.craft.stitching,
+    title: "Couture & assemblage",
+    caption: "Machines et main, selon l'exigence du produit.",
+  },
+  {
+    src: LOCAL.detail,
+    alt: IMAGE_ALTS.craft.stitching,
+    title: "Contrôle qualité",
+    caption: "Vérification manuelle de chaque série avant expédition.",
+  },
 ] as const;
 
 export const TRUST_METRICS = [
@@ -197,110 +244,83 @@ export const TRUST_METRICS = [
   { value: "100", label: "Fabriqué en Tunisie", suffix: "%" },
 ] as const;
 
-export const PRODUCTION_PROCESS = [
-  { step: "01", title: "Brief client" },
-  { step: "02", title: "Conception design en Allemagne" },
-  { step: "03", title: "Création de prototype" },
+export const PROCESS_STEPS = [
+  {
+    step: "01",
+    title: "Analyse",
+    description:
+      "Usages, contraintes techniques, matières et objectifs de fabrication sont étudiés avec précision.",
+    image: LOCAL.leather,
+    imageAlt: IMAGE_ALTS.leatherTexture,
+  },
+  {
+    step: "02",
+    title: "Développement",
+    description:
+      "Prototype et échantillons jusqu'à validation complète du produit, des finitions et du comportement matière.",
+    image: LOCAL.processFinish,
+    imageAlt: IMAGE_ALTS.craft.finishing,
+  },
+  {
+    step: "03",
+    title: "Fabrication",
+    description:
+      "Production artisanale ou mécanisée selon les volumes, les délais et le niveau de finition recherché.",
+    image: LOCAL.processStitch,
+    imageAlt: IMAGE_ALTS.craft.stitching,
+  },
   {
     step: "04",
-    title: "Création série jusqu'à 10 000 pièces par semaine",
+    title: "Contrôle",
+    description:
+      "Régularité, couture, tenue, précision et qualité d'exécution vérifiées sur chaque série.",
+    image: LOCAL.detail,
+    imageAlt: IMAGE_ALTS.craft.stitching,
   },
-  { step: "05", title: "Assemblage" },
-  { step: "06", title: "Envoi" },
-  { step: "07", title: "Réception sous 15 jours" },
+  {
+    step: "05",
+    title: "Suivi",
+    description:
+      "Délais, ajustements, réassorts et continuité de fabrication dans la durée du partenariat.",
+    image: LOCAL.workshop,
+    imageAlt: IMAGE_ALTS.workshop,
+  },
 ] as const;
-
-export const MACRO_GALLERY = [...MACRO_GALLERY_IMAGES];
 
 export const CAPABILITIES = [
   {
     id: "belts",
     title: "Ceintures",
-    subtitle: "Cœur de métier",
-    description:
-      "Sangles et boucles selon votre ligne, cuir choisi, cotes tenues, série après série.",
+    description: "Sangles, boucles et finitions selon votre ligne.",
     image: CAPABILITY_IMAGES.belts,
+  },
+  {
+    id: "goods",
+    title: "Petite maroquinerie",
+    description: "Portefeuilles, porte-cartes et pièces clés en marque blanche.",
+    image: CAPABILITY_IMAGES.goods,
   },
   {
     id: "pouches",
     title: "Pochettes & étuis",
-    subtitle: "Précision technique",
-    description:
-      "Formes de protection pour les objets et instruments qui exigent le millimètre juste.",
+    description: "Protection optique et instruments — Leica et maisons exigeantes.",
     image: CAPABILITY_IMAGES.pouches,
   },
   {
     id: "straps",
     title: "Sangles & anses",
-    subtitle: "Composants",
-    description:
-      "Grain accordé. Tenue éprouvée. Finition qui s'efface au profit du produit.",
+    description: "Composants cuir pour sacs, bagagerie et transport.",
     image: CAPABILITY_IMAGES.straps,
-  },
-  {
-    id: "goods",
-    title: "Petite maroquinerie",
-    subtitle: "Marque blanche",
-    description:
-      "Portefeuilles, porte-cartes, pièces clés, petites par la taille, absolues par l'exigence.",
-    image: CAPABILITY_IMAGES.goods,
   },
   {
     id: "accessories",
     title: "Accessoires",
-    subtitle: "Sur mesure",
-    description:
-      "Pièces pour bagagerie, optique et transport, dessinées, jamais devinées.",
+    description: "Pièces sur mesure pour bagagerie, optique et lifestyle.",
     image: CAPABILITY_IMAGES.accessories,
   },
 ] as const;
 
-export const CRAFT_STEPS = [
-  {
-    title: "La coupe",
-    description: "La peau est lue avant que la lame ne s'avance.",
-    image: CRAFT_IMAGES.cutting,
-  },
-  {
-    title: "La couture",
-    description: "Fil tendu. Main là où elle compte.",
-    image: CRAFT_IMAGES.stitching,
-  },
-  {
-    title: "La finition",
-    description:
-      "Bords brunis. Quincaillerie posée. Puis seulement, elle part.",
-    image: CRAFT_IMAGES.finishing,
-  },
-] as const;
-
-export const PROCESS_STEPS = [
-  {
-    step: "01",
-    title: "Écoute",
-    description: "Votre projet. Votre matière. Votre échéance.",
-  },
-  {
-    step: "02",
-    title: "Échantillon",
-    description: "Affiné jusqu'à ce qu'il ne reste plus de question.",
-  },
-  {
-    step: "03",
-    title: "Fabrication",
-    description: "La série : même main, même regard.",
-  },
-  {
-    step: "04",
-    title: "Contrôle",
-    description: "Grain. Couture. Mesure. Encore.",
-  },
-  {
-    step: "05",
-    title: "Livraison",
-    description: "À la date convenue. Sans réserve.",
-  },
-] as const;
+export const MACRO_GALLERY = [...MACRO_GALLERY_IMAGES];
 
 export const BRAND_REFERENCES = [
   "Baldessarini",
@@ -342,11 +362,6 @@ export const COLLABORATIONS = [
     detail: "Composants · Matières · Volume",
   },
 ] as const;
-
-export const PHILOSOPHY = {
-  headline: "La confiance se construit lentement.",
-  body: "Nous travaillons avec peu de partenaires, longtemps. Le cuir s'affine avec la relation.",
-} as const;
 
 export const TESTIMONIALS = [
   {

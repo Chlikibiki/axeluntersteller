@@ -4,9 +4,11 @@ import { useEffect, useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
 
 const HOME_SECTIONS = [
-  "production",
-  "capabilities",
-  "craftsmanship",
+  "manufacture",
+  "products",
+  "process",
+  "materials",
+  "atelier",
   "partners",
 ] as const;
 

@@ -2,7 +2,6 @@ import { SITE, SECTION_COPY } from "@/lib/constants";
 import { InquiryForm } from "@/components/shared/InquiryForm";
 import { PremiumButton } from "@/components/shared/PremiumButton";
 import { Reveal } from "@/components/shared/Reveal";
-import { FilmChapter } from "@/components/film";
 import { SectionShell } from "@/components/shared/SectionShell";
 import { Mail, MessageCircle } from "lucide-react";
 
@@ -14,27 +13,24 @@ export function FinalCTA() {
       id="contact-cta"
       film="cta"
       filmTransition="lift"
-      atmosphere="void"
+      atmosphere="warm"
       spacing="spacious"
       aria-labelledby="cta-heading"
     >
-      <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:gap-24">
+      <div className="flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-20 xl:gap-24">
         <Reveal pace="slow">
-          <FilmChapter section="cta" />
+          <p className="eyebrow">{cta.label}</p>
           <h2
             id="cta-heading"
-            className="heading-lg text-balance text-starlight-cream"
+            className="heading-lg mt-4 text-balance text-starlight-cream"
           >
             {cta.title}
           </h2>
-          <p className="m-impact type-stack-body md:hidden">
-            Décrivez votre projet. Nous écoutons d&apos;abord.
-          </p>
-          <p className="body-editorial prose-measure type-stack-body hidden md:block">
+          <p className="body-editorial prose-measure mt-5 max-w-lg text-starlight-metal/88">
             {cta.body}
           </p>
 
-          <div className="mt-8 flex flex-col gap-2.5 sm:mt-12 sm:flex-row sm:gap-4">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <PremiumButton
               href={`mailto:${SITE.email}`}
               variant="secondary"
@@ -59,13 +55,13 @@ export function FinalCTA() {
             </PremiumButton>
           </div>
 
-          <p className="body-premium mt-8 max-w-sm text-starlight-muted md:mt-16">
+          <p className="body-premium mt-10 max-w-sm text-starlight-muted/90 md:mt-14">
             {cta.guarantee}
           </p>
         </Reveal>
 
         <Reveal pace="silence" delay={0.12}>
-          <div className="border border-starlight-border bg-starlight-surface/80 p-6 md:bg-starlight-surface md:p-12">
+          <div className="contact-form-panel border border-starlight-border/80 bg-starlight-surface/70 p-6 backdrop-blur-sm md:p-10 lg:p-12">
             <InquiryForm variant="compact" showFileUpload={false} />
           </div>
         </Reveal>

@@ -28,12 +28,12 @@ export interface FilmSectionMeta {
 export type FilmSectionId =
   | "hero"
   | "trust"
+  | "materials"
+  | "atelier"
   | "signature"
   | "partners"
   | "production"
   | "capabilities"
-  | "craft"
-  | "philosophy"
   | "process"
   | "testimonials"
   | "cta";
@@ -42,18 +42,34 @@ export const FILM_SECTIONS: Record<FilmSectionId, FilmSectionMeta> = {
   hero: {
     act: "I",
     chapter: "Ouverture",
-    intention: "La matière d'abord",
+    intention: "Manufacture de cuir depuis 1987",
     rhythm: "crescendo",
     personality: "Immersion",
     sense: "cuir",
   },
   trust: {
     act: "I",
-    chapter: "Héritage",
-    intention: "Le temps gravé",
+    chapter: "Manufacture",
+    intention: "Qui nous sommes",
     rhythm: "breath",
-    personality: "Mémoire",
+    personality: "Maison",
     sense: "temps",
+  },
+  materials: {
+    act: "II",
+    chapter: "Matières",
+    intention: "Ce que l'on voit au toucher",
+    rhythm: "contemplation",
+    personality: "Macro",
+    sense: "cuir",
+  },
+  atelier: {
+    act: "II",
+    chapter: "Atelier",
+    intention: "Comment nous produisons",
+    rhythm: "breath",
+    personality: "Réel",
+    sense: "main",
   },
   signature: {
     act: "I",
@@ -64,9 +80,9 @@ export const FILM_SECTIONS: Record<FilmSectionId, FilmSectionMeta> = {
     sense: "main",
   },
   partners: {
-    act: "II",
+    act: "III",
     chapter: "Confiance",
-    intention: "La rareté reconnue par les maisons",
+    intention: "Pourquoi les marques nous choisissent",
     rhythm: "silence",
     personality: "Mur discret",
     sense: "rarete",
@@ -80,33 +96,17 @@ export const FILM_SECTIONS: Record<FilmSectionId, FilmSectionMeta> = {
     sense: "maitrise",
   },
   capabilities: {
-    act: "II",
-    chapter: "Discipline",
-    intention: "Cinq gestes, une seule exigence",
+    act: "I",
+    chapter: "Produits",
+    intention: "Ce que nous fabriquons",
     rhythm: "contrast",
-    personality: "Structure",
+    personality: "Catalogue",
     sense: "maitrise",
   },
-  craft: {
-    act: "III",
-    chapter: "Gestes",
-    intention: "Le rythme lent de l'atelier",
-    rhythm: "contemplation",
-    personality: "Proximité",
-    sense: "main",
-  },
-  philosophy: {
-    act: "III",
-    chapter: "Conviction",
-    intention: "Un silence pour laisser penser",
-    rhythm: "silence",
-    personality: "Vérité nue",
-    sense: "temps",
-  },
   process: {
-    act: "III",
+    act: "II",
     chapter: "Méthode",
-    intention: "La ligne droite du savoir-faire",
+    intention: "Cinq étapes, une exigence",
     rhythm: "breath",
     personality: "Clarté",
     sense: "maitrise",
@@ -121,8 +121,8 @@ export const FILM_SECTIONS: Record<FilmSectionId, FilmSectionMeta> = {
   },
   cta: {
     act: "IV",
-    chapter: "Seuil",
-    intention: "Passer de la contemplation à l'acte",
+    chapter: "Contact",
+    intention: "Démarrer un projet",
     rhythm: "crescendo",
     personality: "Invitation",
     sense: "cuir",

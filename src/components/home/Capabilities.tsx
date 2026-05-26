@@ -1,16 +1,17 @@
 import Image from "next/image";
 import { CAPABILITIES, SECTION_COPY, UI } from "@/lib/constants";
 import { Reveal } from "@/components/shared/Reveal";
-import { FilmChapter } from "@/components/film";
 import { SectionShell } from "@/components/shared/SectionShell";
 
 const TEXT_GRADIENT =
   "linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.15))";
 
 export function Capabilities() {
+  const copy = SECTION_COPY.capabilities;
+
   return (
     <SectionShell
-      id="capabilities"
+      id="products"
       film="capabilities"
       filmTransition="void"
       atmosphere="elevated"
@@ -18,22 +19,19 @@ export function Capabilities() {
       separator={false}
       className="overflow-x-hidden"
       innerClassName="relative z-[1] overflow-x-hidden"
-      aria-labelledby="capabilities-heading"
+      aria-labelledby="products-heading"
     >
-      <div className="px-6 pt-10 md:px-12 md:pt-16">
+      <div className="px-6 pt-8 md:px-12 md:pt-12">
         <Reveal pace="fade">
-          <FilmChapter section="capabilities" />
+          <p className="eyebrow">{copy.label}</p>
           <h2
-            id="capabilities-heading"
-            className="heading-lg max-w-3xl text-starlight-cream"
+            id="products-heading"
+            className="heading-lg mt-4 max-w-3xl text-starlight-cream"
           >
-            {SECTION_COPY.capabilities.title}
+            {copy.title}
           </h2>
-          <p className="m-impact type-stack-body md:hidden">
-            Du premier prototype à la série, des pièces pensées pour durer.
-          </p>
-          <p className="body-editorial prose-measure type-stack-body hidden md:block">
-            {SECTION_COPY.capabilities.body}
+          <p className="body-editorial prose-measure mt-4 max-w-xl text-starlight-metal/88">
+            {copy.body}
           </p>
         </Reveal>
       </div>
@@ -43,7 +41,7 @@ export function Capabilities() {
           <article
             key={cap.id}
             id={cap.id}
-            className="relative w-full overflow-hidden border-t border-starlight-border/40 h-[56vh] sm:h-[60vh] md:h-[70vh]"
+            className="relative h-[56vh] w-full overflow-hidden border-t border-starlight-border/40 sm:h-[60vh] md:h-[70vh]"
           >
             <Image
               src={cap.image}
@@ -55,29 +53,25 @@ export function Capabilities() {
             />
 
             <div
-              className="absolute inset-0 pointer-events-none"
+              className="pointer-events-none absolute inset-0"
               style={{ background: TEXT_GRADIENT }}
             />
 
-            <Reveal
-              pace="fade"
-              as="div"
-              className="absolute inset-0 z-[1]"
-            >
+            <Reveal pace="fade" as="div" className="absolute inset-0 z-[1]">
               <div className="absolute bottom-0 left-0 z-[1] w-full px-6 pb-8 md:px-12 md:pb-10">
                 <span className="type-index text-starlight-cream/70">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="heading-statement mt-4 text-starlight-cream max-w-[30rem]">
+                <h3 className="heading-statement mt-3 max-w-[30rem] text-starlight-cream">
                   {cap.title}
                 </h3>
-                <p className="body-editorial mt-4 max-w-[42rem] text-starlight-muted/90">
+                <p className="body-editorial mt-3 max-w-md text-starlight-muted/90">
                   {cap.description}
                 </p>
 
                 <a
                   href="/contact"
-                  className="mt-6 inline-block text-[0.65rem] font-light tracking-[0.22em] uppercase text-starlight-cream/92 underline decoration-starlight-border/35 underline-offset-4 transition-opacity duration-700 hover:opacity-100"
+                  className="mt-5 inline-block text-[0.65rem] font-light tracking-[0.22em] uppercase text-starlight-cream/92 underline decoration-starlight-border/35 underline-offset-4 transition-opacity duration-700 hover:opacity-100"
                   aria-label={`Découvrir ${cap.title}`}
                 >
                   Découvrir

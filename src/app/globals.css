@@ -1632,6 +1632,14 @@
     letter-spacing: 0.015em;
   }
 
+  .partner-wall-compact .partner-logo-mark img {
+    opacity: 0.55;
+  }
+
+  .contact-form-panel {
+    box-shadow: inset 0 1px 0 rgba(245, 242, 235, 0.04);
+  }
+
   .partner-logo-mark img {
     filter: brightness(0) invert(93%);
     opacity: 0.65;

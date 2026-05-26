@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 const gridReveal = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.35 },
+    transition: { staggerChildren: 0.05, delayChildren: 0.2 },
   },
 };
 
@@ -21,7 +21,7 @@ const itemReveal = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 2.2,
+      duration: 1.8,
       ease: EASE.silence as [number, number, number, number],
     },
   },
@@ -34,28 +34,28 @@ export function PartnerTrust() {
     <section
       id="partners"
       className={cn(
-        "partner-wall film-section relative bg-black",
+        "partner-wall partner-wall-compact film-section relative bg-black",
         filmRhythmClass("silence"),
         "film-personality-rarete"
       )}
       {...filmSectionAttrs("partners")}
       aria-labelledby="partners-heading"
     >
-      <div className="section-padding relative py-20 md:py-28 lg:py-36">
-        <Reveal pace="silence" className="partner-wall-header mx-auto max-w-2xl text-center">
+      <div className="section-padding relative py-12 md:py-16 lg:py-20">
+        <Reveal pace="silence" className="partner-wall-header mx-auto max-w-xl text-center">
           <h2
             id="partners-heading"
-            className="heading-md font-display font-extralight tracking-[0.02em] text-starlight-cream/90"
+            className="heading-md font-display font-extralight tracking-[0.02em] text-starlight-cream/88"
           >
             {copy.title}
           </h2>
-          <p className="body-editorial prose-measure mx-auto mt-5 text-starlight-metal/88 md:mt-6">
+          <p className="type-readable mx-auto mt-4 max-w-md normal-case tracking-normal text-starlight-metal/75">
             {copy.body}
           </p>
         </Reveal>
 
         <motion.ul
-          className="partner-wall-grid mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-x-8 gap-y-14 sm:gap-x-10 sm:gap-y-16 md:mt-20 md:grid-cols-3 md:gap-x-12 md:gap-y-[4.5rem] lg:mt-24 lg:grid-cols-5 lg:gap-x-10 lg:gap-y-20"
+          className="partner-wall-grid mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 sm:gap-y-12 md:mt-12 md:grid-cols-3 md:gap-x-10 md:gap-y-14 lg:grid-cols-5 lg:gap-x-8 lg:gap-y-12"
           role="list"
           initial="hidden"
           whileInView="visible"
