@@ -58,7 +58,7 @@ export const SECTION_COPY = {
   trust: {
     label: "Héritage",
     title: "Créateurs d'excellence",
-    body: "Nos experts sont artisans du cuir et garants d'un savoir-faire européen forgé depuis 1987. Chaque peau est sélectionnée, chaque pièce façonnée à la main pour les maisons internationales qui exigent précision, constance et finition irréprochable : du prototype à la série, en Allemagne comme en Tunisie.",
+    body: "Depuis 1987, nos artisans perpétuent un savoir-faire cuir européen au service des maisons internationales les plus exigeantes. Chaque peau est choisie pour sa noblesse, chaque pièce façonnée avec une précision de finition qui se lit au toucher. Du prototype à la série, nous réalisons sangles de précision, maroquinerie d'objets et gainages techniques avec la même constance, dans nos ateliers d'Allemagne et de Tunisie.",
     tags: ["Atelier allemand", "Sur mesure", "Maisons internationales"],
   },
   production: {
