@@ -145,6 +145,35 @@
     filter: contrast(1.06) saturate(0.88) brightness(0.94);
   }
 
+  .trust-editorial-frame {
+    box-shadow:
+      0 28px 72px rgba(0, 0, 0, 0.55),
+      0 10px 28px rgba(0, 0, 0, 0.35);
+  }
+
+  .trust-editorial-image {
+    filter: contrast(1.05) saturate(0.8) brightness(0.9);
+  }
+
+  .trust-editorial-warmth {
+    pointer-events: none;
+    background: linear-gradient(
+      155deg,
+      rgba(168, 98, 42, 0.14) 0%,
+      transparent 42%,
+      rgba(0, 0, 0, 0.42) 100%
+    );
+  }
+
+  .trust-editorial-vignette {
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 78% 82% at 48% 42%,
+      transparent 28%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+
   .image-vignette {
     pointer-events: none;
     background: linear-gradient(

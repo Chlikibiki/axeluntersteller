@@ -35,6 +35,9 @@ export const HERO_IMAGES = {
   workshop: LOCAL.workshop,
 } as const;
 
+/** Section Héritage — artisan en atelier, lumière chaude */
+export const TRUST_IMAGE = LOCAL.processStitch;
+
 export const CONTACT_HERO_IMAGE = LOCAL.processCut;
 
 export const MANUFACTURING_IMAGES = {

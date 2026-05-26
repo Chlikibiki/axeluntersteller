@@ -7,6 +7,7 @@ import {
   CONTACT_HERO_IMAGE,
   LOGO,
   PARTNER_LOGOS,
+  TRUST_IMAGE,
 } from "./images";
 
 export const SITE = {
@@ -30,7 +31,7 @@ export const SITE = {
 export const HERO_STATEMENT =
   "Depuis 1987, Starlight transforme les plus belles peaux en cuirs d'exception pour les maisons internationales." as const;
 
-export { HERO_IMAGES, CONTACT_HERO_IMAGE, LOGO, PARTNER_LOGOS };
+export { HERO_IMAGES, CONTACT_HERO_IMAGE, LOGO, PARTNER_LOGOS, TRUST_IMAGE };
 
 export const HERO_COPY = {
   eyebrow: "Manufacture de cuir · Europe",
@@ -172,6 +173,8 @@ export const UI = {
     craft: (title: string) => `${title}, atelier Starlight`,
     capability: (title: string) => `${title}, savoir-faire Starlight`,
     partnerLogo: (name: string) => `Logo ${name}`,
+    trustArtisan:
+      "Artisan cousant une sangle en cuir pleine fleur à la main, lumière chaude d'atelier Starlight",
   },
 } as const;
 

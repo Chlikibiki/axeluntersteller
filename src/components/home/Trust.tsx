@@ -1,7 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { TRUST_METRICS, HERO_STATEMENT, SECTION_COPY } from "@/lib/constants";
+import {
+  TRUST_IMAGE,
+  TRUST_METRICS,
+  HERO_STATEMENT,
+  SECTION_COPY,
+  UI,
+} from "@/lib/constants";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionShell } from "@/components/shared/SectionShell";
 
@@ -58,21 +65,40 @@ function AnimatedMetric({
 export function Trust() {
   return (
     <SectionShell id="trust" spacing="spacious" aria-labelledby="trust-heading">
-      <Reveal>
-        <h2
-          id="trust-heading"
-          className="heading-lg max-w-3xl text-starlight-cream"
-        >
-          {SECTION_COPY.trust.title}
-        </h2>
-        <div className="mt-8 max-w-xl space-y-6">
-          {SECTION_COPY.trust.body.map((paragraph, index) => (
-            <p key={index} className="body-large">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </Reveal>
+      <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.9fr)] lg:gap-16 xl:gap-24">
+        <Reveal className="min-w-0">
+          <h2
+            id="trust-heading"
+            className="heading-lg max-w-3xl text-starlight-cream"
+          >
+            {SECTION_COPY.trust.title}
+          </h2>
+          <div className="mt-8 max-w-xl space-y-6">
+            {SECTION_COPY.trust.body.map((paragraph, index) => (
+              <p key={index} className="body-large">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.12} className="flex justify-center lg:justify-end">
+          <figure className="trust-editorial-frame group relative w-full max-w-sm lg:max-w-none lg:py-4">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-black lg:min-h-[min(72vh,640px)] lg:aspect-[4/5]">
+              <Image
+                src={TRUST_IMAGE}
+                alt={UI.images.trustArtisan}
+                fill
+                className="trust-editorial-image object-cover object-[center_38%] transition-transform duration-[1.4s] ease-out group-hover:scale-[1.04]"
+                sizes="(max-width: 1024px) 90vw, 42vw"
+                priority={false}
+              />
+              <div className="trust-editorial-warmth absolute inset-0" aria-hidden />
+              <div className="trust-editorial-vignette absolute inset-0" aria-hidden />
+            </div>
+          </figure>
+        </Reveal>
+      </div>
 
       <div className="mt-20 grid grid-cols-2 gap-12 border-t border-starlight-border pt-16 sm:grid-cols-3 md:mt-28 lg:grid-cols-5 md:gap-8 md:pt-20">
         {TRUST_METRICS.map((metric, i) => (
