@@ -1,0 +1,130 @@
+"use client";
+
+import Image from "next/image";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { HERO_COPY, HERO_IMAGES, HERO_STATEMENT, UI } from "@/lib/constants";
+import { PremiumButton } from "@/components/shared/PremiumButton";
+
+export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ delay: prefersReducedMotion ? 0 : 1.85 });
+
+      if (bgRef.current && !prefersReducedMotion) {
+        gsap.fromTo(
+          bgRef.current,
+          { scale: 1.06 },
+          { scale: 1, duration: 2.8, ease: "power3.out" }
+        );
+      }
+
+      tl.fromTo(
+        ".hero-line-inner",
+        { y: "105%" },
+        { y: "0%", duration: 1.1, stagger: 0.08, ease: "power4.out" },
+        0.1
+      )
+        .fromTo(
+          ".hero-subhead",
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" },
+          0.4
+        )
+        .fromTo(
+          ".hero-cta",
+          { y: 14, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.08, ease: "power3.out" },
+          0.55
+        )
+        .fromTo(
+          ".hero-scroll",
+          { opacity: 0 },
+          { opacity: 1, duration: 0.8, ease: "power2.out" },
+          0.95
+        );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative min-h-[100dvh] overflow-hidden bg-black"
+      aria-labelledby="hero-heading"
+    >
+      <div className="absolute inset-0">
+        <div
+          ref={bgRef}
+          className="absolute inset-0 origin-center will-change-transform"
+        >
+          <Image
+            src={HERO_IMAGES.primary}
+            alt={UI.images.workshop}
+            fill
+            priority
+            className="hero-image-cinematic object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 cinematic-vignette" />
+      </div>
+
+      <div className="relative z-10 flex min-h-[100dvh] flex-col justify-end section-padding pb-20 pt-36 md:pb-28 md:pt-44">
+        <div className="max-w-3xl">
+          <p className="eyebrow mb-10 md:mb-12">{HERO_COPY.established}</p>
+
+          <h1
+            id="hero-heading"
+            className="heading-xl uppercase text-starlight-cream"
+          >
+            {HERO_COPY.headline.map((line) => (
+              <span key={line} className="hero-line">
+                <span className="hero-line-inner">{line}</span>
+              </span>
+            ))}
+          </h1>
+
+          <p className="hero-subhead body-large mt-12 max-w-xl opacity-0 md:mt-14 md:max-w-2xl">
+            {HERO_COPY.subhead}
+          </p>
+
+          <div className="mt-14 flex flex-col gap-4 sm:flex-row sm:items-center md:mt-16">
+            <div className="hero-cta opacity-0">
+              <PremiumButton href="/contact">
+                {HERO_COPY.ctaPrimary}
+              </PremiumButton>
+            </div>
+            <div className="hero-cta opacity-0">
+              <PremiumButton href="#partners" variant="secondary">
+                {HERO_COPY.ctaSecondary}
+              </PremiumButton>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="#trust"
+        className="hero-scroll absolute bottom-12 left-6 z-20 flex flex-col items-start gap-3 opacity-0 md:left-12 lg:left-16"
+        aria-label={UI.aria.scroll}
+      >
+        <span className="label-caps">{HERO_COPY.scroll}</span>
+        <span className="relative h-12 w-px bg-starlight-border/80">
+          <span className="absolute top-0 left-0 h-4 w-full animate-[hero-scroll_2s_ease-in-out_infinite] bg-starlight-cream" />
+        </span>
+      </a>
+
+      <p className="sr-only">{HERO_STATEMENT}</p>
+    </section>
+  );
+}
