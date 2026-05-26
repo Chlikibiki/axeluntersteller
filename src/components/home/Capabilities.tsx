@@ -3,10 +3,9 @@ import { CAPABILITIES, SECTION_COPY, UI } from "@/lib/constants";
 import { Reveal } from "@/components/shared/Reveal";
 import { FilmChapter } from "@/components/film";
 import { SectionShell } from "@/components/shared/SectionShell";
-import { Grain } from "@/components/shared/Grain";
-import { CineMedia } from "@/components/motion/CineMedia";
 
-const CAPABILITY_WITH_IMAGE = new Set(["belts", "pouches", "straps", "accessories"]);
+const TEXT_GRADIENT =
+  "linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.15))";
 
 export function Capabilities() {
   return (
@@ -15,83 +14,79 @@ export function Capabilities() {
       film="capabilities"
       filmTransition="void"
       atmosphere="elevated"
-      spacing="editorial"
+      fullWidth
+      separator={false}
+      className="overflow-x-hidden"
+      innerClassName="relative z-[1] overflow-x-hidden"
       aria-labelledby="capabilities-heading"
     >
-      <Reveal pace="fade">
-        <FilmChapter section="capabilities" />
-        <h2
-          id="capabilities-heading"
-          className="heading-lg max-w-3xl text-starlight-cream"
-        >
-          {SECTION_COPY.capabilities.title}
-        </h2>
-        <p className="m-impact type-stack-body md:hidden">
-          Du premier prototype à la série, des pièces pensées pour durer.
-        </p>
-        <p className="body-editorial prose-measure type-stack-body hidden md:block">
-          {SECTION_COPY.capabilities.body}
-        </p>
-      </Reveal>
-
-      <ul
-        className="mt-8 divide-y divide-starlight-border md:mt-24"
-        data-cine-stagger
-      >
-        {CAPABILITIES.map((cap, i) => (
-          <li
-            key={cap.id}
-            data-cine-stagger-item
-            className="opacity-0"
+      <div className="px-6 pt-10 md:px-12 md:pt-16">
+        <Reveal pace="fade">
+          <FilmChapter section="capabilities" />
+          <h2
+            id="capabilities-heading"
+            className="heading-lg max-w-3xl text-starlight-cream"
           >
-            {CAPABILITY_WITH_IMAGE.has(cap.id) ? (
-              <CineMedia
-                rootClassName="m-bleed m-cine-frame mb-8 aspect-[16/10] md:mb-12 md:aspect-[21/9] md:min-h-[240px]"
-                strength={0.04}
-              >
-                <Image
-                  src={cap.image}
-                  alt={UI.images.capability(cap.title)}
-                  fill
-                  className="hero-image-cinematic object-cover object-center"
-                  sizes="100vw"
-                />
-                <Grain />
+            {SECTION_COPY.capabilities.title}
+          </h2>
+          <p className="m-impact type-stack-body md:hidden">
+            Du premier prototype à la série, des pièces pensées pour durer.
+          </p>
+          <p className="body-editorial prose-measure type-stack-body hidden md:block">
+            {SECTION_COPY.capabilities.body}
+          </p>
+        </Reveal>
+      </div>
 
-                <div className="pointer-events-none absolute inset-0">
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-6">
-                    <span className="type-index block text-starlight-cream/70">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="heading-md mt-3 text-starlight-cream">
-                      {cap.title}
-                    </h3>
-                    <p className="body-premium mt-3 max-w-sm text-starlight-cream/86">
-                      {cap.description}
-                    </p>
-                  </div>
-                </div>
-              </CineMedia>
-            ) : null}
+      <div className="w-full">
+        {CAPABILITIES.map((cap, index) => (
+          <article
+            key={cap.id}
+            id={cap.id}
+            className="relative w-full overflow-hidden border-t border-starlight-border/40 h-[56vh] sm:h-[60vh] md:h-[70vh]"
+          >
+            <Image
+              src={cap.image}
+              alt={UI.images.capability(cap.title)}
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+              priority={index === 0}
+            />
 
-            {!CAPABILITY_WITH_IMAGE.has(cap.id) ? (
-              <div className="grid grid-cols-[3rem_1fr] gap-x-4 gap-y-1 py-7 md:grid-cols-12 md:items-baseline md:gap-6 md:py-14">
-                <span className="type-index md:col-span-2">
-                  {String(i + 1).padStart(2, "0")}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: TEXT_GRADIENT }}
+            />
+
+            <Reveal
+              pace="fade"
+              as="div"
+              className="absolute inset-0 z-[1]"
+            >
+              <div className="absolute bottom-0 left-0 z-[1] w-full px-6 pb-8 md:px-12 md:pb-10">
+                <span className="type-index text-starlight-cream/70">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
-                <div className="md:col-span-10">
-                  <h3 className="heading-md text-starlight-cream">
-                    {cap.title}
-                  </h3>
-                  <p className="body-premium mt-2 md:mt-3">
-                    {cap.description}
-                  </p>
-                </div>
+                <h3 className="heading-statement mt-4 text-starlight-cream max-w-[30rem]">
+                  {cap.title}
+                </h3>
+                <p className="body-editorial mt-4 max-w-[42rem] text-starlight-muted/90">
+                  {cap.description}
+                </p>
+
+                <a
+                  href="/contact"
+                  className="mt-6 inline-block text-[0.65rem] font-light tracking-[0.22em] uppercase text-starlight-cream/92 underline decoration-starlight-border/35 underline-offset-4 transition-opacity duration-700 hover:opacity-100"
+                  aria-label={`Découvrir ${cap.title}`}
+                >
+                  Découvrir
+                </a>
               </div>
-            ) : null}
-          </li>
+            </Reveal>
+          </article>
         ))}
-      </ul>
+      </div>
     </SectionShell>
   );
 }
