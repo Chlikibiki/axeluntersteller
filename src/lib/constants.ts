@@ -138,7 +138,7 @@ export const SECTION_COPY = {
     facility: "Offenbach am Main · Allemagne",
   },
   footer: {
-    act: "Plan IV · Fin",
+    act: "Phase IV · Fin",
     closing: "Le cuir continue.",
     subline: "Starlight · Allemagne · Tunisie",
     body: "Manufacture de cuir pour les maisons internationales. Depuis 1987.",
@@ -337,6 +337,7 @@ export const BRAND_REFERENCES = [
   "Olsen",
   "Passeport",
   "Leica Camera AG",
+  "BOSS",
   "Minox",
   "Fossil",
   "Hauer Golf",

@@ -12,7 +12,7 @@ interface FilmBridgeProps {
 }
 
 /**
- * Plan de respiration entre séquences : silence, contemplation.
+ * Pont de respiration entre phases : silence, contemplation.
  */
 export function FilmBridge({ bridge: bridgeId, className }: FilmBridgeProps) {
   const bridge = FILM_BRIDGES[bridgeId];

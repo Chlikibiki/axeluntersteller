@@ -3,8 +3,8 @@
  * Chaque section porte une intention, un rythme et une personnalité.
  */
 
-/** Marqueur de progression (cinéma de manufacture, pas « acte » théâtre) */
-export const FILM_MARKER = "Plan" as const;
+/** Marqueur de progression — phases de manufacture */
+export const FILM_MARKER = "Phase" as const;
 
 export type FilmRhythm =
   | "silence"
@@ -143,14 +143,14 @@ export const FILM_BRIDGES: Record<FilmBridgeId, FilmBridgeMeta> = {
   time: {
     id: "time",
     act: "I",
-    line: "Le temps",
+    line: "Le cuir exige du temps",
     whisper: "Chaque année grave la peau",
     rhythm: "silence",
   },
   hand: {
     id: "hand",
     act: "II",
-    line: "La main",
+    line: "La précision commence par le geste",
     whisper: "Entre machine et jugement",
     rhythm: "contemplation",
   },

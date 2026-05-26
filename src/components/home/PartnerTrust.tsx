@@ -37,7 +37,7 @@ export function PartnerTrust() {
 
         <div className="m-rail md:mx-0 md:block md:overflow-visible md:px-0">
           <ul
-            className="flex min-w-max gap-12 md:mx-auto md:grid md:min-w-0 md:max-w-[1200px] md:grid-cols-4 md:gap-x-6 md:gap-y-12 lg:grid-cols-7"
+            className="flex min-w-max gap-10 md:mx-auto md:grid md:min-w-0 md:max-w-[1280px] md:grid-cols-5 md:gap-x-8 md:gap-y-14 lg:grid-cols-5"
             role="list"
             data-cine-stagger
           >
@@ -45,7 +45,7 @@ export function PartnerTrust() {
               <li
                 key={partner.id}
                 data-cine-stagger-item
-                className="m-rail-item flex w-[42vw] max-w-[11rem] items-center justify-center opacity-0 md:w-auto md:max-w-none"
+                className="m-rail-item flex w-[44vw] max-w-[13.5rem] items-center justify-center opacity-0 md:w-auto md:max-w-none"
               >
                 <PartnerLogo
                   variant="wall"
@@ -54,6 +54,7 @@ export function PartnerTrust() {
                   name={partner.name}
                   wide={Boolean("wide" in partner && partner.wide)}
                   size={"size" in partner ? partner.size : "default"}
+                  color={Boolean("color" in partner && partner.color)}
                   invert={Boolean("invert" in partner && partner.invert)}
                 />
               </li>

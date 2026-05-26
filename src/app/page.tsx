@@ -14,27 +14,27 @@ import { FilmBridge, FilmJourney } from "@/components/film";
 export default function HomePage() {
   return (
     <FilmJourney>
-      {/* Plan I — Matière & temps */}
+      {/* Phase I — Matière & temps */}
       <Hero />
       <Trust />
       <FilmBridge bridge="time" />
 
-      {/* Climax plan I — la main */}
+      {/* Climax phase I — le geste */}
       <SignatureMoment />
       <FilmBridge bridge="hand" />
 
-      {/* Plan II — Maîtrise & rareté */}
+      {/* Phase II — Maîtrise & rareté */}
       <PartnerTrust />
       <ManufacturingExamples />
       <Capabilities />
 
-      {/* Plan III — Atelier intérieur */}
+      {/* Phase III — Atelier intérieur */}
       <FilmBridge bridge="rarity" />
       <Craftsmanship />
       <Philosophy />
       <Process />
 
-      {/* Plan IV — Résonance & seuil */}
+      {/* Phase IV — Résonance & seuil */}
       <Testimonials />
       <FinalCTA />
     </FilmJourney>

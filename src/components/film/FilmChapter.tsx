@@ -12,7 +12,7 @@ interface FilmChapterProps {
 }
 
 /**
- * Marqueur de chapitre : plan, titre, intention émotionnelle.
+ * Marqueur de chapitre : phase, titre, intention émotionnelle.
  */
 export function FilmChapter({
   section,
