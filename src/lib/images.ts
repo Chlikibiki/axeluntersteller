@@ -3,6 +3,7 @@
  */
 
 const base = "/images";
+const partners = `${base}/logo/partners`;
 
 export const LOCAL = {
   hero: `${base}/hero/leather.jpg`,
@@ -20,12 +21,55 @@ export const LOGO = {
   boss: "/images/logo/boss.png",
   leica: "/images/logo/Leica_Camera_logo.png",
   freitag: "/images/logo/freitag_logo-01.jpg",
+  partners: {
+    baldessarini: `${partners}/baldessarini.svg`,
+    bettyBarclay: `${partners}/betty-barclay.svg`,
+    soliver: `${partners}/soliver.svg`,
+    olsen: `${partners}/olsen.svg`,
+    passeport: `${partners}/passeport.svg`,
+    leica: `${partners}/leica.png`,
+    minox: `${partners}/minox.svg`,
+    fossil: `${partners}/fossil.svg`,
+    hauerGolf: `${partners}/hauer-golf.svg`,
+    procterGamble: `${partners}/procter-gamble.svg`,
+    freitag: `${partners}/freitag.jpg`,
+    brax: `${partners}/brax.svg`,
+    cinque: `${partners}/cinque.svg`,
+    royRobson: `${partners}/roy-robson.svg`,
+  },
 } as const;
 
 export const PARTNER_LOGOS = [
-  { id: "boss", name: "BOSS", src: LOGO.boss, width: 320, height: 112 },
-  { id: "leica", name: "Leica", src: LOGO.leica, width: 280, height: 112 },
-  { id: "freitag", name: "Freitag", src: LOGO.freitag, width: 340, height: 104 },
+  { id: "baldessarini", name: "Baldessarini", src: LOGO.partners.baldessarini },
+  { id: "betty-barclay", name: "Betty Barclay", src: LOGO.partners.bettyBarclay, wide: true },
+  { id: "soliver", name: "s.Oliver", src: LOGO.partners.soliver },
+  { id: "olsen", name: "Olsen", src: LOGO.partners.olsen },
+  { id: "passeport", name: "Passeport", src: LOGO.partners.passeport },
+  {
+    id: "leica",
+    name: "Leica Camera AG",
+    src: LOGO.partners.leica,
+    wide: true,
+  },
+  { id: "minox", name: "Minox", src: LOGO.partners.minox },
+  { id: "fossil", name: "Fossil", src: LOGO.partners.fossil },
+  { id: "hauer-golf", name: "Hauer Golf", src: LOGO.partners.hauerGolf, wide: true },
+  {
+    id: "procter-gamble",
+    name: "Procter & Gamble",
+    src: LOGO.partners.procterGamble,
+    wide: true,
+    invert: true,
+  },
+  {
+    id: "freitag",
+    name: "FREITAG lab.",
+    src: LOGO.partners.freitag,
+    wide: true,
+  },
+  { id: "brax", name: "BRAX", src: LOGO.partners.brax },
+  { id: "cinque", name: "CINQUE", src: LOGO.partners.cinque },
+  { id: "roy-robson", name: "ROY Robson", src: LOGO.partners.royRobson, wide: true },
 ] as const;
 
 export const HERO_IMAGES = {

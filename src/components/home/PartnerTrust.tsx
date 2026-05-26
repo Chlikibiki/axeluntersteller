@@ -3,8 +3,6 @@
 import { PARTNER_LOGOS, SECTION_COPY } from "@/lib/constants";
 import { PartnerLogo } from "@/components/shared/PartnerLogo";
 import { Reveal } from "@/components/shared/Reveal";
-import { cn } from "@/lib/utils";
-
 export function PartnerTrust() {
   const { partners: copy } = SECTION_COPY;
 
@@ -17,22 +15,18 @@ export function PartnerTrust() {
       <div className="section-padding py-24 md:py-32 lg:py-40">
         <Reveal>
           <ul
-            className="mx-auto flex max-w-[1400px] flex-col items-stretch md:flex-row md:items-center md:justify-center"
+            className="mx-auto grid max-w-[1400px] grid-cols-2 items-center gap-x-6 gap-y-12 sm:grid-cols-3 md:grid-cols-4 md:gap-x-8 md:gap-y-14 lg:grid-cols-7"
             role="list"
           >
-            {PARTNER_LOGOS.map((partner, index) => (
-              <li
-                key={partner.id}
-                className={cn(
-                  "flex flex-1 items-center justify-center py-14 md:py-0",
-                  index > 0 && "border-t border-starlight-border md:border-t-0 md:border-l"
-                )}
-              >
+            {PARTNER_LOGOS.map((partner) => (
+              <li key={partner.id} className="flex items-center justify-center">
                 <PartnerLogo
                   variant="wall"
                   partnerId={partner.id}
                   src={partner.src}
                   name={partner.name}
+                  wide={"wide" in partner && partner.wide}
+                  invert={"invert" in partner && partner.invert}
                 />
               </li>
             ))}

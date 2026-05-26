@@ -326,12 +326,20 @@ export const PROCESS_STEPS = [
 ] as const;
 
 export const BRAND_REFERENCES = [
-  "BOSS",
-  "Leica",
-  "Freitag",
-  "Hugo Boss",
-  "Fossil",
+  "Baldessarini",
+  "Betty Barclay",
+  "s.Oliver",
+  "Olsen",
+  "Passeport",
+  "Leica Camera AG",
   "Minox",
+  "Fossil",
+  "Hauer Golf",
+  "Procter & Gamble",
+  "FREITAG lab.",
+  "BRAX",
+  "CINQUE",
+  "ROY Robson",
 ] as const;
 
 export const COLLABORATIONS = [
