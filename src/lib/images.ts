@@ -1,6 +1,9 @@
 /**
  * Photographies locales (/public/images)
+ * Direction visuelle : src/lib/visual-direction.ts
  */
+
+import { IMAGE_ALTS } from "./visual-direction";
 
 const base = "/images";
 const partners = `${base}/logo/partners`;
@@ -84,32 +87,32 @@ export const CRAFT_IMAGES = {
 export const MACRO_GALLERY_IMAGES = [
   {
     src: LOCAL.leather,
-    alt: "Grain de cuir pleine fleur en lumière rasante",
+    alt: IMAGE_ALTS.leatherTexture,
     label: "Grain",
   },
   {
     src: LOCAL.detail,
-    alt: "Couture sellier sur cuir",
+    alt: IMAGE_ALTS.craft.stitching,
     label: "Couture",
   },
   {
     src: LOCAL.belt,
-    alt: "Détail de tranche et quincaillerie",
+    alt: IMAGE_ALTS.belt,
     label: "Tranche",
   },
   {
     src: LOCAL.processCut,
-    alt: "Découpe de la peau à la main",
+    alt: IMAGE_ALTS.craft.cutting,
     label: "Coupe",
   },
   {
     src: LOCAL.processStitch,
-    alt: "Mains à l'établi de l'atelier",
+    alt: IMAGE_ALTS.trustArtisan,
     label: "Main",
   },
   {
     src: LOCAL.processFinish,
-    alt: "Tracé du patron sur le cuir",
+    alt: IMAGE_ALTS.craft.finishing,
     label: "Patron",
   },
 ] as const;

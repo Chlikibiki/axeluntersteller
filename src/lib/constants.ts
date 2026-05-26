@@ -1,3 +1,4 @@
+import { IMAGE_ALTS } from "./visual-direction";
 import {
   CAPABILITY_IMAGES,
   CRAFT_IMAGES,
@@ -161,24 +162,22 @@ export const UI = {
   contact: {
     pageTitle: "Contact",
     mapTitle: "Atelier Starlight, Offenbach am Main, Allemagne",
-    heroAlt: "Découpe d'une peau dans l'atelier Starlight",
+    heroAlt: IMAGE_ALTS.contact,
     since: "Depuis",
   },
   images: {
-    heroPrimary:
-      "Couture en gros plan sur cuir pleine fleur, atelier Starlight",
-    belt: "Fabrication de ceinture en cuir",
-    leatherTexture: "Grain du cuir en lumière rasante",
-    workshop: "Atelier de maroquinerie, cuir et fabrication Starlight",
+    heroPrimary: IMAGE_ALTS.heroPrimary,
+    belt: IMAGE_ALTS.belt,
+    leatherTexture: IMAGE_ALTS.leatherTexture,
+    workshop: IMAGE_ALTS.workshop,
     manufacturing: (title: string) =>
-      `${title}, réalisation atelier Starlight`,
+      `${title}, réalisation atelier, lumière éditoriale sombre`,
     manufacturingDetail: (category: string) =>
-      `${category}, détail du cuir`,
-    craft: (title: string) => `${title}, atelier Starlight`,
-    capability: (title: string) => `${title}, savoir-faire Starlight`,
+      `${category}, macro cuir pleine fleur, reflets ambrés`,
+    craft: (title: string) => IMAGE_ALTS.craftStep(title),
+    capability: (title: string) => IMAGE_ALTS.capability(title),
     partnerLogo: (name: string) => `Logo ${name}`,
-    trustArtisan:
-      "Artisan cousant une sangle en cuir pleine fleur à la main, lumière chaude d'atelier Starlight",
+    trustArtisan: IMAGE_ALTS.trustArtisan,
   },
 } as const;
 
