@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
+import { Atmosphere, type AtmosphereVariant } from "@/components/shared/Atmosphere";
 
 type SectionTone = "bg" | "surface";
-type SectionSpacing = "default" | "spacious";
+type SectionSpacing = "default" | "spacious" | "tight";
 
 interface SectionShellProps {
   children: React.ReactNode;
@@ -9,6 +10,7 @@ interface SectionShellProps {
   className?: string;
   innerClassName?: string;
   tone?: SectionTone;
+  atmosphere?: AtmosphereVariant;
   spacing?: SectionSpacing;
   separator?: boolean;
   fullWidth?: boolean;
@@ -24,6 +26,7 @@ const toneClasses: Record<SectionTone, string> = {
 const spacingClasses: Record<SectionSpacing, string> = {
   default: "section-y",
   spacious: "section-y-spacious",
+  tight: "section-y-tight",
 };
 
 export function SectionShell({
@@ -32,6 +35,7 @@ export function SectionShell({
   className,
   innerClassName,
   tone = "bg",
+  atmosphere,
   spacing = "default",
   separator = true,
   fullWidth = false,
@@ -41,15 +45,20 @@ export function SectionShell({
     <section
       id={id}
       className={cn(
+        "relative overflow-hidden",
         separator && "section-separator",
-        toneClasses[tone],
+        atmosphere ? "bg-black" : toneClasses[tone],
         !fullWidth && spacingClasses[spacing],
         !fullWidth && "section-padding",
         className
       )}
       {...aria}
     >
-      <div className={cn(innerClassName)}>{children}</div>
+      {atmosphere ? <Atmosphere variant={atmosphere} /> : null}
+      {!atmosphere && tone === "bg" ? (
+        <div className="leather-whisper absolute inset-0" aria-hidden />
+      ) : null}
+      <div className={cn("relative z-[1]", innerClassName)}>{children}</div>
     </section>
   );
 }

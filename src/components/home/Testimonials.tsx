@@ -17,8 +17,8 @@ export function Testimonials() {
 
   return (
     <SectionShell
-      tone="surface"
-      spacing="spacious"
+      atmosphere="elevated"
+      spacing="default"
       aria-labelledby="testimonials-heading"
     >
       <div className="flex items-end justify-between gap-8">

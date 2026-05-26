@@ -363,6 +363,11 @@ export const COLLABORATIONS = [
   },
 ] as const;
 
+export const SIGNATURE_COPY = {
+  line1: "La machine répète.",
+  line2: "La main décide.",
+} as const;
+
 export const PHILOSOPHY = {
   headline: "La confiance se construit lentement.",
   body: "Nous travaillons avec peu de partenaires, longtemps. Le cuir s'affine avec la relation.",

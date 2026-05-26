@@ -7,6 +7,7 @@ interface PartnerLogoProps {
   name: string;
   partnerId?: string;
   wide?: boolean;
+  size?: "default" | "wide" | "sm";
   invert?: boolean;
   width?: number;
   height?: number;
@@ -15,8 +16,9 @@ interface PartnerLogoProps {
 }
 
 const WALL_FRAME = {
-  default: "h-11 w-36 sm:h-12 sm:w-40 md:h-14 md:w-44",
-  wide: "h-11 w-44 sm:h-12 sm:w-52 md:h-14 md:w-60 lg:h-[3.25rem] lg:w-72",
+  default: "h-10 w-32 sm:h-11 sm:w-36 md:h-12 md:w-40",
+  wide: "h-10 w-40 sm:h-11 sm:w-48 md:h-12 md:w-56",
+  sm: "h-8 w-28 sm:h-9 sm:w-32 md:h-10 md:w-36",
 } as const;
 
 export function PartnerLogo({
@@ -24,6 +26,7 @@ export function PartnerLogo({
   name,
   partnerId,
   wide = false,
+  size = "default",
   invert = false,
   width = 140,
   height = 48,
@@ -31,35 +34,43 @@ export function PartnerLogo({
   variant = "default",
 }: PartnerLogoProps) {
   const isFreitag = partnerId === "freitag";
-  const useWideFrame = wide || isFreitag;
+  const isSvg = src.endsWith(".svg");
+  const frameKey =
+    size === "sm" ? "sm" : wide || isFreitag ? "wide" : "default";
+
+  const luxeImageClass = cn(
+    "object-contain object-center transition-all duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
+    isFreitag || isSvg
+      ? "opacity-[0.36] hover:opacity-[0.72]"
+      : "brightness-0 invert opacity-[0.34] hover:opacity-[0.68]",
+    invert && !isFreitag && "brightness-0 invert"
+  );
 
   if (variant === "wall") {
     return (
       <span
         className={cn(
-          "relative flex w-full items-center justify-center px-2",
+          "group relative flex w-full items-center justify-center px-1",
           className
         )}
       >
         <span
           className={cn(
-            "relative",
-            useWideFrame ? WALL_FRAME.wide : WALL_FRAME.default
+            "relative transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]",
+            WALL_FRAME[frameKey]
           )}
         >
           <Image
             src={src}
             alt={UI.images.partnerLogo(name)}
             fill
-            className={cn(
-              "object-contain object-center opacity-90 transition-opacity duration-700 hover:opacity-100",
-              invert && "brightness-0 invert",
-              isFreitag && !invert && "opacity-100"
-            )}
+            className={luxeImageClass}
             sizes={
-              useWideFrame
-                ? "(max-width: 768px) 40vw, 280px"
-                : "(max-width: 768px) 32vw, 176px"
+              frameKey === "wide"
+                ? "(max-width: 768px) 36vw, 224px"
+                : frameKey === "sm"
+                  ? "(max-width: 768px) 26vw, 144px"
+                  : "(max-width: 768px) 30vw, 160px"
             }
             unoptimized
           />
@@ -71,8 +82,7 @@ export function PartnerLogo({
   return (
     <span
       className={cn(
-        "relative inline-flex shrink-0 items-center justify-center opacity-60 transition-opacity duration-500 hover:opacity-100",
-        invert ? "brightness-0 invert" : "brightness-0 invert",
+        "relative inline-flex shrink-0 items-center justify-center brightness-0 invert opacity-50 transition-opacity duration-700 hover:opacity-90",
         className
       )}
       style={{ width, height }}

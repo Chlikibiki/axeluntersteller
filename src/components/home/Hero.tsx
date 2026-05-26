@@ -16,33 +16,53 @@ export function Hero() {
     ).matches;
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: prefersReducedMotion ? 0 : 1.85 });
+      const tl = gsap.timeline({ delay: prefersReducedMotion ? 0 : 2.1 });
 
       if (bgRef.current && !prefersReducedMotion) {
         gsap.fromTo(
           bgRef.current,
-          { scale: 1.06 },
-          { scale: 1, duration: 2.8, ease: "power3.out" }
+          { scale: 1.09 },
+          { scale: 1, duration: 3.6, ease: "power3.out" }
         );
+
+        gsap.to(bgRef.current, {
+          scale: 1.06,
+          duration: 22,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+          delay: 3.6,
+        });
       }
 
       tl.fromTo(
         ".hero-line-inner",
-        { y: "105%" },
-        { y: "0%", duration: 1.1, stagger: 0.08, ease: "power4.out" },
-        0.1
+        { y: "108%" },
+        {
+          y: "0%",
+          duration: 1.55,
+          stagger: 0.14,
+          ease: "power4.out",
+        },
+        0.15
       )
         .fromTo(
           ".hero-subhead",
-          { y: 20, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" },
-          0.4
+          { y: 28, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1.35, ease: "power3.out" },
+          0.55
         )
         .fromTo(
           ".hero-cta",
-          { y: 14, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.8, stagger: 0.08, ease: "power3.out" },
-          0.55
+          { y: 18, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1.2,
+            stagger: 0.12,
+            ease: "power3.out",
+          },
+          0.75
         );
     }, sectionRef);
 
@@ -58,7 +78,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <div
           ref={bgRef}
-          className="absolute inset-0 origin-center will-change-transform"
+          className="absolute -inset-[2%] origin-center will-change-transform"
         >
           <Image
             src={HERO_IMAGES.primary}
@@ -70,12 +90,13 @@ export function Hero() {
           />
         </div>
         <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 hero-light-breathe" />
         <div className="absolute inset-0 cinematic-vignette" />
       </div>
 
-      <div className="relative z-10 flex min-h-[100dvh] flex-col justify-end section-padding pb-20 pt-36 md:pb-28 md:pt-44">
+      <div className="relative z-10 flex min-h-[100dvh] flex-col justify-end section-padding pb-16 pt-32 md:pb-28 md:pt-44">
         <div className="max-w-3xl">
-          <p className="eyebrow mb-10 md:mb-12">{HERO_COPY.established}</p>
+          <p className="eyebrow mb-8 md:mb-12">{HERO_COPY.established}</p>
 
           <h1
             id="hero-heading"
@@ -88,11 +109,11 @@ export function Hero() {
             ))}
           </h1>
 
-          <p className="hero-subhead body-large mt-12 max-w-xl opacity-0 md:mt-14 md:max-w-2xl">
+          <p className="hero-subhead body-large mt-10 max-w-xl opacity-0 md:mt-14 md:max-w-2xl">
             {HERO_COPY.subhead}
           </p>
 
-          <div className="mt-14 flex w-full flex-col items-center gap-4 md:mt-16 sm:flex-row sm:items-center sm:justify-start">
+          <div className="mt-12 flex w-full flex-col items-center gap-3 md:mt-16 sm:flex-row sm:items-center sm:justify-start sm:gap-4">
             <div className="hero-cta flex w-full max-w-sm justify-center opacity-0 sm:w-auto sm:max-w-none">
               <PremiumButton href="/contact" className="w-full sm:w-auto">
                 {HERO_COPY.ctaPrimary}

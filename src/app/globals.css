@@ -123,6 +123,18 @@
   body {
     @apply bg-starlight-bg text-starlight-cream font-sans antialiased;
     overflow-x: hidden;
+    background-color: #000;
+    background-image:
+      radial-gradient(
+        ellipse 120% 80% at 50% -20%,
+        rgba(166, 139, 106, 0.04) 0%,
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 90% 60% at 100% 100%,
+        rgba(0, 0, 0, 0.9) 0%,
+        transparent 50%
+      );
   }
 
   ::selection {
@@ -189,11 +201,15 @@
   }
 
   .section-y {
-    @apply py-20 md:py-28 lg:py-32;
+    @apply py-16 md:py-28 lg:py-32;
   }
 
   .section-y-spacious {
-    @apply py-28 md:py-36 lg:py-44;
+    @apply py-20 md:py-36 lg:py-44;
+  }
+
+  .section-y-tight {
+    @apply py-12 md:py-20 lg:py-24;
   }
 
   .section-separator {
@@ -201,7 +217,12 @@
   }
 
   .heading-xl {
-    @apply font-display text-4xl font-extralight leading-[1.02] tracking-[-0.03em] md:text-6xl lg:text-7xl xl:text-[5.5rem];
+    @apply font-display text-[2.35rem] font-extralight leading-[0.98] tracking-[-0.035em] md:text-6xl lg:text-7xl xl:text-[5.75rem];
+  }
+
+  .heading-monument {
+    @apply font-display font-extralight leading-[1.02] tracking-[-0.04em] text-balance;
+    font-size: clamp(2.25rem, 7.5vw, 5.25rem);
   }
 
   .heading-display {
@@ -288,4 +309,116 @@
     will-change: transform;
   }
 
+  /* Atmosphères : noir vivant, jamais plat */
+  .atmosphere-void {
+    background:
+      radial-gradient(
+        ellipse 80% 55% at 50% 0%,
+        rgba(166, 139, 106, 0.035) 0%,
+        transparent 58%
+      ),
+      linear-gradient(180deg, #000 0%, #040404 48%, #000 100%);
+  }
+
+  .atmosphere-depth {
+    background:
+      radial-gradient(
+        ellipse 70% 45% at 20% 100%,
+        rgba(122, 101, 80, 0.07) 0%,
+        transparent 62%
+      ),
+      linear-gradient(180deg, #000 0%, #050505 100%);
+  }
+
+  .atmosphere-warm {
+    background:
+      radial-gradient(
+        ellipse 55% 40% at 50% 50%,
+        rgba(196, 168, 130, 0.045) 0%,
+        transparent 70%
+      ),
+      #000;
+  }
+
+  .atmosphere-elevated {
+    background: linear-gradient(180deg, #080808 0%, #030303 100%);
+  }
+
+  .atmosphere-ink {
+    background: #000;
+  }
+
+  .atmosphere-ember {
+    background:
+      radial-gradient(
+        ellipse 65% 50% at 50% 85%,
+        rgba(168, 98, 42, 0.12) 0%,
+        transparent 65%
+      ),
+      linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, transparent 55%);
+  }
+
+  .leather-whisper {
+    opacity: 0.35;
+    background-image: url("/textures/leather-atmosphere.svg");
+    background-size: 480px 480px;
+    mix-blend-mode: soft-light;
+  }
+
+  .hero-light-breathe {
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 55% 45% at 28% 72%,
+      rgba(196, 168, 130, 0.07) 0%,
+      transparent 68%
+    );
+    animation: hero-light-breathe 14s ease-in-out infinite alternate;
+  }
+
+  @keyframes hero-light-breathe {
+    0% {
+      opacity: 0.55;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+  }
+
+  .signature-image {
+    filter: contrast(1.04) saturate(0.78) brightness(0.88);
+  }
+
+  .signature-image-overlay {
+    background:
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.35) 45%,
+        rgba(0, 0, 0, 0.55) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        transparent 55%
+      );
+  }
+
+  .film-footer {
+    background:
+      radial-gradient(
+        ellipse 90% 70% at 50% 0%,
+        rgba(166, 139, 106, 0.05) 0%,
+        transparent 55%
+      ),
+      linear-gradient(180deg, #030303 0%, #000 100%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-light-breathe {
+      animation: none;
+    }
+  }
 }
+

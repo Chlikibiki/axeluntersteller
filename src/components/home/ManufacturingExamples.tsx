@@ -8,6 +8,7 @@ import { MANUFACTURING_EXAMPLES, SECTION_COPY, UI } from "@/lib/constants";
 import { PremiumButton } from "@/components/shared/PremiumButton";
 import { Grain } from "@/components/shared/Grain";
 import { Reveal } from "@/components/shared/Reveal";
+import { Atmosphere } from "@/components/shared/Atmosphere";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +28,7 @@ export function ManufacturingExamples() {
               trigger: el,
               start: "top bottom",
               end: "bottom top",
-              scrub: 1,
+              scrub: 1.6,
             },
           }
         );
@@ -40,11 +41,12 @@ export function ManufacturingExamples() {
     <section
       id="production"
       ref={sectionRef}
-      className="bg-starlight-bg section-separator"
+      className="relative overflow-hidden bg-black section-separator"
       aria-labelledby="production-heading"
     >
-      <div className="section-padding pt-20 pb-12 md:pt-28 md:pb-16">
-        <Reveal>
+      <Atmosphere variant="warm" />
+      <div className="section-padding relative z-[1] pt-16 pb-10 md:pt-28 md:pb-16">
+        <Reveal pace="slow">
           <h2
             id="production-heading"
             className="heading-lg max-w-3xl text-starlight-cream"

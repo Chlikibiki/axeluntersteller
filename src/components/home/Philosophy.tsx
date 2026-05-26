@@ -6,11 +6,11 @@ import { SectionShell } from "@/components/shared/SectionShell";
 export function Philosophy() {
   return (
     <SectionShell
-      tone="surface"
+      atmosphere="warm"
       spacing="spacious"
       aria-labelledby="philosophy-heading"
     >
-      <Reveal className="mx-auto max-w-4xl text-center">
+      <Reveal pace="slow" className="mx-auto max-w-4xl text-center">
         <h2
           id="philosophy-heading"
           className="heading-statement text-balance text-starlight-cream"

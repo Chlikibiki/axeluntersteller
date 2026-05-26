@@ -1,5 +1,6 @@
 import { Hero } from "@/components/home/Hero";
 import { Trust } from "@/components/home/Trust";
+import { SignatureMoment } from "@/components/home/SignatureMoment";
 import { PartnerTrust } from "@/components/home/PartnerTrust";
 import { ManufacturingExamples } from "@/components/home/ManufacturingExamples";
 import { Capabilities } from "@/components/home/Capabilities";
@@ -14,6 +15,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Trust />
+      <SignatureMoment />
       <PartnerTrust />
       <ManufacturingExamples />
       <Capabilities />

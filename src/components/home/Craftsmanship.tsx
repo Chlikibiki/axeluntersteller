@@ -10,10 +10,11 @@ export function Craftsmanship() {
   return (
     <SectionShell
       id="craftsmanship"
-      spacing="spacious"
+      atmosphere="void"
+      spacing="default"
       aria-labelledby="craft-heading"
     >
-      <Reveal>
+      <Reveal pace="slow">
         <h2
           id="craft-heading"
           className="heading-lg max-w-3xl text-starlight-cream"

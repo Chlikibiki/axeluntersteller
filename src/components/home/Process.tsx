@@ -6,10 +6,11 @@ export function Process() {
   return (
     <SectionShell
       id="process"
-      spacing="spacious"
+      atmosphere="depth"
+      spacing="default"
       aria-labelledby="process-heading"
     >
-      <Reveal>
+      <Reveal pace="slow">
         <h2
           id="process-heading"
           className="heading-lg max-w-2xl text-starlight-cream"

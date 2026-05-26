@@ -58,7 +58,7 @@ export const PARTNER_LOGOS = [
     id: "procter-gamble",
     name: "Procter & Gamble",
     src: LOGO.partners.procterGamble,
-    wide: true,
+    size: "sm",
   },
   {
     id: "freitag",

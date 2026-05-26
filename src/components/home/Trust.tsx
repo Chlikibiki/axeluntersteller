@@ -64,9 +64,14 @@ function AnimatedMetric({
 
 export function Trust() {
   return (
-    <SectionShell id="trust" spacing="spacious" aria-labelledby="trust-heading">
-      <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.9fr)] lg:gap-16 xl:gap-24">
-        <Reveal className="min-w-0">
+    <SectionShell
+      id="trust"
+      atmosphere="depth"
+      spacing="spacious"
+      aria-labelledby="trust-heading"
+    >
+      <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.9fr)] lg:gap-16 xl:gap-24">
+        <Reveal pace="slow" className="min-w-0">
           <h2
             id="trust-heading"
             className="heading-lg max-w-3xl text-starlight-cream"
@@ -82,7 +87,7 @@ export function Trust() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.12} className="flex justify-center lg:justify-end">
+        <Reveal pace="slow" delay={0.12} className="flex justify-center lg:justify-end">
           <figure className="trust-editorial-frame group relative w-full max-w-sm lg:max-w-none lg:py-4">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-black lg:min-h-[min(72vh,640px)] lg:aspect-[4/5]">
               <Image

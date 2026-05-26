@@ -11,11 +11,12 @@ export function FinalCTA() {
   return (
     <SectionShell
       id="contact-cta"
+      atmosphere="void"
       spacing="spacious"
       aria-labelledby="cta-heading"
     >
       <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
-        <Reveal>
+        <Reveal pace="slow">
           <h2
             id="cta-heading"
             className="heading-lg text-balance text-starlight-cream"
@@ -52,7 +53,7 @@ export function FinalCTA() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.1}>
+        <Reveal pace="slow" delay={0.1}>
           <div className="border border-starlight-border bg-starlight-surface p-8 md:p-12">
             <InquiryForm variant="compact" showFileUpload={false} />
           </div>

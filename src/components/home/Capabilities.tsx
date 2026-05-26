@@ -8,11 +8,11 @@ export function Capabilities() {
   return (
     <SectionShell
       id="capabilities"
-      tone="surface"
-      spacing="spacious"
+      atmosphere="elevated"
+      spacing="default"
       aria-labelledby="capabilities-heading"
     >
-      <Reveal>
+      <Reveal pace="slow">
         <h2
           id="capabilities-heading"
           className="heading-lg max-w-3xl text-starlight-cream"
