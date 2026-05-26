@@ -89,6 +89,10 @@ export const IMAGE_BRIEFS = {
     "Leather cutting in atelier, dramatic shadow, warm side light, manufacturing mastery, no faces to camera",
   texture:
     "Macro full grain leather texture, golden reflections, deep blacks, aged patina, ultra realistic",
+  analyseLeathers:
+    "Premium leather swatches side by side on dark walnut table, smooth dark brown, black grained, camel, embossed textures, overlapping samples, warm cinematic atelier light, luxury maroquinerie maison",
+  impressionStarlight:
+    "Starlight leather manufacturing impression, cinematic dark editorial workshop atmosphere, warm low-key light",
 } as const;
 
 /** Alt textes éditoriaux — accessibilité + cohérence SEO */
@@ -102,6 +106,10 @@ export const IMAGE_ALTS = {
     "Mains d'artisan cousant une sangle en cuir, lumière ambrée et contraste cinématographique",
   belt: "Ceinture en cuir pleine fleur, tranche brunie et quincaillerie",
   leatherTexture: "Macro du grain de cuir pleine fleur, reflets dorés sur fond sombre",
+  analyseLeathers:
+    "Échantillons de cuir haut de gamme côte à côte — lisse brun, grainé noir, camel, embossé — lumière chaude d'atelier de maroquinerie",
+  impressionStarlight:
+    "Impression Starlight, manufacture cuir en lumière cinématographique sombre",
   belts:
     "Ceintures cuir artisanal sur bois de noyer sombre, boucles métal poli, lumière chaude cinématographique, photographie éditoriale premium",
   pouches:

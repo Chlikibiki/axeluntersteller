@@ -23,6 +23,8 @@ export const LOCAL = {
   processCut: `${base}/process/process00.jpg`,
   processStitch: `${base}/process/process01.jpg`,
   processFinish: `${base}/process/process02.jpg`,
+  processAnalyseLeathers: `${base}/process/analyse-leathers.jpg`,
+  impressionStarlight: `${base}/details/impression_starlight.jpg`,
 } as const;
 
 export const LOGO = {

@@ -6,6 +6,7 @@ import {
   TRUST_METRICS,
 } from "@/lib/constants";
 import { Reveal } from "@/components/shared/Reveal";
+import { CounterMetric } from "@/components/shared/CounterMetric";
 import { SectionShell } from "@/components/shared/SectionShell";
 
 export function Manufacture() {
@@ -82,8 +83,10 @@ export function Manufacture() {
           {TRUST_METRICS.map((metric) => (
             <div key={metric.label} className="text-center md:text-left">
               <p className="font-display text-3xl font-extralight tracking-wide text-starlight-cream/92 md:text-4xl">
-                {metric.value}
-                {metric.suffix}
+                <CounterMetric
+                  value={Number(metric.value)}
+                  suffix={metric.suffix}
+                />
               </p>
               <p className="type-readable mt-2 uppercase tracking-[0.1em]">
                 {metric.label}

@@ -250,8 +250,8 @@ export const PROCESS_STEPS = [
     title: "Analyse",
     description:
       "Usages, contraintes techniques, matières et objectifs de fabrication sont étudiés avec précision.",
-    image: LOCAL.leather,
-    imageAlt: IMAGE_ALTS.leatherTexture,
+    image: LOCAL.processAnalyseLeathers,
+    imageAlt: IMAGE_ALTS.analyseLeathers,
   },
   {
     step: "02",
@@ -282,8 +282,8 @@ export const PROCESS_STEPS = [
     title: "Suivi",
     description:
       "Délais, ajustements, réassorts et continuité de fabrication dans la durée du partenariat.",
-    image: LOCAL.workshop,
-    imageAlt: IMAGE_ALTS.workshop,
+    image: LOCAL.impressionStarlight,
+    imageAlt: IMAGE_ALTS.impressionStarlight,
   },
 ] as const;
 
