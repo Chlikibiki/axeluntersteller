@@ -12,8 +12,8 @@ import {
 export const SITE = {
   name: "ST★RLIGHT",
   legalName: "Starlight — Manufacture de cuir",
-  tagline: "Manufacture de cuir · Europe · Depuis 1981",
-  established: 1981,
+  tagline: "Manufacture de cuir · Europe · Depuis 1987",
+  established: 1987,
   email: "projects@starlight-leather.com",
   phone: "+49 123 456 7890",
   whatsapp: "491234567890",
@@ -28,20 +28,20 @@ export const SITE = {
 } as const;
 
 export const HERO_STATEMENT =
-  "Depuis 1981, Starlight transforme les plus belles peaux en cuirs d'exception pour les maisons internationales." as const;
+  "Depuis 1987, Starlight transforme les plus belles peaux en cuirs d'exception pour les maisons internationales." as const;
 
 export { HERO_IMAGES, CONTACT_HERO_IMAGE, LOGO, PARTNER_LOGOS };
 
 export const HERO_COPY = {
   eyebrow: "Manufacture de cuir · Europe",
-  established: "Depuis 1981 · Allemagne · Tunisie",
+  established: "Depuis 1987 · Allemagne · Tunisie",
   headline: ["LE CUIR,", "NOTRE HÉRITAGE,", "NOTRE SIGNATURE."],
   subhead:
-    "Depuis 1981, nous sélectionnons les plus belles peaux et les transformons en cuirs d'exception. Pour les maisons qui exigent l'excellence.",
+    "Depuis 1987, nous sélectionnons les plus belles peaux et les transformons en cuirs d'exception. Pour les maisons qui exigent l'excellence.",
   ctaPrimary: "Démarrer un projet",
   ctaSecondary: "Nos partenaires",
   trust: [
-    { label: "Depuis", value: "1981" },
+    { label: "Depuis", value: "1987" },
     { label: "Pour", value: "Maisons du monde" },
     { label: "Atelier", value: "Europe" },
   ],
@@ -57,8 +57,8 @@ export const HERO_COPY = {
 export const SECTION_COPY = {
   trust: {
     label: "Héritage",
-    title: "Le temps est notre matière.",
-    body: "Depuis 1981, la patience et l'exigence ne se négocient pas. Elles demeurent.",
+    title: "Créateurs d'excellence",
+    body: "Nos experts sont artisans du cuir et garants d'un savoir-faire européen forgé depuis 1987. Chaque peau est sélectionnée, chaque pièce façonnée à la main pour les maisons internationales qui exigent précision, constance et finition irréprochable — du prototype à la série, en Allemagne comme en Tunisie.",
     tags: ["Atelier allemand", "Sur mesure", "Maisons internationales"],
   },
   production: {
@@ -89,7 +89,7 @@ export const SECTION_COPY = {
     body: "Simple, lent, sans détour.",
   },
   partners: {
-    tagline: "Manufacture européenne depuis 1981.",
+    tagline: "Manufacture européenne depuis 1987.",
     disclaimer:
       "Noms cités à titre de référence. Toutes les marques appartiennent à leurs propriétaires.",
   },
@@ -107,7 +107,7 @@ export const SECTION_COPY = {
   philosophy: {
     label: "Conviction",
     cta: "Prendre contact",
-    established: "Depuis 1981 · Allemagne · Tunisie",
+    established: "Depuis 1987 · Allemagne · Tunisie",
   },
   cta: {
     label: "Commencer",
@@ -130,7 +130,7 @@ export const SECTION_COPY = {
     facility: "Offenbach am Main · Allemagne",
   },
   footer: {
-    body: "Manufacture de cuir pour les maisons internationales. Depuis 1981.",
+    body: "Manufacture de cuir pour les maisons internationales. Depuis 1987.",
     tagline: "Starlight · Allemagne · Tunisie",
     navigation: "Navigation",
     contact: "Contact",
@@ -181,7 +181,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const TRUST_METRICS = [
-  { value: "1981", label: "Fondation", suffix: "" },
+  { value: "1987", label: "Fondation", suffix: "" },
   { value: "40", label: "Années", suffix: "+" },
   { value: "50", label: "Partenaires", suffix: "+" },
   { value: "100", label: "Fabriqué en Europe", suffix: "%" },
@@ -405,7 +405,7 @@ export const FORM_COPY = {
 } as const;
 
 export const META_DESCRIPTION =
-  "Manufacture de cuir allemande depuis 1981. Ceintures, pochettes et accessoires pour les maisons internationales — ateliers en Allemagne et en Tunisie." as const;
+  "Manufacture de cuir allemande depuis 1987. Ceintures, pochettes et accessoires pour les maisons internationales — ateliers en Allemagne et en Tunisie." as const;
 
 export const SEO_KEYWORDS = [
   "fabricant cuir allemagne",
