@@ -92,14 +92,18 @@ export function Hero() {
             {HERO_COPY.subhead}
           </p>
 
-          <div className="mt-14 flex flex-col gap-4 sm:flex-row sm:items-center md:mt-16">
-            <div className="hero-cta opacity-0">
-              <PremiumButton href="/contact">
+          <div className="mt-14 flex w-full flex-col items-center gap-4 md:mt-16 sm:flex-row sm:items-center sm:justify-start">
+            <div className="hero-cta flex w-full max-w-sm justify-center opacity-0 sm:w-auto sm:max-w-none">
+              <PremiumButton href="/contact" className="w-full sm:w-auto">
                 {HERO_COPY.ctaPrimary}
               </PremiumButton>
             </div>
-            <div className="hero-cta opacity-0">
-              <PremiumButton href="#partners" variant="secondary">
+            <div className="hero-cta flex w-full max-w-sm justify-center opacity-0 sm:w-auto sm:max-w-none">
+              <PremiumButton
+                href="#partners"
+                variant="secondary"
+                className="w-full sm:w-auto"
+              >
                 {HERO_COPY.ctaSecondary}
               </PremiumButton>
             </div>

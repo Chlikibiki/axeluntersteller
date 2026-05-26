@@ -25,8 +25,8 @@ export function PartnerTrust() {
                   partnerId={partner.id}
                   src={partner.src}
                   name={partner.name}
-                  wide={"wide" in partner && partner.wide}
-                  invert={"invert" in partner && partner.invert}
+                  wide={Boolean("wide" in partner && partner.wide)}
+                  invert={Boolean("invert" in partner && partner.invert)}
                 />
               </li>
             ))}
