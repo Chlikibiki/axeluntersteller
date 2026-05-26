@@ -121,13 +121,13 @@ export function InquiryForm({
             accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.zip"
             className="mt-2 w-full text-sm text-starlight-metal file:mr-4 file:border-0 file:bg-starlight-leather file:px-4 file:py-2 file:text-xs file:font-medium file:uppercase file:tracking-wider file:text-starlight-cream"
           />
-          <p className="mt-2 text-xs text-starlight-muted">{copy.filesHint}</p>
+          <p className="type-readable mt-2">{copy.filesHint}</p>
         </div>
       )}
 
       <PremiumButtonSubmit>{copy.submit}</PremiumButtonSubmit>
 
-      <p className="text-xs text-starlight-muted">{copy.privacy}</p>
+      <p className="type-readable">{copy.privacy}</p>
     </form>
   );
 }

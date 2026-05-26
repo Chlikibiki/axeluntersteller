@@ -1,4 +1,5 @@
 import {
+  FILM_MARKER,
   FILM_SECTIONS,
   type FilmSectionId,
 } from "@/lib/film-narrative";
@@ -11,7 +12,7 @@ interface FilmChapterProps {
 }
 
 /**
- * Marqueur de chapitre : acte, titre, intention émotionnelle.
+ * Marqueur de chapitre : plan, titre, intention émotionnelle.
  */
 export function FilmChapter({
   section,
@@ -22,8 +23,8 @@ export function FilmChapter({
 
   return (
     <header className={cn("film-chapter", className)}>
-      <p className="film-chapter-meta label-caps text-starlight-muted/90">
-        <span className="text-starlight-muted/60">Acte {meta.act}</span>
+      <p className="film-chapter-meta label-caps">
+        <span>{FILM_MARKER} {meta.act}</span>
         <span className="mx-2 text-starlight-border-strong" aria-hidden>
           ·
         </span>
@@ -31,9 +32,7 @@ export function FilmChapter({
         <span className="sr-only"> — {meta.personality}</span>
       </p>
       {showIntention ? (
-        <p className="film-chapter-intention hidden md:block">
-          {meta.intention}
-        </p>
+        <p className="film-chapter-intention">{meta.intention}</p>
       ) : null}
     </header>
   );

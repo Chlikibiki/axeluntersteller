@@ -53,12 +53,17 @@ function AnimatedMetric({
   }, [value, isNumeric]);
 
   return (
-    <div ref={ref} className="m-rail-item w-[38vw] min-w-[7.5rem] max-w-[9rem] md:w-auto md:min-w-0 md:max-w-none">
-      <p className="type-stat text-starlight-cream">
+    <div
+      ref={ref}
+      className="w-full min-w-0 max-w-none text-center md:w-auto md:max-w-none"
+    >
+      <p className="type-stat text-starlight-cream/92">
         {display}
         {suffix}
       </p>
-      <p className="label-caps mt-2 md:mt-4">{label}</p>
+      <p className="type-readable mt-2 uppercase tracking-[0.12em] md:mt-4">
+        {label}
+      </p>
     </div>
   );
 }
@@ -103,9 +108,9 @@ export function Trust() {
           delay={0.08}
           className="order-2 lg:order-none lg:flex lg:justify-end"
         >
-          <figure className="trust-editorial-frame m-bleed md:m-0 md:max-w-none lg:py-4">
+          <figure className="trust-editorial-frame m-bleed md:m-0 md:max-w-none lg:py-4 max-md:h-[100dvh]">
             <CineMedia
-              rootClassName="m-cine-frame aspect-[4/5] rounded-none md:aspect-[4/5] md:rounded-sm lg:min-h-[min(72vh,640px)]"
+              rootClassName="m-cine-frame aspect-[4/5] rounded-none max-md:aspect-auto max-md:h-full max-md:max-h-none md:aspect-[4/5] md:rounded-sm lg:min-h-[min(72vh,640px)]"
               strength={0.04}
               scaleFrom={1.04}
               scrub={1.4}
@@ -131,7 +136,7 @@ export function Trust() {
       </div>
 
       <div className="mt-8 border-t border-starlight-border pt-8 md:mt-20 md:pt-16 lg:mt-28 lg:pt-20">
-        <div className="m-rail md:grid md:grid-cols-3 md:gap-8 lg:grid-cols-5 lg:gap-6">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid md:grid-cols-3 md:gap-8 lg:grid-cols-5 lg:gap-6">
           {TRUST_METRICS.map((metric) => (
             <AnimatedMetric
               key={metric.label}

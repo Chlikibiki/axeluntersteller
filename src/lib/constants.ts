@@ -138,7 +138,7 @@ export const SECTION_COPY = {
     facility: "Offenbach am Main · Allemagne",
   },
   footer: {
-    act: "Acte IV · Fin",
+    act: "Plan IV · Fin",
     closing: "Le cuir continue.",
     subline: "Starlight · Allemagne · Tunisie",
     body: "Manufacture de cuir pour les maisons internationales. Depuis 1987.",

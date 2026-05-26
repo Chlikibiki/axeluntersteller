@@ -61,7 +61,7 @@ export function PartnerTrust() {
           </ul>
         </div>
 
-        <p className="mt-8 text-[0.6rem] font-light tracking-[0.26em] text-starlight-muted/75 uppercase md:mt-20 md:text-center md:text-[0.65rem]">
+        <p className="type-readable mt-8 uppercase tracking-[0.14em] md:mt-20 md:text-center">
           {copy.tagline}
         </p>
       </div>

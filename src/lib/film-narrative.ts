@@ -3,6 +3,9 @@
  * Chaque section porte une intention, un rythme et une personnalité.
  */
 
+/** Marqueur de progression (cinéma de manufacture, pas « acte » théâtre) */
+export const FILM_MARKER = "Plan" as const;
+
 export type FilmRhythm =
   | "silence"
   | "breath"

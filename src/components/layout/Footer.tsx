@@ -104,10 +104,10 @@ export function Footer() {
           data-cine-y="12"
           data-cine-start="top 96%"
         >
-          <p className="film-fin-mark font-display text-[0.7rem] font-light tracking-[0.42em] text-starlight-muted/50 uppercase">
+          <p className="film-fin-mark font-display uppercase">
             {SITE.name}
           </p>
-          <p className="film-fin-legal mt-4 text-[0.625rem] font-light leading-relaxed tracking-[0.06em] text-starlight-muted/65 md:mt-0">
+          <p className="film-fin-legal mt-4 md:mt-0">
             © {year} {SITE.legalName}. {copy.rights}
           </p>
         </div>
