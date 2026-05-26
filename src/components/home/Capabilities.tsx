@@ -6,9 +6,9 @@ import { SectionShell } from "@/components/shared/SectionShell";
 import { Grain } from "@/components/shared/Grain";
 import { CineMedia } from "@/components/motion/CineMedia";
 
-export function Capabilities() {
-  const belts = CAPABILITIES[0];
+const CAPABILITY_WITH_IMAGE = new Set(["belts", "pouches", "straps"]);
 
+export function Capabilities() {
   return (
     <SectionShell
       id="capabilities"
@@ -44,14 +44,14 @@ export function Capabilities() {
             data-cine-stagger-item
             className="opacity-0"
           >
-            {i === 0 ? (
+            {CAPABILITY_WITH_IMAGE.has(cap.id) ? (
               <CineMedia
                 rootClassName="m-bleed m-cine-frame mb-8 aspect-[16/10] md:mb-12 md:aspect-[21/9] md:min-h-[240px]"
                 strength={0.04}
               >
                 <Image
-                  src={belts.image}
-                  alt={UI.images.capability(belts.title)}
+                  src={cap.image}
+                  alt={UI.images.capability(cap.title)}
                   fill
                   className="hero-image-cinematic object-cover object-center"
                   sizes="100vw"
