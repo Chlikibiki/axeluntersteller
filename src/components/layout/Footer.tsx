@@ -1,58 +1,95 @@
 import Link from "next/link";
-import { NAV_LINKS, SITE, SECTION_COPY } from "@/lib/constants";
+import { NAV_LINKS, SITE, SECTION_COPY, HERO_COPY } from "@/lib/constants";
 import { Logo } from "@/components/shared/Logo";
+import { NobleSurface } from "@/components/shared/NobleSurface";
+import { PremiumButton } from "@/components/shared/PremiumButton";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const { footer: copy } = SECTION_COPY;
 
   return (
-    <footer className="relative overflow-hidden border-t border-starlight-border/50 film-footer">
-      <div
-        className="pointer-events-none absolute inset-0 leather-whisper opacity-20"
-        aria-hidden
-      />
+    <footer
+      className="film-fin relative overflow-hidden bg-black"
+      aria-labelledby="footer-closing"
+    >
+      <div className="film-fin-horizon pointer-events-none absolute inset-x-0 top-0 z-[1]" aria-hidden />
+      <div className="film-fin-glow pointer-events-none absolute inset-0 z-[1]" aria-hidden />
+      <div className="film-fin-vignette pointer-events-none absolute inset-0 z-[2]" aria-hidden />
+      <div className="film-fin-grain pointer-events-none absolute inset-0 z-[3]" aria-hidden />
+      <NobleSurface intensity="section" className="z-[4] opacity-95" />
 
-      <div className="section-padding relative z-[1] py-14 md:py-32">
-        <div className="border-b border-starlight-border/40 pb-10 md:pb-20">
-          <p className="font-display text-[1.35rem] font-extralight leading-[1.1] tracking-[-0.03em] text-starlight-cream/90 md:text-[clamp(1.75rem,5vw,3.5rem)] md:leading-[1.05]">
-            {SECTION_COPY.footer.tagline}
+      <div className="section-padding relative z-10">
+        {/* Scène finale — phrase & respiration */}
+        <div
+          className="film-fin-prologue"
+          data-cine-reveal
+          data-cine-y="24"
+          data-cine-start="top 92%"
+        >
+          <p className="label-caps text-starlight-muted/80">{copy.act}</p>
+          <h2
+            id="footer-closing"
+            className="film-fin-closing heading-monument mt-8 max-w-4xl text-starlight-cream md:mt-10"
+          >
+            {copy.closing}
+          </h2>
+          <p className="film-fin-subline label-caps mt-6 text-starlight-muted/90 md:mt-8">
+            {copy.subline}
           </p>
         </div>
 
-        <div className="mt-10 grid gap-10 md:mt-20 md:grid-cols-2 md:gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-5">
+        <div className="film-fin-divider" aria-hidden />
+
+        {/* Composition éditoriale */}
+        <div
+          className="film-fin-grid"
+          data-cine-reveal
+          data-cine-y="20"
+          data-cine-start="top 94%"
+        >
+          <div className="film-fin-brand lg:col-span-5">
             <Logo size="lg" />
-            <p className="body-premium mt-6 max-w-sm text-starlight-metal/90 md:body-large md:mt-8">
-              {SECTION_COPY.footer.body}
+            <p className="body-editorial prose-measure mt-8 text-starlight-metal/90 md:mt-10">
+              {copy.body}
             </p>
+            <div className="mt-10 md:mt-12">
+              <PremiumButton href="/contact" variant="secondary">
+                {HERO_COPY.ctaPrimary}
+              </PremiumButton>
+            </div>
           </div>
 
-          <div className="lg:col-span-3 lg:col-start-7">
-            <p className="label-caps mb-4">{SECTION_COPY.footer.navigation}</p>
-            <ul className="space-y-2.5">
+          <nav
+            className="film-fin-nav lg:col-span-3 lg:col-start-7"
+            aria-label={copy.navigation}
+          >
+            <p className="label-caps mb-5 text-starlight-muted/85">{copy.navigation}</p>
+            <ul className="space-y-3.5">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm font-light text-starlight-metal transition-colors duration-500 hover:text-starlight-cream"
+                    className="link-premium text-sm font-light text-starlight-metal"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          <div className="lg:col-span-3">
-            <p className="label-caps mb-4">{SECTION_COPY.footer.contact}</p>
-            <address className="space-y-1.5 text-sm font-light not-italic leading-relaxed text-starlight-metal">
+          <div className="film-fin-contact lg:col-span-3">
+            <p className="label-caps mb-5 text-starlight-muted/85">{copy.contact}</p>
+            <address className="space-y-2 text-sm font-light not-italic leading-[1.7] text-starlight-metal">
               <p>{SITE.address.street}</p>
               <p>
                 {SITE.address.postal} {SITE.address.city}
               </p>
+              <p>{SITE.address.country}</p>
               <a
                 href={`mailto:${SITE.email}`}
-                className="mt-3 inline-block text-starlight-cream/90 transition-colors duration-500 hover:text-starlight-cream"
+                className="link-premium mt-4 inline-block text-starlight-cream/90"
               >
                 {SITE.email}
               </a>
@@ -60,9 +97,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-starlight-border/30 pt-6 md:mt-20 md:pt-8">
-          <p className="text-[0.65rem] font-light tracking-wide text-starlight-muted/75">
-            © {year} {SITE.legalName}. {SECTION_COPY.footer.rights}
+        {/* Générique */}
+        <div
+          className="film-fin-credits"
+          data-cine-reveal
+          data-cine-y="12"
+          data-cine-start="top 96%"
+        >
+          <p className="film-fin-mark font-display text-[0.7rem] font-light tracking-[0.42em] text-starlight-muted/50 uppercase">
+            {SITE.name}
+          </p>
+          <p className="film-fin-legal mt-4 text-[0.625rem] font-light leading-relaxed tracking-[0.06em] text-starlight-muted/65 md:mt-0">
+            © {year} {SITE.legalName}. {copy.rights}
           </p>
         </div>
       </div>

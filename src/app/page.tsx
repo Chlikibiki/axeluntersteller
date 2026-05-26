@@ -9,21 +9,34 @@ import { Philosophy } from "@/components/home/Philosophy";
 import { Process } from "@/components/home/Process";
 import { Testimonials } from "@/components/home/Testimonials";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import { FilmBridge, FilmJourney } from "@/components/film";
 
 export default function HomePage() {
   return (
-    <>
+    <FilmJourney>
+      {/* Acte I — Matière & temps */}
       <Hero />
       <Trust />
+      <FilmBridge bridge="time" />
+
+      {/* Climax acte I — la main */}
       <SignatureMoment />
+      <FilmBridge bridge="hand" />
+
+      {/* Acte II — Maîtrise & rareté */}
       <PartnerTrust />
       <ManufacturingExamples />
       <Capabilities />
+
+      {/* Acte III — Atelier intérieur */}
+      <FilmBridge bridge="rarity" />
       <Craftsmanship />
       <Philosophy />
       <Process />
+
+      {/* Acte IV — Résonance & seuil */}
       <Testimonials />
       <FinalCTA />
-    </>
+    </FilmJourney>
   );
 }

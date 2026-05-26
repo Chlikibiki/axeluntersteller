@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { NobleSurface } from "@/components/shared/NobleSurface";
 
 export type AtmosphereVariant =
   | "void"
@@ -25,6 +26,12 @@ export function Atmosphere({
   className?: string;
 }) {
   return (
-    <div className={cn("pointer-events-none absolute inset-0", variants[variant], className)} aria-hidden />
+    <div
+      className={cn("pointer-events-none absolute inset-0 z-0", className)}
+      aria-hidden
+    >
+      <NobleSurface intensity="still" />
+      <div className={cn("absolute inset-0", variants[variant])} />
+    </div>
   );
 }

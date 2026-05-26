@@ -5,12 +5,12 @@ import { useEffect, useRef, useState } from "react";
 import {
   TRUST_IMAGE,
   TRUST_METRICS,
-  HERO_STATEMENT,
   SECTION_COPY,
   UI,
 } from "@/lib/constants";
 import { CineMedia } from "@/components/motion/CineMedia";
 import { Reveal } from "@/components/shared/Reveal";
+import { FilmChapter } from "@/components/film";
 import { SectionShell } from "@/components/shared/SectionShell";
 
 function AnimatedMetric({
@@ -33,7 +33,7 @@ function AnimatedMetric({
       ([entry]) => {
         if (!entry.isIntersecting) return;
         const target = parseInt(value, 10);
-        const duration = 2000;
+        const duration = 2800;
         const start = performance.now();
 
         const animate = (now: number) => {
@@ -54,7 +54,7 @@ function AnimatedMetric({
 
   return (
     <div ref={ref} className="m-rail-item w-[38vw] min-w-[7.5rem] max-w-[9rem] md:w-auto md:min-w-0 md:max-w-none">
-      <p className="font-display text-4xl font-extralight text-starlight-cream md:text-6xl lg:text-7xl">
+      <p className="type-stat text-starlight-cream">
         {display}
         {suffix}
       </p>
@@ -67,6 +67,8 @@ export function Trust() {
   return (
     <SectionShell
       id="trust"
+      film="trust"
+      filmTransition="soft"
       atmosphere="depth"
       spacing="editorial"
       aria-labelledby="trust-heading"
@@ -74,33 +76,25 @@ export function Trust() {
       <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1.05fr)_minmax(260px,0.9fr)] lg:items-center lg:gap-16 xl:gap-24">
         <div className="order-1 min-w-0 lg:order-none">
           <Reveal pace="slow">
-            <p className="eyebrow mb-3 md:mb-4">Héritage</p>
+            <FilmChapter section="trust" />
             <h2
               id="trust-heading"
-              className="heading-lg max-w-3xl text-starlight-cream"
+              className="heading-lg max-w-4xl text-starlight-cream"
             >
               {SECTION_COPY.trust.title}
             </h2>
-            <p className="m-impact mt-4">
+            <p className="m-impact type-stack-body">
               Savoir-faire européen au service des maisons les plus exigeantes.
             </p>
           </Reveal>
 
-          <Reveal pace="fade" className="order-3 mt-6 lg:order-none lg:mt-8">
-            <div className="m-stack-text max-w-xl">
-              {SECTION_COPY.trust.body.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className={
-                    index === 1
-                      ? "body-premium text-starlight-metal/90"
-                      : "body-large"
-                  }
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+          <Reveal pace="silence" className="order-3 mt-6 lg:order-none lg:mt-8">
+            <p className="body-editorial prose-measure max-w-xl">
+              {SECTION_COPY.trust.body[0]}
+            </p>
+            <p className="body-premium mt-6 hidden max-w-md text-starlight-metal/75 lg:block">
+              {SECTION_COPY.trust.bodyExtended}
+            </p>
           </Reveal>
         </div>
 
@@ -149,13 +143,6 @@ export function Trust() {
         </div>
       </div>
 
-      <p
-        data-cine-reveal
-        data-cine-y="16"
-        className="heading-statement mt-10 hidden max-w-5xl text-balance text-starlight-cream/90 opacity-0 md:mt-24 md:block lg:mt-32"
-      >
-        {HERO_STATEMENT}
-      </p>
     </SectionShell>
   );
 }

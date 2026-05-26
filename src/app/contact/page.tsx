@@ -30,10 +30,10 @@ export default function ContactPage() {
           <Grain />
         </div>
         <div className="relative z-10 section-padding pb-16 pt-8 md:pb-20">
-          <h1 className="heading-xl max-w-3xl text-starlight-cream">
+          <h1 className="heading-display max-w-4xl text-starlight-cream">
             {SECTION_COPY.contact.title}
           </h1>
-          <p className="body-large mt-8 max-w-xl">
+          <p className="body-editorial prose-measure type-stack-body">
             {SECTION_COPY.contact.body}
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function ContactPage() {
             <h2 className="heading-md text-starlight-cream">
               {SECTION_COPY.contact.subtitle}
             </h2>
-            <p className="body-premium mt-6 text-starlight-muted">
+            <p className="body-premium type-stack-body text-starlight-muted">
               {SITE.legalName} · {UI.contact.since} {SITE.established}
             </p>
 

@@ -33,7 +33,7 @@ export function Logo({
       priority={priority}
       unoptimized
       className={cn(
-        "object-contain object-left transition-opacity duration-500 hover:opacity-85",
+        "object-contain object-left transition-opacity duration-[900ms] ease-[var(--ease-premium)] hover:opacity-80",
         sizeClasses[size],
         className
       )}
@@ -47,7 +47,7 @@ export function Logo({
   return (
     <Link
       href="/"
-      className="inline-block shrink-0"
+      className="inline-block shrink-0 transition-opacity duration-[900ms] ease-[var(--ease-premium)] hover:opacity-90"
       aria-label={`${SITE.name}, accueil`}
     >
       {image}

@@ -39,10 +39,10 @@ export function PartnerLogo({
     size === "sm" ? "sm" : wide || isFreitag ? "wide" : "default";
 
   const luxeImageClass = cn(
-    "object-contain object-center transition-all duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
+    "object-contain object-center transition-all duration-[1600ms] ease-[var(--ease-premium)]",
     isFreitag || isSvg
-      ? "opacity-[0.36] hover:opacity-[0.72]"
-      : "brightness-0 invert opacity-[0.34] hover:opacity-[0.68]",
+      ? "opacity-[0.36] hover:opacity-[0.62]"
+      : "brightness-0 invert opacity-[0.34] hover:opacity-[0.58]",
     invert && !isFreitag && "brightness-0 invert"
   );
 
@@ -56,7 +56,7 @@ export function PartnerLogo({
       >
         <span
           className={cn(
-            "relative transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]",
+            "relative transition-transform duration-[1600ms] ease-[var(--ease-premium)] group-hover:scale-[1.008]",
             WALL_FRAME[frameKey]
           )}
         >

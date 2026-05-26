@@ -9,6 +9,8 @@ interface PremiumButtonProps {
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
   external?: boolean;
+  /** Respiration très légère au repos (hero uniquement) */
+  breathe?: boolean;
 }
 
 export function PremiumButton({
@@ -17,18 +19,18 @@ export function PremiumButton({
   variant = "primary",
   className,
   external,
+  breathe = false,
 }: PremiumButtonProps) {
-  const base =
-    "inline-flex items-center justify-center px-8 py-3.5 text-[0.625rem] font-medium uppercase tracking-[0.22em] transition-all duration-500 md:px-10 md:py-4 md:text-xs md:tracking-[0.2em]";
+  const classes = cn(
+    "premium-btn",
+    variant === "primary" && "premium-btn-primary",
+    variant === "secondary" && "premium-btn-secondary",
+    variant === "ghost" && "premium-btn-ghost",
+    breathe && "premium-btn-breathe",
+    className
+  );
 
-  const variants = {
-    primary: "bg-starlight-cream text-black hover:bg-white",
-    secondary:
-      "border border-starlight-border-strong text-starlight-cream hover:border-starlight-cream",
-    ghost: "text-starlight-cream hover:text-white",
-  };
-
-  const classes = cn(base, variants[variant], className);
+  const inner = <span className="premium-btn-label">{children}</span>;
 
   if (external) {
     return (
@@ -38,14 +40,29 @@ export function PremiumButton({
         rel="noopener noreferrer"
         className={classes}
       >
-        {children}
+        {inner}
       </a>
     );
   }
 
   return (
     <Link href={href} className={classes}>
-      {children}
+      {inner}
     </Link>
+  );
+}
+
+/** Bouton submit formulaire — mêmes interactions */
+export function PremiumButtonSubmit({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <button type="submit" className={cn("premium-btn premium-btn-primary w-full md:w-auto", className)}>
+      <span className="premium-btn-label">{children}</span>
+    </button>
   );
 }

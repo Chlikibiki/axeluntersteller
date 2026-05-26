@@ -5,6 +5,7 @@ import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CinematicMotion } from "@/components/motion/CinematicMotion";
+import { CINEMA_TIME } from "@/lib/motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,11 +16,13 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
     const lenis = new Lenis({
-      duration: isMobile ? 1.15 : 1.4,
+      duration: isMobile
+        ? CINEMA_TIME.scrollDurationMobile
+        : CINEMA_TIME.scrollDuration,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       smoothWheel: true,
-      touchMultiplier: isMobile ? 1.1 : 1.5,
+      touchMultiplier: isMobile ? 1.05 : 1.15,
     });
 
     lenisRef.current = lenis;

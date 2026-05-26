@@ -36,7 +36,7 @@ export { HERO_IMAGES, CONTACT_HERO_IMAGE, LOGO, PARTNER_LOGOS, TRUST_IMAGE };
 export const HERO_COPY = {
   eyebrow: "Manufacture de cuir · Europe",
   established: "Depuis 1987 · Allemagne · Tunisie",
-  headline: ["Le cuir,", "Notre héritage,", "Votre signature."],
+  headline: ["LE CUIR,", "NOTRE HÉRITAGE,", "VOTRE SIGNATURE."],
   manifesto:
     "Notre héritage façonne la matière. Votre vision en devient la signature.",
   subhead:
@@ -61,9 +61,10 @@ export const SECTION_COPY = {
     label: "Héritage",
     title: "Créateurs d'excellence",
     body: [
-      "Depuis 1987, nos artisans perpétuent un savoir-faire cuir européen au service des maisons internationales les plus exigeantes. Chaque peau est choisie pour sa noblesse, chaque pièce façonnée avec une précision de finition qui se lit au toucher. Du prototype à la série, nous réalisons sangles de précision, maroquinerie d'objets et gainages techniques avec la même exigence de constance, dans nos ateliers d'Allemagne et de Tunisie.",
-      "Nos infrastructures couvrent plus de 5 000 m² dédiés à la fabrication, au contrôle qualité et au stockage, afin de garantir réactivité, maîtrise des volumes et excellence d'exécution à chaque étape de production.",
+      "Depuis 1987, le geste façonne la matière pour les maisons les plus exigeantes. Allemagne, Tunisie : une même exigence, du prototype à la série.",
     ],
+    bodyExtended:
+      "Nos ateliers couvrent plus de 5 000 m² dédiés à la fabrication et au contrôle qualité.",
     tags: ["Atelier allemand", "Sur mesure", "Maisons internationales"],
   },
   production: {
@@ -94,6 +95,8 @@ export const SECTION_COPY = {
     body: "Simple, lent, sans détour.",
   },
   partners: {
+    title: "Marques partenaires",
+    body: "Des maisons qui nous confient leur exigence.",
     tagline: "Manufacture européenne depuis 1987.",
     disclaimer:
       "Noms cités à titre de référence. Toutes les marques appartiennent à leurs propriétaires.",
@@ -135,8 +138,10 @@ export const SECTION_COPY = {
     facility: "Offenbach am Main · Allemagne",
   },
   footer: {
+    act: "Acte IV · Fin",
+    closing: "Le cuir continue.",
+    subline: "Starlight · Allemagne · Tunisie",
     body: "Manufacture de cuir pour les maisons internationales. Depuis 1987.",
-    tagline: "Starlight · Allemagne · Tunisie",
     navigation: "Navigation",
     contact: "Contact",
     rights: "Tous droits réservés.",

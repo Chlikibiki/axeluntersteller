@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { FORM_COPY } from "@/lib/constants";
+import { PremiumButtonSubmit } from "@/components/shared/PremiumButton";
 
 interface InquiryFormProps {
   variant?: "compact" | "full";
@@ -124,12 +125,7 @@ export function InquiryForm({
         </div>
       )}
 
-      <button
-        type="submit"
-        className="group relative inline-flex w-full items-center justify-center bg-starlight-cream px-8 py-4 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-starlight-bg transition-all duration-500 hover:bg-starlight-leather hover:text-starlight-cream md:w-auto"
-      >
-        {copy.submit}
-      </button>
+      <PremiumButtonSubmit>{copy.submit}</PremiumButtonSubmit>
 
       <p className="text-xs text-starlight-muted">{copy.privacy}</p>
     </form>

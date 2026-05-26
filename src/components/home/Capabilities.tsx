@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CAPABILITIES, SECTION_COPY, UI } from "@/lib/constants";
 import { Reveal } from "@/components/shared/Reveal";
+import { FilmChapter } from "@/components/film";
 import { SectionShell } from "@/components/shared/SectionShell";
 import { Grain } from "@/components/shared/Grain";
 import { CineMedia } from "@/components/motion/CineMedia";
@@ -9,22 +10,24 @@ export function Capabilities() {
   return (
     <SectionShell
       id="capabilities"
+      film="capabilities"
+      filmTransition="void"
       atmosphere="elevated"
       spacing="editorial"
       aria-labelledby="capabilities-heading"
     >
-      <Reveal pace="material">
-        <p className="eyebrow mb-3">Savoir-faire</p>
+      <Reveal pace="fade">
+        <FilmChapter section="capabilities" />
         <h2
           id="capabilities-heading"
           className="heading-lg max-w-3xl text-starlight-cream"
         >
           {SECTION_COPY.capabilities.title}
         </h2>
-        <p className="m-impact mt-4 md:hidden">
+        <p className="m-impact type-stack-body md:hidden">
           Cinq disciplines. Une seule exigence.
         </p>
-        <p className="body-large mt-4 hidden max-w-xl md:block">
+        <p className="body-editorial prose-measure type-stack-body hidden md:block">
           {SECTION_COPY.capabilities.body}
         </p>
       </Reveal>
@@ -53,11 +56,11 @@ export function Capabilities() {
             data-cine-stagger-item
             className="grid grid-cols-[3rem_1fr] gap-x-4 gap-y-1 py-7 opacity-0 md:grid-cols-12 md:items-baseline md:gap-6 md:py-14"
           >
-            <span className="font-display text-3xl font-extralight text-starlight-muted md:col-span-2 md:text-5xl">
+            <span className="type-index md:col-span-2">
               {String(i + 1).padStart(2, "0")}
             </span>
             <div className="md:col-span-10">
-              <h3 className="text-lg font-extralight text-starlight-cream md:heading-md">
+              <h3 className="heading-md text-starlight-cream">
                 {cap.title}
               </h3>
               <p className="body-premium mt-2 md:mt-3">{cap.description}</p>

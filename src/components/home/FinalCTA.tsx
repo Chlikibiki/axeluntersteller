@@ -2,6 +2,7 @@ import { SITE, SECTION_COPY } from "@/lib/constants";
 import { InquiryForm } from "@/components/shared/InquiryForm";
 import { PremiumButton } from "@/components/shared/PremiumButton";
 import { Reveal } from "@/components/shared/Reveal";
+import { FilmChapter } from "@/components/film";
 import { SectionShell } from "@/components/shared/SectionShell";
 import { Mail, MessageCircle } from "lucide-react";
 
@@ -11,23 +12,25 @@ export function FinalCTA() {
   return (
     <SectionShell
       id="contact-cta"
+      film="cta"
+      filmTransition="lift"
       atmosphere="void"
-      spacing="editorial"
+      spacing="spacious"
       aria-labelledby="cta-heading"
     >
       <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:gap-24">
         <Reveal pace="slow">
-          <p className="eyebrow mb-3">Commencer</p>
+          <FilmChapter section="cta" />
           <h2
             id="cta-heading"
             className="heading-lg text-balance text-starlight-cream"
           >
             {cta.title}
           </h2>
-          <p className="m-impact mt-4 md:hidden">
+          <p className="m-impact type-stack-body md:hidden">
             Décrivez votre projet. Nous écoutons d&apos;abord.
           </p>
-          <p className="body-large mt-4 hidden max-w-md md:mt-8 md:block">
+          <p className="body-editorial prose-measure type-stack-body hidden md:block">
             {cta.body}
           </p>
 
@@ -61,7 +64,7 @@ export function FinalCTA() {
           </p>
         </Reveal>
 
-        <Reveal pace="slow" delay={0.08}>
+        <Reveal pace="silence" delay={0.12}>
           <div className="border border-starlight-border bg-starlight-surface/80 p-6 md:bg-starlight-surface md:p-12">
             <InquiryForm variant="compact" showFileUpload={false} />
           </div>

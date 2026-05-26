@@ -26,17 +26,17 @@ export function SectionHeading({
         className
       )}
     >
-      {label ? <p className="label-caps mb-4">{label}</p> : null}
+      {label ? <p className="label-caps type-stack-title">{label}</p> : null}
       <h2
         className={cn(
-          "heading-lg text-balance",
+          "heading-lg",
           dark ? "text-starlight-cream" : "text-starlight-bg"
         )}
       >
         {title}
       </h2>
       {description && (
-        <p className="body-premium mt-5 max-w-xl text-balance">{description}</p>
+        <p className="body-editorial type-stack-body text-balance">{description}</p>
       )}
     </Reveal>
   );

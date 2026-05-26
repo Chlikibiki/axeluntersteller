@@ -1,17 +1,19 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, HERO_COPY, UI } from "@/lib/constants";
+import { useFilmNavActive } from "@/hooks/useFilmNavActive";
 import { cn } from "@/lib/utils";
 import { PremiumButton } from "@/components/shared/PremiumButton";
+import { NavLink } from "@/components/shared/NavLink";
 import { Logo } from "@/components/shared/Logo";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { isLinkActive } = useFilmNavActive();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
@@ -30,9 +32,9 @@ export function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 right-0 left-0 z-50 transition-all duration-500",
+          "fixed top-0 right-0 left-0 z-50 transition-[background-color,border-color,padding,backdrop-filter] duration-[900ms] ease-[var(--ease-premium)]",
           scrolled
-            ? "border-b border-starlight-border bg-black/80 py-5 backdrop-blur-md"
+            ? "border-b border-starlight-border/40 bg-black/70 py-5 backdrop-blur-sm"
             : "bg-transparent py-5 md:py-10"
         )}
       >
@@ -44,13 +46,13 @@ export function Header() {
             aria-label={UI.aria.mainNav}
           >
             {NAV_LINKS.map((link) => (
-              <Link
+              <NavLink
                 key={link.href}
                 href={link.href}
-                className="link-underline text-sm uppercase tracking-[0.15em] text-starlight-metal transition-colors hover:text-starlight-cream"
+                active={isLinkActive(link.href)}
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
 
@@ -62,7 +64,7 @@ export function Header() {
 
           <button
             type="button"
-            className="flex size-10 items-center justify-center text-starlight-cream lg:hidden"
+            className="icon-btn-luxe flex size-10 items-center justify-center border border-transparent text-starlight-cream transition-colors hover:border-starlight-border/60 lg:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? UI.aria.closeMenu : UI.aria.openMenu}
@@ -78,23 +80,29 @@ export function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-40 flex flex-col bg-black lg:hidden"
           >
             <div className="flex flex-1 flex-col justify-center gap-8 section-padding pt-24">
               {NAV_LINKS.map((link, i) => (
                 <motion.div
                   key={link.href}
-                  initial={{ opacity: 0, x: -12 }}
+                  initial={{ opacity: 0, x: -8 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{
+                    delay: i * 0.06,
+                    duration: 0.75,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                 >
-                  <Link
+                  <NavLink
                     href={link.href}
+                    variant="mobile"
+                    active={isLinkActive(link.href)}
                     onClick={() => setMenuOpen(false)}
-                    className="font-display text-3xl font-extralight text-starlight-cream"
                   >
                     {link.label}
-                  </Link>
+                  </NavLink>
                 </motion.div>
               ))}
               <div onClick={() => setMenuOpen(false)} className="mt-8">

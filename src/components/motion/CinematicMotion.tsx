@@ -70,7 +70,7 @@ function initCinematicMotion() {
 
     gsap.utils.toArray<HTMLElement>("[data-cine-reveal]").forEach((el) => {
       const y = Number(el.dataset.cineY ?? CINE.revealY) * motionScale;
-      const start = el.dataset.cineStart ?? (mobile ? "top 90%" : "top 86%");
+      const start = el.dataset.cineStart ?? (mobile ? "top 92%" : "top 88%");
 
       gsap.fromTo(
         el,
@@ -99,17 +99,17 @@ function initCinematicMotion() {
 
       gsap.fromTo(
         items,
-        { opacity: 0, y: 26, force3D: true },
+        { opacity: 0, y: 18, force3D: true },
         {
           opacity: 1,
           y: 0,
-          duration: 1.4,
-          stagger: 0.11,
+          duration: 1.65,
+          stagger: 0.14,
           ease: "power3.out",
           force3D: true,
           scrollTrigger: {
             trigger: parent,
-            start: "top 84%",
+            start: "top 88%",
             once: true,
           },
         }

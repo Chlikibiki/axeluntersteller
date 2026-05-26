@@ -1,24 +1,27 @@
 import { PHILOSOPHY, SECTION_COPY } from "@/lib/constants";
 import { Reveal } from "@/components/shared/Reveal";
 import { PremiumButton } from "@/components/shared/PremiumButton";
+import { FilmChapter } from "@/components/film";
 import { SectionShell } from "@/components/shared/SectionShell";
 
 export function Philosophy() {
   return (
     <SectionShell
+      film="philosophy"
+      filmTransition="soft"
       atmosphere="warm"
-      spacing="editorial"
+      spacing="spacious"
       aria-labelledby="philosophy-heading"
     >
       <Reveal pace="slow" className="md:mx-auto md:max-w-4xl md:text-center">
-        <p className="eyebrow mb-4 md:mb-6">Conviction</p>
+        <FilmChapter section="philosophy" className="md:mx-auto md:text-center" />
         <h2
           id="philosophy-heading"
           className="heading-statement text-left text-starlight-cream md:text-center"
         >
           {PHILOSOPHY.headline}
         </h2>
-        <p className="body-premium mt-6 max-w-md md:body-large md:mx-auto md:mt-10 md:max-w-2xl">
+        <p className="body-editorial prose-measure-wide type-stack-body md:mx-auto md:text-center">
           {PHILOSOPHY.body}
         </p>
         <p className="label-caps mt-8 md:mt-12">

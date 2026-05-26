@@ -6,6 +6,7 @@ import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageLoader } from "@/components/layout/PageLoader";
+import { NobleSurface } from "@/components/shared/NobleSurface";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -43,11 +44,14 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-starlight-bg font-sans text-starlight-cream">
+      <body className="cinema-experience min-h-screen bg-black font-sans text-starlight-cream">
         <SmoothScroll>
           <PageLoader />
           <Header />
-          <main className="max-md:overflow-x-clip">{children}</main>
+          <main className="relative max-md:overflow-x-clip">
+            <NobleSurface intensity="whisper" className="z-0" />
+            <div className="relative z-[1]">{children}</div>
+          </main>
           <Footer />
         </SmoothScroll>
       </body>

@@ -1,9 +1,13 @@
 "use client";
 
 import { PARTNER_LOGOS, SECTION_COPY } from "@/lib/constants";
+import { filmRhythmClass, filmSectionAttrs } from "@/lib/film-narrative";
+import { FilmChapter } from "@/components/film";
 import { PartnerLogo } from "@/components/shared/PartnerLogo";
 import { Reveal } from "@/components/shared/Reveal";
 import { Atmosphere } from "@/components/shared/Atmosphere";
+import { NobleSurface } from "@/components/shared/NobleSurface";
+import { cn } from "@/lib/utils";
 
 export function PartnerTrust() {
   const { partners: copy } = SECTION_COPY;
@@ -11,18 +15,24 @@ export function PartnerTrust() {
   return (
     <section
       id="partners"
-      className="relative overflow-hidden border-y border-starlight-border/60 bg-black"
-      aria-label="Marques partenaires"
+      className={cn(
+        "film-section relative overflow-hidden border-y border-starlight-border/40 bg-black",
+        filmRhythmClass("silence"),
+        "film-personality-rarete film-transition-soft"
+      )}
+      {...filmSectionAttrs("partners")}
+      aria-labelledby="partners-heading"
     >
       <Atmosphere variant="ink" />
-      <div className="leather-whisper absolute inset-0 max-md:opacity-20" aria-hidden />
+      <NobleSurface intensity="section" className="z-0" />
 
       <div className="section-padding relative z-[1] py-10 md:py-28 lg:py-32">
-        <Reveal pace="fade" className="mb-6 md:mb-16">
-          <p className="eyebrow">Références</p>
-          <p className="m-impact mt-3 max-w-xs">
-            Des maisons qui nous confient leur exigence.
-          </p>
+        <Reveal pace="fade" className="mb-6 md:mb-12">
+          <FilmChapter section="partners" showIntention={false} />
+          <h2 id="partners-heading" className="sr-only">
+            {copy.title}
+          </h2>
+          <p className="m-impact type-stack-body max-w-xs md:hidden">{copy.body}</p>
         </Reveal>
 
         <div className="m-rail md:mx-0 md:block md:overflow-visible md:px-0">

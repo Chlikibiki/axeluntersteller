@@ -4,14 +4,9 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { HERO_COPY, HERO_IMAGES, HERO_STATEMENT, UI } from "@/lib/constants";
+import { filmRhythmClass, filmSectionAttrs } from "@/lib/film-narrative";
 import { PremiumButton } from "@/components/shared/PremiumButton";
 import { cn } from "@/lib/utils";
-
-const LINE_CLASS = [
-  "hero-line--lead",
-  "hero-line--heritage",
-  "hero-line--signature",
-] as const;
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -26,7 +21,7 @@ export function Hero() {
     const mobile = window.innerWidth < 768;
 
     const ctx = gsap.context(() => {
-      const delay = prefersReducedMotion ? 0 : mobile ? 1.35 : 2;
+      const delay = prefersReducedMotion ? 0 : mobile ? 1.6 : 2.35;
 
       if (!prefersReducedMotion && bgRef.current) {
         gsap.fromTo(
@@ -108,29 +103,19 @@ export function Hero() {
         .fromTo(
           ".hero-line-inner",
           {
-            y: "115%",
-            opacity: prefersReducedMotion ? 1 : 0.4,
-            filter: prefersReducedMotion ? "blur(0px)" : "blur(10px)",
+            y: 14,
+            opacity: 0,
+            filter: prefersReducedMotion ? "blur(0px)" : "blur(8px)",
           },
           {
-            y: "0%",
+            y: 0,
             opacity: 1,
             filter: "blur(0px)",
-            duration: prefersReducedMotion ? 0 : 1.55,
-            stagger: 0.14,
-            ease: "power4.out",
+            duration: prefersReducedMotion ? 0 : 1.65,
+            stagger: 0.18,
+            ease: "power3.out",
           },
           0.08
-        )
-        .fromTo(
-          ".hero-line--signature .hero-line-inner",
-          { scale: 0.98 },
-          {
-            scale: 1,
-            duration: prefersReducedMotion ? 0 : 1.8,
-            ease: "power2.out",
-          },
-          0.42
         )
         .fromTo(
           ".hero-manifesto",
@@ -176,7 +161,12 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="hero-iconic relative min-h-[94dvh] overflow-hidden bg-black md:min-h-[100dvh]"
+      className={cn(
+        "hero-iconic film-section relative min-h-[94dvh] overflow-hidden bg-black md:min-h-[100dvh]",
+        filmRhythmClass("crescendo"),
+        "film-personality-cuir"
+      )}
+      {...filmSectionAttrs("hero")}
       aria-labelledby="hero-heading"
     >
       <div className="hero-stage absolute inset-0" aria-hidden>
@@ -204,8 +194,8 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 flex min-h-[94dvh] flex-col justify-end section-padding pb-11 pt-28 md:min-h-[100dvh] md:pb-28 md:pt-44">
-        <div className="hero-content max-w-4xl">
-          <p className="hero-eyebrow eyebrow mb-6 opacity-0 md:mb-10">
+        <div className="hero-content max-w-[100%] lg:max-w-6xl">
+          <p className="hero-eyebrow eyebrow mb-8 opacity-0 md:mb-12">
             {HERO_COPY.established}
           </p>
 
@@ -213,21 +203,18 @@ export function Hero() {
             id="hero-heading"
             className="hero-heading font-display text-starlight-cream"
           >
-            {HERO_COPY.headline.map((line, i) => (
-              <span
-                key={line}
-                className={cn("hero-line block overflow-hidden", LINE_CLASS[i])}
-              >
-                <span className="hero-line-inner block">{line}</span>
+            {HERO_COPY.headline.map((line) => (
+              <span key={line} className="hero-line block">
+                <span className="hero-line-inner">{line}</span>
               </span>
             ))}
           </h1>
 
-          <p className="hero-manifesto mt-5 max-w-md font-display text-[0.9375rem] font-extralight leading-[1.45] tracking-[-0.02em] text-starlight-cream/92 opacity-0 md:mt-7 md:max-w-lg md:text-lg md:leading-[1.5]">
+          <p className="hero-manifesto body-lead prose-measure mt-7 opacity-0 md:mt-10">
             {HERO_COPY.manifesto}
           </p>
 
-          <p className="hero-subhead body-large mt-4 hidden max-w-xl opacity-0 md:mt-8 md:block md:max-w-2xl">
+          <p className="hero-subhead body-editorial prose-measure-wide mt-0 hidden opacity-0 md:mt-10 md:block">
             {HERO_COPY.subhead}
           </p>
 
@@ -235,7 +222,8 @@ export function Hero() {
             <div className="hero-cta flex w-full opacity-0 sm:w-auto">
               <PremiumButton
                 href="/contact"
-                className="hero-btn hero-btn-primary w-full sm:w-auto"
+                breathe
+                className="w-full sm:w-auto"
               >
                 {HERO_COPY.ctaPrimary}
               </PremiumButton>
@@ -244,7 +232,8 @@ export function Hero() {
               <PremiumButton
                 href="#partners"
                 variant="secondary"
-                className="hero-btn hero-btn-secondary w-full sm:w-auto"
+                breathe
+                className="w-full sm:w-auto"
               >
                 {HERO_COPY.ctaSecondary}
               </PremiumButton>

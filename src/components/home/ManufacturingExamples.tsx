@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import { MANUFACTURING_EXAMPLES, SECTION_COPY, UI } from "@/lib/constants";
+import { filmRhythmClass, filmSectionAttrs } from "@/lib/film-narrative";
+import { FilmChapter } from "@/components/film";
 import { PremiumButton } from "@/components/shared/PremiumButton";
+import { cn } from "@/lib/utils";
 import { Grain } from "@/components/shared/Grain";
 import { Reveal } from "@/components/shared/Reveal";
 import { Atmosphere } from "@/components/shared/Atmosphere";
@@ -12,23 +15,28 @@ export function ManufacturingExamples() {
   return (
     <section
       id="production"
-      className="relative overflow-hidden bg-black section-separator"
+      className={cn(
+        "film-section relative overflow-hidden bg-black section-separator film-transition-soft",
+        filmRhythmClass("tension"),
+        "film-personality-maitrise"
+      )}
+      {...filmSectionAttrs("production")}
       aria-labelledby="production-heading"
     >
       <Atmosphere variant="warm" />
       <div className="section-padding relative z-[1] pt-10 pb-6 md:pt-28 md:pb-16">
-        <Reveal pace="material">
-          <p className="eyebrow mb-3">Réalisations</p>
+        <Reveal pace="fade">
+          <FilmChapter section="production" />
           <h2
             id="production-heading"
             className="heading-lg max-w-3xl text-starlight-cream"
           >
             {SECTION_COPY.production.title}
           </h2>
-          <p className="m-impact mt-4 md:hidden">
+          <p className="m-impact type-stack-body md:hidden">
             Conçu pour les marques, jamais pour l&apos;étalage.
           </p>
-          <p className="body-large mt-4 hidden max-w-xl md:block">
+          <p className="body-editorial prose-measure type-stack-body hidden md:block">
             {SECTION_COPY.production.body}
           </p>
         </Reveal>
@@ -59,7 +67,7 @@ export function ManufacturingExamples() {
 
             <div className="flex flex-col justify-center section-padding py-8 md:py-24 lg:py-32">
               <Reveal pace="slow">
-                <span className="font-display text-5xl font-extralight text-starlight-muted/40 lg:hidden">
+                <span className="type-index lg:hidden">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <p className="label-caps mt-4 lg:mt-0">{example.category}</p>
