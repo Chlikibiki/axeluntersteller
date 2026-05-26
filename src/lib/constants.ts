@@ -146,7 +146,6 @@ export const UI = {
     mainNav: "Navigation principale",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
-    scroll: "Faire défiler pour découvrir",
     craftGallery: "Détails de fabrication",
     facilityMap: "Localisation de l'atelier",
     prevTestimonial: "Témoignage précédent",

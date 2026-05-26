@@ -43,12 +43,6 @@ export function Hero() {
           { y: 14, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.8, stagger: 0.08, ease: "power3.out" },
           0.55
-        )
-        .fromTo(
-          ".hero-scroll",
-          { opacity: 0 },
-          { opacity: 1, duration: 0.8, ease: "power2.out" },
-          0.95
         );
     }, sectionRef);
 
@@ -112,16 +106,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
-      <a
-        href="#trust"
-        className="hero-scroll absolute bottom-12 left-6 z-20 opacity-0 md:left-12 lg:left-16"
-        aria-label={UI.aria.scroll}
-      >
-        <span className="relative block h-12 w-px bg-starlight-border/80">
-          <span className="absolute top-0 left-0 h-4 w-full animate-[hero-scroll_2s_ease-in-out_infinite] bg-starlight-cream" />
-        </span>
-      </a>
 
       <p className="sr-only">{HERO_STATEMENT}</p>
     </section>
