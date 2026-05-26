@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { SIGNATURE_COPY, UI } from "@/lib/constants";
+import { UI } from "@/lib/constants";
 import { SIGNATURE_ATELIER_IMAGE } from "@/lib/images";
 import { filmRhythmClass, filmSectionAttrs } from "@/lib/film-narrative";
 import { cn } from "@/lib/utils";
@@ -13,8 +13,6 @@ export function SignatureMoment() {
   const mediaRef = useRef<HTMLDivElement>(null);
   const lightWarmRef = useRef<HTMLDivElement>(null);
   const lightBladeRef = useRef<HTMLDivElement>(null);
-  const line1Ref = useRef<HTMLParagraphElement>(null);
-  const line2Ref = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -22,14 +20,7 @@ export function SignatureMoment() {
     ).matches;
 
     const ctx = gsap.context(() => {
-      if (prefersReducedMotion) {
-        gsap.set([line1Ref.current, line2Ref.current], {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-        });
-        return;
-      }
+      if (prefersReducedMotion) return;
 
       if (mediaRef.current) {
         gsap.fromTo(
@@ -84,21 +75,6 @@ export function SignatureMoment() {
           delay: 1,
         });
       }
-
-      const lines = [line1Ref.current, line2Ref.current].filter(Boolean);
-      gsap.fromTo(
-        lines,
-        { opacity: 0, y: 36, filter: "blur(12px)" },
-        {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 1.8,
-          stagger: 0.55,
-          ease: "power3.out",
-          delay: 1.2,
-        }
-      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -113,7 +89,7 @@ export function SignatureMoment() {
         "film-personality-main film-transition-lift"
       )}
       {...filmSectionAttrs("signature")}
-      aria-labelledby="signature-heading"
+      aria-label={UI.images.trustArtisan}
     >
       <div className="signature-immersive-stage absolute inset-0" aria-hidden>
         <div
@@ -122,7 +98,7 @@ export function SignatureMoment() {
         >
           <Image
             src={SIGNATURE_ATELIER_IMAGE}
-            alt={UI.images.trustArtisan}
+            alt=""
             fill
             className="signature-immersive-image object-cover object-[center_38%] md:object-[center_42%]"
             sizes="100vw"
@@ -135,27 +111,6 @@ export function SignatureMoment() {
         <div className="signature-immersive-veil" />
         <div className="signature-immersive-vignette" />
         <div className="signature-immersive-grain" />
-      </div>
-
-      <div className="signature-immersive-copy relative z-10 flex min-h-[100dvh] flex-col justify-end section-padding pb-14 pt-28 md:pb-24 md:pt-32">
-        <p className="sr-only" id="signature-heading">
-          {SIGNATURE_COPY.line1} {SIGNATURE_COPY.line2}
-        </p>
-
-        <blockquote className="signature-immersive-quote max-w-5xl">
-          <p
-            ref={line1Ref}
-            className="signature-phrase signature-phrase-1 text-starlight-cream opacity-0"
-          >
-            {SIGNATURE_COPY.line1}
-          </p>
-          <p
-            ref={line2Ref}
-            className="signature-phrase signature-phrase-2 text-starlight-cream/78 opacity-0"
-          >
-            {SIGNATURE_COPY.line2}
-          </p>
-        </blockquote>
       </div>
     </section>
   );

@@ -56,12 +56,22 @@ export function PremiumButton({
 export function PremiumButtonSubmit({
   children,
   className,
+  disabled,
 }: {
   children: React.ReactNode;
   className?: string;
+  disabled?: boolean;
 }) {
   return (
-    <button type="submit" className={cn("premium-btn premium-btn-primary w-full md:w-auto", className)}>
+    <button
+      type="submit"
+      disabled={disabled}
+      className={cn(
+        "premium-btn premium-btn-primary w-full md:w-auto",
+        disabled && "pointer-events-none opacity-50",
+        className
+      )}
+    >
       <span className="premium-btn-label">{children}</span>
     </button>
   );

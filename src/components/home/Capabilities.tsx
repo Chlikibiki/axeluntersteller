@@ -7,6 +7,8 @@ import { Grain } from "@/components/shared/Grain";
 import { CineMedia } from "@/components/motion/CineMedia";
 
 export function Capabilities() {
+  const belts = CAPABILITIES[0];
+
   return (
     <SectionShell
       id="capabilities"
@@ -25,26 +27,12 @@ export function Capabilities() {
           {SECTION_COPY.capabilities.title}
         </h2>
         <p className="m-impact type-stack-body md:hidden">
-          Cinq disciplines. Une seule exigence.
+          Du premier prototype à la série, des pièces pensées pour durer.
         </p>
         <p className="body-editorial prose-measure type-stack-body hidden md:block">
           {SECTION_COPY.capabilities.body}
         </p>
       </Reveal>
-
-      <CineMedia
-        rootClassName="m-bleed m-cine-frame mt-8 aspect-[16/10] md:mt-16 md:aspect-[21/9] md:min-h-[280px]"
-        strength={0.04}
-      >
-        <Image
-          src={CAPABILITIES[0].image}
-          alt={UI.images.capability(CAPABILITIES[0].title)}
-          fill
-          className="hero-image-cinematic object-cover"
-          sizes="100vw"
-        />
-        <Grain />
-      </CineMedia>
 
       <ul
         className="mt-8 divide-y divide-starlight-border md:mt-24"
@@ -54,16 +42,34 @@ export function Capabilities() {
           <li
             key={cap.id}
             data-cine-stagger-item
-            className="grid grid-cols-[3rem_1fr] gap-x-4 gap-y-1 py-7 opacity-0 md:grid-cols-12 md:items-baseline md:gap-6 md:py-14"
+            className="opacity-0"
           >
-            <span className="type-index md:col-span-2">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <div className="md:col-span-10">
-              <h3 className="heading-md text-starlight-cream">
-                {cap.title}
-              </h3>
-              <p className="body-premium mt-2 md:mt-3">{cap.description}</p>
+            {i === 0 ? (
+              <CineMedia
+                rootClassName="m-bleed m-cine-frame mb-8 aspect-[16/10] md:mb-12 md:aspect-[21/9] md:min-h-[240px]"
+                strength={0.04}
+              >
+                <Image
+                  src={belts.image}
+                  alt={UI.images.capability(belts.title)}
+                  fill
+                  className="hero-image-cinematic object-cover object-center"
+                  sizes="100vw"
+                />
+                <Grain />
+              </CineMedia>
+            ) : null}
+
+            <div className="grid grid-cols-[3rem_1fr] gap-x-4 gap-y-1 py-7 md:grid-cols-12 md:items-baseline md:gap-6 md:py-14">
+              <span className="type-index md:col-span-2">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div className="md:col-span-10">
+                <h3 className="heading-md text-starlight-cream">
+                  {cap.title}
+                </h3>
+                <p className="body-premium mt-2 md:mt-3">{cap.description}</p>
+              </div>
             </div>
           </li>
         ))}

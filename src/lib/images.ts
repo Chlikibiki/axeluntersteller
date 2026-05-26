@@ -7,7 +7,9 @@ const partners = `${base}/logo/partners`;
 
 export const LOCAL = {
   hero: `${base}/hero/leather.jpg`,
+  heroPhoto: `${base}/hero/hero.jpg`,
   belt: `${base}/belts/belt.jpg`,
+  beltCeinture: `${base}/belts/ceinture.jpg`,
   leather: `${base}/leather/leather01.jpg`,
   workshop: `${base}/workshop/manifacture.jpg`,
   detail: `${base}/details/detail.jpg`,
@@ -27,78 +29,18 @@ export const LOGO = {
     soliver: `${partners}/soliver.svg`,
     olsen: `${partners}/olsen.svg`,
     passeport: `${partners}/passeport.svg`,
-    leica: "/images/logo/Leica_Camera_logo.png",
-    boss: "/images/logo/boss.png",
+    leica: `${partners}/leica.svg`,
+    boss: `${partners}/boss.svg`,
     minox: `${partners}/minox.svg`,
     fossil: `${partners}/fossil.svg`,
     hauerGolf: `${partners}/hauer-golf.svg`,
-    procterGamble: `${partners}/procter-gamble.png`,
-    freitag: `${partners}/freitag.jpg`,
+    procterGamble: `${partners}/procter-gamble.svg`,
+    freitag: `${partners}/freitag.svg`,
     brax: `${partners}/brax.svg`,
     cinque: `${partners}/cinque.svg`,
     royRobson: `${partners}/roy-robson.svg`,
   },
 } as const;
-
-export const PARTNER_LOGOS = [
-  { id: "baldessarini", name: "Baldessarini", src: LOGO.partners.baldessarini, size: "lg" as const },
-  {
-    id: "betty-barclay",
-    name: "Betty Barclay",
-    src: LOGO.partners.bettyBarclay,
-    wide: true,
-    size: "lg" as const,
-  },
-  { id: "soliver", name: "s.Oliver", src: LOGO.partners.soliver, size: "lg" as const },
-  { id: "olsen", name: "Olsen", src: LOGO.partners.olsen, size: "lg" as const },
-  { id: "passeport", name: "Passeport", src: LOGO.partners.passeport, size: "lg" as const },
-  {
-    id: "leica",
-    name: "Leica Camera AG",
-    src: LOGO.partners.leica,
-    color: true,
-    size: "lg" as const,
-  },
-  {
-    id: "boss",
-    name: "BOSS",
-    src: LOGO.partners.boss,
-    color: true,
-    size: "lg" as const,
-  },
-  { id: "minox", name: "Minox", src: LOGO.partners.minox, size: "lg" as const },
-  { id: "fossil", name: "Fossil", src: LOGO.partners.fossil, size: "lg" as const },
-  {
-    id: "hauer-golf",
-    name: "Hauer Golf",
-    src: LOGO.partners.hauerGolf,
-    wide: true,
-    size: "lg" as const,
-  },
-  {
-    id: "procter-gamble",
-    name: "Procter & Gamble",
-    src: LOGO.partners.procterGamble,
-    color: true,
-    size: "xs" as const,
-  },
-  {
-    id: "freitag",
-    name: "FREITAG lab.",
-    src: LOGO.partners.freitag,
-    wide: true,
-    color: true,
-  },
-  { id: "brax", name: "BRAX", src: LOGO.partners.brax, size: "lg" as const },
-  { id: "cinque", name: "CINQUE", src: LOGO.partners.cinque, size: "lg" as const },
-  {
-    id: "roy-robson",
-    name: "ROY Robson",
-    src: LOGO.partners.royRobson,
-    wide: true,
-    size: "lg" as const,
-  },
-] as const;
 
 export const HERO_IMAGES = {
   primary: LOCAL.hero,
@@ -122,7 +64,7 @@ export const MANUFACTURING_IMAGES = {
 } as const;
 
 export const CAPABILITY_IMAGES = {
-  belts: LOCAL.belt,
+  belts: LOCAL.beltCeinture,
   pouches: LOCAL.detail,
   straps: LOCAL.leather,
   goods: LOCAL.processFinish,
@@ -130,8 +72,8 @@ export const CAPABILITY_IMAGES = {
 } as const;
 
 export const CRAFT_IMAGES = {
-  cutting: LOCAL.processCut,
-  stitching: LOCAL.processStitch,
+  cutting: LOCAL.heroPhoto,
+  stitching: LOCAL.detail,
   finishing: LOCAL.processFinish,
 } as const;
 

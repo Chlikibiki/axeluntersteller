@@ -151,7 +151,7 @@ export const FILM_BRIDGES: Record<FilmBridgeId, FilmBridgeMeta> = {
     id: "hand",
     act: "II",
     line: "La précision commence par le geste",
-    whisper: "Entre machine et jugement",
+    whisper: "Entre technologie maîtrisée et finition à la main.",
     rhythm: "contemplation",
   },
   rarity: {

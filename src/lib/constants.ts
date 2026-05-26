@@ -2,20 +2,19 @@ import {
   CAPABILITY_IMAGES,
   CRAFT_IMAGES,
   HERO_IMAGES,
-  MANUFACTURING_IMAGES,
   MACRO_GALLERY_IMAGES,
   CONTACT_HERO_IMAGE,
   LOGO,
-  PARTNER_LOGOS,
   TRUST_IMAGE,
 } from "./images";
+import { PARTNER_LOGOS } from "./partner-logos";
 
 export const SITE = {
   name: "ST★RLIGHT",
   legalName: "Starlight, Manufacture de cuir",
   tagline: "Manufacture de cuir · Europe · Depuis 1987",
   established: 1987,
-  email: "projects@starlight-leather.com",
+  email: "axunt@aol.com",
   phone: "+49 123 456 7890",
   whatsapp: "491234567890",
   address: {
@@ -31,7 +30,8 @@ export const SITE = {
 export const HERO_STATEMENT =
   "Depuis 1987, Starlight transforme les plus belles peaux en cuirs d'exception pour les maisons internationales." as const;
 
-export { HERO_IMAGES, CONTACT_HERO_IMAGE, LOGO, PARTNER_LOGOS, TRUST_IMAGE };
+export { HERO_IMAGES, CONTACT_HERO_IMAGE, LOGO, TRUST_IMAGE };
+export { PARTNER_LOGOS } from "./partner-logos";
 
 export const HERO_COPY = {
   eyebrow: "Manufacture de cuir · Europe",
@@ -49,7 +49,7 @@ export const HERO_COPY = {
     { label: "Atelier", value: "Europe" },
   ],
   referencesLabel: "Aux côtés de",
-  references: PARTNER_LOGOS,
+  references: PARTNER_LOGOS.map((p) => p.name),
   visualCaptions: [
     { label: "01", text: "Sangle · Quincaillerie" },
     { label: "02", text: "Peau · Sélection" },
@@ -80,8 +80,8 @@ export const SECTION_COPY = {
   },
   capabilities: {
     label: "Savoir-faire",
-    title: "Cinq disciplines. Une exigence.",
-    body: "Du premier prototype à la série, toujours à la main, toujours à la mesure.",
+    title: "Nos spécialités cuir.",
+    body: "Du premier prototype à la série, des pièces pensées pour durer.",
     tag: "Production atelier",
   },
   craft: {
@@ -95,9 +95,8 @@ export const SECTION_COPY = {
     body: "Simple, lent, sans détour.",
   },
   partners: {
-    title: "Marques partenaires",
-    body: "Des maisons qui nous confient leur exigence.",
-    tagline: "Manufacture européenne depuis 1987.",
+    title: "Ils nous confient leur fabrication.",
+    body: "Depuis 1987, nous fabriquons pour des marques internationales exigeantes.",
     disclaimer:
       "Noms cités à titre de référence. Toutes les marques appartiennent à leurs propriétaires.",
   },
@@ -208,8 +207,6 @@ export const MANUFACTURING_EXAMPLES = [
     inspiration: "Portée chaque jour. Jugée pour toujours.",
     description:
       "Cuir pleine fleur. Quincaillerie selon vos cahiers des charges. Coupe, couture et finition en série, sans perdre la main.",
-    image: MANUFACTURING_IMAGES.belts.main,
-    macro: MANUFACTURING_IMAGES.belts.macro,
     specs: ["Cuir pleine fleur", "Quincaillerie", "Collections sur mesure"],
   },
   {
@@ -220,8 +217,6 @@ export const MANUFACTURING_EXAMPLES = [
     inspiration: "Protéger avec présence.",
     description:
       "Pochettes et étuis calqués au millimètre. Grain choisi. Bords travaillés. Pour les instruments qui n'admettent aucun jeu.",
-    image: MANUFACTURING_IMAGES.optics.main,
-    macro: MANUFACTURING_IMAGES.optics.macro,
     specs: ["Ajustement exact", "Protection", "Finition de marque"],
   },
   {
@@ -232,8 +227,6 @@ export const MANUFACTURING_EXAMPLES = [
     inspiration: "Des pièces qui tiennent leur rang.",
     description:
       "Sangles, pans, montages complets, le cuir traité avec la même rigueur, qu'il s'agisse d'une pièce ou de dix mille.",
-    image: MANUFACTURING_IMAGES.carry.main,
-    macro: MANUFACTURING_IMAGES.carry.macro,
     specs: ["Composants & montage", "Choix des matières", "Production en volume"],
   },
 ] as const;
@@ -371,11 +364,6 @@ export const COLLABORATIONS = [
   },
 ] as const;
 
-export const SIGNATURE_COPY = {
-  line1: "La machine répète.",
-  line2: "La main décide.",
-} as const;
-
 export const PHILOSOPHY = {
   headline: "La confiance se construit lentement.",
   body: "Nous travaillons avec peu de partenaires, longtemps. Le cuir s'affine avec la relation.",
@@ -415,6 +403,9 @@ export const FORM_COPY = {
   filesHint: "PDF, AI, EPS, PNG, JPG, ZIP (25 Mo max)",
   submit: "Envoyer",
   privacy: "Traité en toute confidentialité.",
+  submitting: "Envoi en cours…",
+  errorSubmit:
+    "L'envoi a échoué. Réessayez ou écrivez-nous directement à axunt@aol.com.",
   placeholders: {
     name: "Votre nom",
     company: "Nom de la maison",

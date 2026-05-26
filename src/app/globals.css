@@ -1621,6 +1621,33 @@
     line-height: 0.98;
   }
 
+  /* ——— Mur de marques ——— */
+  .partner-wall {
+    border-top: 1px solid rgba(245, 242, 235, 0.06);
+  }
+
+  .partner-wall-header .heading-md {
+    font-weight: 200;
+    line-height: 1.2;
+    letter-spacing: 0.015em;
+  }
+
+  .partner-logo-mark img {
+    filter: brightness(0) invert(93%);
+    opacity: 0.65;
+    transition: opacity 1.5s var(--ease-premium);
+  }
+
+  .partner-logo-cell:hover .partner-logo-mark img {
+    opacity: 0.82;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .partner-logo-mark img {
+      transition: none;
+    }
+  }
+
   /* Ponts entre phases */
   .film-bridge {
     position: relative;

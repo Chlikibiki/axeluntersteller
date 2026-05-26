@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { FORM_COPY } from "@/lib/constants";
+import { FORM_COPY, SITE } from "@/lib/constants";
 import { PremiumButtonSubmit } from "@/components/shared/PremiumButton";
 
 interface InquiryFormProps {
@@ -17,11 +17,46 @@ export function InquiryForm({
   showFileUpload = true,
 }: InquiryFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const copy = FORM_COPY;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError(null);
+    setSubmitting(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          company: data.get("company"),
+          email: data.get("email"),
+          phone: data.get("phone"),
+          inquiryType: data.get("inquiryType"),
+          message: data.get("message"),
+        }),
+      });
+
+      if (!response.ok) {
+        const body = (await response.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        throw new Error(body?.error ?? "send_failed");
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch {
+      setError(copy.errorSubmit);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -48,6 +83,7 @@ export function InquiryForm({
             id="name"
             name="name"
             required
+            disabled={submitting}
             placeholder={copy.placeholders.name}
           />
         </div>
@@ -57,6 +93,7 @@ export function InquiryForm({
             id="company"
             name="company"
             required
+            disabled={submitting}
             placeholder={copy.placeholders.company}
           />
         </div>
@@ -67,6 +104,7 @@ export function InquiryForm({
             name="email"
             type="email"
             required
+            disabled={submitting}
             placeholder={copy.placeholders.email}
           />
         </div>
@@ -76,6 +114,7 @@ export function InquiryForm({
             id="phone"
             name="phone"
             type="tel"
+            disabled={submitting}
             placeholder={copy.placeholders.phone}
           />
         </div>
@@ -87,6 +126,7 @@ export function InquiryForm({
           <select
             id="inquiry-type"
             name="inquiryType"
+            disabled={submitting}
             className="flex h-12 w-full border border-starlight-border bg-transparent px-4 text-sm text-starlight-cream outline-none focus-visible:border-starlight-leather"
             defaultValue="production"
           >
@@ -106,6 +146,7 @@ export function InquiryForm({
           id="message"
           name="message"
           required
+          disabled={submitting}
           placeholder={copy.placeholders.message}
         />
       </div>
@@ -118,14 +159,33 @@ export function InquiryForm({
             name="files"
             type="file"
             multiple
+            disabled={submitting}
             accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.zip"
-            className="mt-2 w-full text-sm text-starlight-metal file:mr-4 file:border-0 file:bg-starlight-leather file:px-4 file:py-2 file:text-xs file:font-medium file:uppercase file:tracking-wider file:text-starlight-cream"
+            className="mt-2 w-full text-sm text-starlight-metal file:mr-4 file:border-0 file:bg-starlight-leather file:px-4 file:py-2 file:text-xs file:font-medium file:uppercase file:tracking-wider file:text-starlight-cream disabled:opacity-50"
           />
           <p className="type-readable mt-2">{copy.filesHint}</p>
+          <p className="type-readable mt-1">
+            Pour les pièces jointes lourdes, écrivez à{" "}
+            <a
+              href={`mailto:${SITE.email}`}
+              className="link-premium text-starlight-cream/85"
+            >
+              {SITE.email}
+            </a>
+            .
+          </p>
         </div>
       )}
 
-      <PremiumButtonSubmit>{copy.submit}</PremiumButtonSubmit>
+      {error ? (
+        <p className="type-readable text-starlight-cream/80" role="alert">
+          {error}
+        </p>
+      ) : null}
+
+      <PremiumButtonSubmit disabled={submitting}>
+        {submitting ? copy.submitting : copy.submit}
+      </PremiumButtonSubmit>
 
       <p className="type-readable">{copy.privacy}</p>
     </form>
