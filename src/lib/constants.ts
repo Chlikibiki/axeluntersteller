@@ -52,7 +52,6 @@ export const HERO_COPY = {
     { label: "01", text: "Sangle · Quincaillerie" },
     { label: "02", text: "Peau · Sélection" },
   ],
-  scroll: "Défiler",
 } as const;
 
 export const SECTION_COPY = {

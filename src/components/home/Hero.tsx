@@ -115,11 +115,10 @@ export function Hero() {
 
       <a
         href="#trust"
-        className="hero-scroll absolute bottom-12 left-6 z-20 flex flex-col items-start gap-3 opacity-0 md:left-12 lg:left-16"
+        className="hero-scroll absolute bottom-12 left-6 z-20 opacity-0 md:left-12 lg:left-16"
         aria-label={UI.aria.scroll}
       >
-        <span className="label-caps">{HERO_COPY.scroll}</span>
-        <span className="relative h-12 w-px bg-starlight-border/80">
+        <span className="relative block h-12 w-px bg-starlight-border/80">
           <span className="absolute top-0 left-0 h-4 w-full animate-[hero-scroll_2s_ease-in-out_infinite] bg-starlight-cream" />
         </span>
       </a>

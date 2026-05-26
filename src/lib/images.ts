@@ -31,7 +31,7 @@ export const LOGO = {
     minox: `${partners}/minox.svg`,
     fossil: `${partners}/fossil.svg`,
     hauerGolf: `${partners}/hauer-golf.svg`,
-    procterGamble: `${partners}/procter-gamble.svg`,
+    procterGamble: `${partners}/procter-gamble.png`,
     freitag: `${partners}/freitag.jpg`,
     brax: `${partners}/brax.svg`,
     cinque: `${partners}/cinque.svg`,
@@ -59,7 +59,6 @@ export const PARTNER_LOGOS = [
     name: "Procter & Gamble",
     src: LOGO.partners.procterGamble,
     wide: true,
-    invert: true,
   },
   {
     id: "freitag",
