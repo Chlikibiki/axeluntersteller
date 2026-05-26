@@ -39,7 +39,7 @@ export function Header() {
         )}
       >
         <div className="section-padding flex items-center justify-between">
-          <Logo size="md" priority />
+          <Logo size="md" priority variant="header" />
 
           <nav
             className="hidden items-center gap-10 lg:flex"

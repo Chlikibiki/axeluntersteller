@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 const gridReveal = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.05, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.045, delayChildren: 0.18 },
   },
 };
 
@@ -34,14 +34,14 @@ export function PartnerTrust() {
     <section
       id="partners"
       className={cn(
-        "partner-wall partner-wall-compact film-section relative bg-black",
+        "partner-wall film-section relative bg-black",
         filmRhythmClass("silence"),
         "film-personality-rarete"
       )}
       {...filmSectionAttrs("partners")}
       aria-labelledby="partners-heading"
     >
-      <div className="section-padding relative py-12 md:py-16 lg:py-20">
+      <div className="section-padding relative py-14 md:py-20 lg:py-24">
         <Reveal pace="silence" className="partner-wall-header mx-auto max-w-xl text-center">
           <h2
             id="partners-heading"
@@ -55,7 +55,7 @@ export function PartnerTrust() {
         </Reveal>
 
         <motion.ul
-          className="partner-wall-grid mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 sm:gap-y-12 md:mt-12 md:grid-cols-3 md:gap-x-10 md:gap-y-14 lg:grid-cols-5 lg:gap-x-8 lg:gap-y-12"
+          className="partner-wall-grid mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-x-10 gap-y-14 sm:gap-x-12 sm:gap-y-16 md:mt-16 md:grid-cols-3 md:gap-x-14 md:gap-y-20 lg:grid-cols-5 lg:gap-x-12 lg:gap-y-[4.5rem]"
           role="list"
           initial="hidden"
           whileInView="visible"
@@ -66,12 +66,13 @@ export function PartnerTrust() {
             <motion.li
               key={partner.id}
               variants={itemReveal}
-              className="flex items-center justify-center"
+              className="flex items-center justify-center px-2 sm:px-3"
             >
               <PartnerLogo
                 src={partner.src}
                 name={partner.name}
                 scale={partner.scale}
+                maxWidth={partner.maxWidth}
               />
             </motion.li>
           ))}

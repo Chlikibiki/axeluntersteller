@@ -16,6 +16,8 @@ interface LogoProps {
   className?: string;
   linked?: boolean;
   priority?: boolean;
+  /** Logo dédié au header uniquement */
+  variant?: "default" | "header";
 }
 
 export function Logo({
@@ -23,10 +25,11 @@ export function Logo({
   className,
   linked = true,
   priority = false,
+  variant = "default",
 }: LogoProps) {
   const image = (
     <Image
-      src={LOGO.starlight}
+      src={variant === "header" ? LOGO.starlightHeader : LOGO.starlight}
       alt={`${SITE.legalName}, depuis ${SITE.established}`}
       width={720}
       height={320}

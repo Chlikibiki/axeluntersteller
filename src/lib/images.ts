@@ -29,6 +29,7 @@ export const LOCAL = {
 
 export const LOGO = {
   starlight: "/images/logo/starlight-logo.png",
+  starlightHeader: "/images/logo/Logo_starlight.png",
   boss: "/images/logo/boss.png",
   leica: "/images/logo/Leica_Camera_logo.png",
   freitag: "/images/logo/freitag_logo-01.jpg",

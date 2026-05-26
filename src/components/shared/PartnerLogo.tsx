@@ -7,31 +7,41 @@ interface PartnerLogoProps {
   name: string;
   /** Ajustement du poids optique (1 = référence) */
   scale?: number;
+  /** Largeur max individuelle (rem) */
+  maxWidth?: number;
   className?: string;
 }
 
 /**
- * Marque partenaire — monochrome, poids optique harmonisé.
- * Utilisé uniquement dans le mur premium PartnerTrust.
+ * Marque partenaire — monochrome argent doux, poids optique harmonisé.
  */
-export function PartnerLogo({ src, name, scale = 1, className }: PartnerLogoProps) {
+export function PartnerLogo({
+  src,
+  name,
+  scale = 1,
+  maxWidth = 6.5,
+  className,
+}: PartnerLogoProps) {
   return (
     <div
       className={cn(
-        "partner-logo-cell group flex h-12 w-full items-center justify-center sm:h-[3.25rem] md:h-14",
+        "partner-logo-cell group flex h-14 w-full items-center justify-center sm:h-[3.75rem] md:h-16 lg:h-[4.25rem]",
         className
       )}
     >
       <div
-        className="partner-logo-mark relative h-full w-full max-w-[8.75rem] sm:max-w-[9.25rem] md:max-w-[9.75rem]"
-        style={{ transform: `scale(${scale})` }}
+        className="partner-logo-mark relative h-full w-full"
+        style={{
+          maxWidth: `${maxWidth}rem`,
+          ["--logo-scale" as string]: scale,
+        }}
       >
         <Image
           src={src}
           alt={UI.images.partnerLogo(name)}
           fill
           className="object-contain object-center"
-          sizes="(max-width: 768px) 40vw, 156px"
+          sizes="(max-width: 768px) 42vw, 168px"
           unoptimized={src.endsWith(".svg")}
         />
       </div>
