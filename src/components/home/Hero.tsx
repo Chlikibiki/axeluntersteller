@@ -210,7 +210,7 @@ export function Hero() {
             ))}
           </h1>
 
-          <p className="hero-manifesto body-lead prose-measure mt-7 opacity-0 md:mt-10">
+          <p className="hero-manifesto body-lead mt-7 opacity-0 md:mt-10">
             {HERO_COPY.manifesto}
           </p>
 

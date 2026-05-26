@@ -6,7 +6,7 @@ import { LOGO } from "@/lib/images";
 
 const sizeClasses = {
   sm: "h-8 w-auto max-w-[140px] md:max-w-[160px]",
-  md: "h-14 w-auto max-w-[240px] md:h-16 md:max-w-[300px]",
+  md: "h-16 w-auto max-w-[280px] md:h-[4.75rem] md:max-w-[380px]",
   lg: "h-28 w-auto max-w-[280px] md:h-36 md:max-w-[360px]",
   xl: "h-32 w-auto max-w-[300px] md:h-40 md:max-w-[380px]",
 } as const;

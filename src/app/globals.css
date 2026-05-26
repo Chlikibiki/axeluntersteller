@@ -622,6 +622,17 @@
     color: inherit;
   }
 
+  .hero-manifesto {
+    max-width: 22rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-manifesto {
+      max-width: none;
+      white-space: nowrap;
+    }
+  }
+
   /* ——— Interactions premium ——— */
   .premium-btn {
     position: relative;
