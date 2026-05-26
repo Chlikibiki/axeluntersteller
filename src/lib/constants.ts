@@ -58,7 +58,10 @@ export const SECTION_COPY = {
   trust: {
     label: "Héritage",
     title: "Créateurs d'excellence",
-    body: "Depuis 1987, nos artisans perpétuent un savoir-faire cuir européen au service des maisons internationales les plus exigeantes. Chaque peau est choisie pour sa noblesse, chaque pièce façonnée avec une précision de finition qui se lit au toucher. Du prototype à la série, nous réalisons sangles de précision, maroquinerie d'objets et gainages techniques avec la même constance, dans nos ateliers d'Allemagne et de Tunisie.",
+    body: [
+      "Depuis 1987, nos artisans perpétuent un savoir-faire cuir européen au service des maisons internationales les plus exigeantes. Chaque peau est choisie pour sa noblesse, chaque pièce façonnée avec une précision de finition qui se lit au toucher. Du prototype à la série, nous réalisons sangles de précision, maroquinerie d'objets et gainages techniques avec la même exigence de constance, dans nos ateliers d'Allemagne et de Tunisie.",
+      "Nos infrastructures couvrent plus de 5 000 m² dédiés à la fabrication, au contrôle qualité et au stockage, afin de garantir réactivité, maîtrise des volumes et excellence d'exécution à chaque étape de production.",
+    ],
     tags: ["Atelier allemand", "Sur mesure", "Maisons internationales"],
   },
   production: {

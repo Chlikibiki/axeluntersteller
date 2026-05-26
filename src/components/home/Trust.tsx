@@ -65,7 +65,13 @@ export function Trust() {
         >
           {SECTION_COPY.trust.title}
         </h2>
-        <p className="body-large mt-8 max-w-xl">{SECTION_COPY.trust.body}</p>
+        <div className="mt-8 max-w-xl space-y-6">
+          {SECTION_COPY.trust.body.map((paragraph, index) => (
+            <p key={index} className="body-large">
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </Reveal>
 
       <div className="mt-20 grid grid-cols-2 gap-12 border-t border-starlight-border pt-16 sm:grid-cols-3 md:mt-28 lg:grid-cols-5 md:gap-8 md:pt-20">
