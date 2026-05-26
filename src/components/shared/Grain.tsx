@@ -1,4 +1,4 @@
-/** Vignette photographique légère — pas de grain digital */
+/** Vignette photographique légère, pas de grain digital */
 export function Grain({ className }: { className?: string }) {
   return (
     <div

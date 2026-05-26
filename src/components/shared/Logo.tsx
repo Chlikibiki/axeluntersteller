@@ -27,7 +27,7 @@ export function Logo({
   const image = (
     <Image
       src={LOGO.starlight}
-      alt={`${SITE.legalName} — Depuis ${SITE.established}`}
+      alt={`${SITE.legalName}, depuis ${SITE.established}`}
       width={720}
       height={320}
       priority={priority}
@@ -48,7 +48,7 @@ export function Logo({
     <Link
       href="/"
       className="inline-block shrink-0"
-      aria-label={`${SITE.name} — Accueil`}
+      aria-label={`${SITE.name}, accueil`}
     >
       {image}
     </Link>

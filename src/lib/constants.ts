@@ -11,7 +11,7 @@ import {
 
 export const SITE = {
   name: "ST★RLIGHT",
-  legalName: "Starlight — Manufacture de cuir",
+  legalName: "Starlight, Manufacture de cuir",
   tagline: "Manufacture de cuir · Europe · Depuis 1987",
   established: 1987,
   email: "projects@starlight-leather.com",
@@ -58,13 +58,13 @@ export const SECTION_COPY = {
   trust: {
     label: "Héritage",
     title: "Créateurs d'excellence",
-    body: "Nos experts sont artisans du cuir et garants d'un savoir-faire européen forgé depuis 1987. Chaque peau est sélectionnée, chaque pièce façonnée à la main pour les maisons internationales qui exigent précision, constance et finition irréprochable — du prototype à la série, en Allemagne comme en Tunisie.",
+    body: "Nos experts sont artisans du cuir et garants d'un savoir-faire européen forgé depuis 1987. Chaque peau est sélectionnée, chaque pièce façonnée à la main pour les maisons internationales qui exigent précision, constance et finition irréprochable : du prototype à la série, en Allemagne comme en Tunisie.",
     tags: ["Atelier allemand", "Sur mesure", "Maisons internationales"],
   },
   production: {
     label: "Réalisations",
     title: "Fabriqué ici. Porté ailleurs.",
-    body: "Ce qui quitte notre atelier — conçu pour les marques, jamais pour l'étalage.",
+    body: "Ce qui quitte notre atelier est conçu pour les marques, jamais pour l'étalage.",
     tag: "Référence atelier",
     cta: "Nous écrire",
   },
@@ -75,7 +75,7 @@ export const SECTION_COPY = {
   capabilities: {
     label: "Savoir-faire",
     title: "Cinq disciplines. Une exigence.",
-    body: "Du premier prototype à la série — toujours à la main, toujours à la mesure.",
+    body: "Du premier prototype à la série, toujours à la main, toujours à la mesure.",
     tag: "Production atelier",
   },
   craft: {
@@ -96,7 +96,7 @@ export const SECTION_COPY = {
   collaborations: {
     label: "Alliances",
     title: "Des partenaires choisis. Un travail durable.",
-    body: "Des liens qui se mesurent en années — bâtis sur une fiabilité discrète.",
+    body: "Des liens qui se mesurent en années, bâtis sur une fiabilité discrète.",
     disclaimer:
       "Noms cités à titre de référence. Toutes les marques appartiennent à leurs propriétaires.",
   },
@@ -152,22 +152,22 @@ export const UI = {
   },
   contact: {
     pageTitle: "Contact",
-    mapTitle: "Atelier Starlight — Offenbach am Main, Allemagne",
+    mapTitle: "Atelier Starlight, Offenbach am Main, Allemagne",
     heroAlt: "Découpe d'une peau dans l'atelier Starlight",
     since: "Depuis",
   },
   images: {
     heroPrimary:
-      "Couture en gros plan sur cuir pleine fleur — atelier Starlight",
+      "Couture en gros plan sur cuir pleine fleur, atelier Starlight",
     belt: "Fabrication de ceinture en cuir",
     leatherTexture: "Grain du cuir en lumière rasante",
-    workshop: "Atelier de maroquinerie — cuir et fabrication Starlight",
+    workshop: "Atelier de maroquinerie, cuir et fabrication Starlight",
     manufacturing: (title: string) =>
-      `${title} — réalisation atelier Starlight`,
+      `${title}, réalisation atelier Starlight`,
     manufacturingDetail: (category: string) =>
-      `${category} — détail du cuir`,
-    craft: (title: string) => `${title} — atelier Starlight`,
-    capability: (title: string) => `${title} — savoir-faire Starlight`,
+      `${category}, détail du cuir`,
+    craft: (title: string) => `${title}, atelier Starlight`,
+    capability: (title: string) => `${title}, savoir-faire Starlight`,
     partnerLogo: (name: string) => `Logo ${name}`,
   },
 } as const;
@@ -181,10 +181,11 @@ export const NAV_LINKS = [
 ] as const;
 
 export const TRUST_METRICS = [
-  { value: "1987", label: "Fondation", suffix: "" },
   { value: "40", label: "Années", suffix: "+" },
-  { value: "50", label: "Partenaires", suffix: "+" },
-  { value: "100", label: "Fabriqué en Europe", suffix: "%" },
+  { value: "150", label: "Employés", suffix: "" },
+  { value: "3", label: "Sites", suffix: "" },
+  { value: "10", label: "Marques", suffix: "" },
+  { value: "100", label: "Fabriqué en Tunisie", suffix: "%" },
 ] as const;
 
 export const MANUFACTURING_EXAMPLES = [
@@ -195,7 +196,7 @@ export const MANUFACTURING_EXAMPLES = [
     title: "La sangle",
     inspiration: "Portée chaque jour. Jugée pour toujours.",
     description:
-      "Cuir pleine fleur. Quincaillerie selon vos cahiers des charges. Coupe, couture et finition en série — sans perdre la main.",
+      "Cuir pleine fleur. Quincaillerie selon vos cahiers des charges. Coupe, couture et finition en série, sans perdre la main.",
     image: MANUFACTURING_IMAGES.belts.main,
     macro: MANUFACTURING_IMAGES.belts.macro,
     specs: ["Cuir pleine fleur", "Quincaillerie", "Collections sur mesure"],
@@ -219,7 +220,7 @@ export const MANUFACTURING_EXAMPLES = [
     title: "L'assemblage",
     inspiration: "Des pièces qui tiennent leur rang.",
     description:
-      "Sangles, pans, montages complets — le cuir traité avec la même rigueur, qu'il s'agisse d'une pièce ou de dix mille.",
+      "Sangles, pans, montages complets, le cuir traité avec la même rigueur, qu'il s'agisse d'une pièce ou de dix mille.",
     image: MANUFACTURING_IMAGES.carry.main,
     macro: MANUFACTURING_IMAGES.carry.macro,
     specs: ["Composants & montage", "Choix des matières", "Production en volume"],
@@ -234,7 +235,7 @@ export const CAPABILITIES = [
     title: "Ceintures",
     subtitle: "Cœur de métier",
     description:
-      "Sangles et boucles selon votre ligne — cuir choisi, cotes tenues, série après série.",
+      "Sangles et boucles selon votre ligne, cuir choisi, cotes tenues, série après série.",
     image: CAPABILITY_IMAGES.belts,
   },
   {
@@ -258,7 +259,7 @@ export const CAPABILITIES = [
     title: "Petite maroquinerie",
     subtitle: "Marque blanche",
     description:
-      "Portefeuilles, porte-cartes, pièces clés — petites par la taille, absolues par l'exigence.",
+      "Portefeuilles, porte-cartes, pièces clés, petites par la taille, absolues par l'exigence.",
     image: CAPABILITY_IMAGES.goods,
   },
   {
@@ -266,7 +267,7 @@ export const CAPABILITIES = [
     title: "Accessoires",
     subtitle: "Sur mesure",
     description:
-      "Pièces pour bagagerie, optique et transport — dessinées, jamais devinées.",
+      "Pièces pour bagagerie, optique et transport, dessinées, jamais devinées.",
     image: CAPABILITY_IMAGES.accessories,
   },
 ] as const;
@@ -285,7 +286,7 @@ export const CRAFT_STEPS = [
   {
     title: "La finition",
     description:
-      "Bords brunis. Quincaillerie posée. Puis seulement — elle part.",
+      "Bords brunis. Quincaillerie posée. Puis seulement, elle part.",
     image: CRAFT_IMAGES.finishing,
   },
 ] as const;
@@ -304,7 +305,7 @@ export const PROCESS_STEPS = [
   {
     step: "03",
     title: "Fabrication",
-    description: "La série — même main, même regard.",
+    description: "La série : même main, même regard.",
   },
   {
     step: "04",
@@ -331,21 +332,21 @@ export const COLLABORATIONS = [
   {
     name: "BOSS",
     logo: LOGO.boss,
-    context: "Ceintures — sangle, boucle, répétabilité en série.",
+    context: "Ceintures : sangle, boucle, répétabilité en série.",
     detail: "Ceintures · Quincaillerie · Volume",
   },
   {
     name: "Leica",
     logo: LOGO.leica,
     context:
-      "Étuis et protections pour l'optique de précision — ajustement, grain, finition.",
+      "Étuis et protections pour l'optique de précision : ajustement, grain, finition.",
     detail: "Étuis · Ajustement · Finition",
   },
   {
     name: "Freitag",
     logo: LOGO.freitag,
     context:
-      "Composants cuir pour la maroquinerie — exigence matière, profondeur de fabrication.",
+      "Composants cuir pour la maroquinerie : exigence matière, profondeur de fabrication.",
     detail: "Composants · Matières · Volume",
   },
 ] as const;
@@ -358,7 +359,7 @@ export const PHILOSOPHY = {
 export const TESTIMONIALS = [
   {
     quote:
-      "Série après série — le même cuir, la même couture, la même mesure. C'est pour cela que nous restons.",
+      "Série après série, le même cuir, la même couture, la même mesure. C'est pour cela que nous restons.",
     role: "Direction produit",
     industry: "Mode",
   },
@@ -386,7 +387,7 @@ export const FORM_COPY = {
   inquiryType: "Objet",
   message: "Message",
   files: "Pièces jointes",
-  filesHint: "PDF, AI, EPS, PNG, JPG, ZIP — 25 Mo max",
+  filesHint: "PDF, AI, EPS, PNG, JPG, ZIP (25 Mo max)",
   submit: "Envoyer",
   privacy: "Traité en toute confidentialité.",
   placeholders: {
@@ -405,7 +406,7 @@ export const FORM_COPY = {
 } as const;
 
 export const META_DESCRIPTION =
-  "Manufacture de cuir allemande depuis 1987. Ceintures, pochettes et accessoires pour les maisons internationales — ateliers en Allemagne et en Tunisie." as const;
+  "Manufacture de cuir allemande depuis 1987. Ceintures, pochettes et accessoires pour les maisons internationales. Ateliers en Allemagne et en Tunisie." as const;
 
 export const SEO_KEYWORDS = [
   "fabricant cuir allemagne",

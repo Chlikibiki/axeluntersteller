@@ -1,5 +1,5 @@
 /**
- * Photographies locales — /public/images
+ * Photographies locales (/public/images)
  */
 
 const base = "/images";

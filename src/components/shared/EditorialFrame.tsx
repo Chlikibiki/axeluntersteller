@@ -8,7 +8,7 @@ interface EditorialFrameProps {
   accent?: boolean;
 }
 
-/** Cadre éditorial — bordure fine, lueur cuir, finition lumière */
+/** Cadre éditorial : bordure fine, lueur cuir, finition lumière */
 export function EditorialFrame({
   children,
   className,
