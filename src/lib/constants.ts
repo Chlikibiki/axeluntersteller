@@ -198,37 +198,17 @@ export const TRUST_METRICS = [
   { value: "100", label: "Fabriqué en Tunisie", suffix: "%" },
 ] as const;
 
-export const MANUFACTURING_EXAMPLES = [
+export const PRODUCTION_PROCESS = [
+  { step: "01", title: "Brief client" },
+  { step: "02", title: "Conception design en Allemagne" },
+  { step: "03", title: "Création de prototype" },
   {
-    id: "belts",
-    category: "Ceintures",
-    reference: "Maisons de mode",
-    title: "La sangle",
-    inspiration: "Portée chaque jour. Jugée pour toujours.",
-    description:
-      "Cuir pleine fleur. Quincaillerie selon vos cahiers des charges. Coupe, couture et finition en série, sans perdre la main.",
-    specs: ["Cuir pleine fleur", "Quincaillerie", "Collections sur mesure"],
+    step: "04",
+    title: "Création série jusqu'à 10 000 pièces par semaine",
   },
-  {
-    id: "optics",
-    category: "Cuir technique",
-    reference: "Maisons de précision",
-    title: "L'étui",
-    inspiration: "Protéger avec présence.",
-    description:
-      "Pochettes et étuis calqués au millimètre. Grain choisi. Bords travaillés. Pour les instruments qui n'admettent aucun jeu.",
-    specs: ["Ajustement exact", "Protection", "Finition de marque"],
-  },
-  {
-    id: "carry",
-    category: "Maroquinerie",
-    reference: "Maisons contemporaines",
-    title: "L'assemblage",
-    inspiration: "Des pièces qui tiennent leur rang.",
-    description:
-      "Sangles, pans, montages complets, le cuir traité avec la même rigueur, qu'il s'agisse d'une pièce ou de dix mille.",
-    specs: ["Composants & montage", "Choix des matières", "Production en volume"],
-  },
+  { step: "05", title: "Assemblage" },
+  { step: "06", title: "Envoi" },
+  { step: "07", title: "Réception sous 15 jours" },
 ] as const;
 
 export const MACRO_GALLERY = [...MACRO_GALLERY_IMAGES];

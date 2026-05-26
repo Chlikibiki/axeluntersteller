@@ -1,9 +1,8 @@
 "use client";
 
-import { MANUFACTURING_EXAMPLES, SECTION_COPY } from "@/lib/constants";
+import { PRODUCTION_PROCESS, SECTION_COPY } from "@/lib/constants";
 import { filmRhythmClass, filmSectionAttrs } from "@/lib/film-narrative";
 import { FilmChapter } from "@/components/film";
-import { PremiumButton } from "@/components/shared/PremiumButton";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/shared/Reveal";
 import { Atmosphere } from "@/components/shared/Atmosphere";
@@ -38,41 +37,23 @@ export function ManufacturingExamples() {
           </p>
         </Reveal>
 
-        <div className="mt-14 border-t border-starlight-border/50 md:mt-20">
-          {MANUFACTURING_EXAMPLES.map((example, index) => (
-            <article
-              key={example.id}
-              id={example.id === "belts" ? "belts" : undefined}
-              className={cn(
-                "border-b border-starlight-border/50 py-10 md:py-14",
-                index === 0 && "pt-10 md:pt-14"
-              )}
+        <ol
+          className="mt-14 border-t border-starlight-border/50 md:mt-20"
+          data-cine-stagger
+        >
+          {PRODUCTION_PROCESS.map((item) => (
+            <li
+              key={item.step}
+              data-cine-stagger-item
+              className="grid grid-cols-[2.5rem_1fr] gap-x-4 border-b border-starlight-border/50 py-7 opacity-0 md:grid-cols-12 md:items-center md:gap-6 md:py-10"
             >
-              <Reveal pace="slow">
-                <span className="type-index">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="label-caps mt-4">{example.category}</p>
-                <h3 className="heading-md mt-3 text-starlight-cream md:mt-5">
-                  {example.title}
-                </h3>
-                <p className="body-editorial mt-2 max-w-lg text-starlight-metal/90 italic">
-                  {example.inspiration}
-                </p>
-                <p className="body-premium mt-5 max-w-xl md:body-large md:mt-6">
-                  {example.description}
-                </p>
-                <PremiumButton
-                  href="/contact"
-                  variant="ghost"
-                  className="mt-8 !px-0 md:mt-10"
-                >
-                  {SECTION_COPY.production.cta}
-                </PremiumButton>
-              </Reveal>
-            </article>
+              <span className="type-index md:col-span-2">{item.step}</span>
+              <p className="heading-md text-starlight-cream md:col-span-10">
+                {item.title}
+              </p>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

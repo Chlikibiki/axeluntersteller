@@ -6,7 +6,7 @@ import { SectionShell } from "@/components/shared/SectionShell";
 import { Grain } from "@/components/shared/Grain";
 import { CineMedia } from "@/components/motion/CineMedia";
 
-const CAPABILITY_WITH_IMAGE = new Set(["belts", "pouches", "straps"]);
+const CAPABILITY_WITH_IMAGE = new Set(["belts", "pouches", "straps", "accessories"]);
 
 export function Capabilities() {
   return (
@@ -57,20 +57,38 @@ export function Capabilities() {
                   sizes="100vw"
                 />
                 <Grain />
+
+                <div className="pointer-events-none absolute inset-0">
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-6">
+                    <span className="type-index block text-starlight-cream/70">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="heading-md mt-3 text-starlight-cream">
+                      {cap.title}
+                    </h3>
+                    <p className="body-premium mt-3 max-w-sm text-starlight-cream/86">
+                      {cap.description}
+                    </p>
+                  </div>
+                </div>
               </CineMedia>
             ) : null}
 
-            <div className="grid grid-cols-[3rem_1fr] gap-x-4 gap-y-1 py-7 md:grid-cols-12 md:items-baseline md:gap-6 md:py-14">
-              <span className="type-index md:col-span-2">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div className="md:col-span-10">
-                <h3 className="heading-md text-starlight-cream">
-                  {cap.title}
-                </h3>
-                <p className="body-premium mt-2 md:mt-3">{cap.description}</p>
+            {!CAPABILITY_WITH_IMAGE.has(cap.id) ? (
+              <div className="grid grid-cols-[3rem_1fr] gap-x-4 gap-y-1 py-7 md:grid-cols-12 md:items-baseline md:gap-6 md:py-14">
+                <span className="type-index md:col-span-2">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="md:col-span-10">
+                  <h3 className="heading-md text-starlight-cream">
+                    {cap.title}
+                  </h3>
+                  <p className="body-premium mt-2 md:mt-3">
+                    {cap.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            ) : null}
           </li>
         ))}
       </ul>

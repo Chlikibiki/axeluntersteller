@@ -15,6 +15,7 @@ export const LOCAL = {
   detail: `${base}/details/detail.jpg`,
   pochettes03: `${base}/pochettes/pochettes03.jpg`,
   sanglesAnses: `${base}/sangles/sangles_anses.jpg`,
+  coqTel: `${base}/accessoires/coq_tel.jpg`,
   processCut: `${base}/process/process00.jpg`,
   processStitch: `${base}/process/process01.jpg`,
   processFinish: `${base}/process/process02.jpg`,
@@ -70,7 +71,7 @@ export const CAPABILITY_IMAGES = {
   pouches: LOCAL.pochettes03,
   straps: LOCAL.sanglesAnses,
   goods: LOCAL.processFinish,
-  accessories: LOCAL.processStitch,
+  accessories: LOCAL.coqTel,
 } as const;
 
 export const CRAFT_IMAGES = {
