@@ -214,7 +214,7 @@ export const ATELIER_SCENES = [
     src: LOCAL.workshop,
     alt: IMAGE_ALTS.workshop,
     title: "Atelier principal",
-    caption: "Lumière chaude, organisation rigoureuse, production en série maîtrisée.",
+    caption: "Organisation rigoureuse, production en série maîtrisée.",
   },
   {
     src: LOCAL.processCut,
