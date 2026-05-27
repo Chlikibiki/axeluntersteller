@@ -130,6 +130,8 @@ export const SECTION_COPY = {
     body: "Manufacture de cuir pour les maisons internationales. Depuis 1987.",
     navigation: "Navigation",
     contact: "Contact",
+    contactManager: "Axel Untersteller",
+    contactAddress: "Z.I.7080 Bizerte Tunisie",
     rights: "Tous droits réservés.",
   },
 } as const;

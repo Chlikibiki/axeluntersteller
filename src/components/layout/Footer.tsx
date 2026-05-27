@@ -8,6 +8,24 @@ export function Footer() {
   const year = new Date().getFullYear();
   const { footer: copy } = SECTION_COPY;
 
+  const contactBlock = (
+    <>
+      <p className="label-caps mb-5 text-starlight-muted/85">{copy.contact}</p>
+      <address className="space-y-3 text-sm font-light not-italic leading-[1.7] text-starlight-metal md:text-base">
+        <p>
+          <span className="text-starlight-muted/85">Responsable :</span>
+          <br />
+          <span className="text-starlight-cream/90">{copy.contactManager}</span>
+        </p>
+        <p>
+          <span className="text-starlight-muted/85">Adresse :</span>
+          <br />
+          <span className="text-starlight-cream/90">{copy.contactAddress}</span>
+        </p>
+      </address>
+    </>
+  );
+
   return (
     <footer
       className="film-fin relative overflow-hidden bg-black"
@@ -80,17 +98,7 @@ export function Footer() {
           </nav>
 
           <div className="hidden lg:block film-fin-contact lg:col-span-3">
-            <p className="label-caps mb-5 text-starlight-muted/85">{copy.contact}</p>
-            <address className="space-y-2 text-sm font-light not-italic leading-[1.7] text-starlight-metal">
-              <p>{SITE.address.street}</p>
-              <p>
-                {SITE.address.postal} {SITE.address.city}
-              </p>
-              <p>{SITE.address.country}</p>
-              <p className="mt-4 text-starlight-cream/90">
-                {SITE.email}
-              </p>
-            </address>
+            {contactBlock}
           </div>
 
           {/* Mobile : 2 colonnes Navigation / Contact */}
@@ -111,19 +119,7 @@ export function Footer() {
               </ul>
             </nav>
 
-            <div>
-              <p className="label-caps mb-5 text-starlight-muted/85">{copy.contact}</p>
-              <address className="space-y-2 text-base font-light not-italic leading-[1.7] text-starlight-metal">
-                <p>{SITE.address.street}</p>
-                <p>
-                  {SITE.address.postal} {SITE.address.city}
-                </p>
-                <p>{SITE.address.country}</p>
-                <p className="mt-4 text-starlight-cream/90">
-                  {SITE.email}
-                </p>
-              </address>
-            </div>
+            <div>{contactBlock}</div>
           </div>
         </div>
 
