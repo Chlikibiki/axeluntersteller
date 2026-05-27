@@ -32,9 +32,8 @@ export function FinalCTA() {
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <PremiumButton
-              href={`mailto:${SITE.email}`}
+              href="/contact"
               variant="secondary"
-              external
               className="w-full sm:w-auto"
             >
               <span className="flex items-center justify-center gap-2">

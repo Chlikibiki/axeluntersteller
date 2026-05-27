@@ -87,12 +87,9 @@ export function Footer() {
                 {SITE.address.postal} {SITE.address.city}
               </p>
               <p>{SITE.address.country}</p>
-              <a
-                href={`mailto:${SITE.email}`}
-                className="link-premium mt-4 inline-block text-starlight-cream/90"
-              >
+              <p className="mt-4 text-starlight-cream/90">
                 {SITE.email}
-              </a>
+              </p>
             </address>
           </div>
 
@@ -122,12 +119,9 @@ export function Footer() {
                   {SITE.address.postal} {SITE.address.city}
                 </p>
                 <p>{SITE.address.country}</p>
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="link-premium mt-4 inline-block text-starlight-cream/90"
-                >
+                <p className="mt-4 text-starlight-cream/90">
                   {SITE.email}
-                </a>
+                </p>
               </address>
             </div>
           </div>

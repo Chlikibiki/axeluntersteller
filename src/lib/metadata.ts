@@ -64,7 +64,6 @@ export const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    email: SITE.email,
     telephone: SITE.phone,
     availableLanguage: ["French", "German", "English"],
   },

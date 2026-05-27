@@ -166,12 +166,9 @@ export function InquiryForm({
           <p className="type-readable mt-2">{copy.filesHint}</p>
           <p className="type-readable mt-1">
             Pour les pièces jointes lourdes, écrivez à{" "}
-            <a
-              href={`mailto:${SITE.email}`}
-              className="link-premium text-starlight-cream/85"
-            >
+            <span className="text-starlight-cream/85">
               {SITE.email}
-            </a>
+            </span>
             .
           </p>
         </div>

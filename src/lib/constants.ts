@@ -15,15 +15,15 @@ export const SITE = {
   legalName: "Starlight, Manufacture de cuir",
   tagline: "Manufacture de cuir · Europe · Depuis 1987",
   established: 1987,
-  email: "axunt@aol.com",
+  email: "Z.I.7080 BizerteTunisie - Responsable : Axel Untersteller",
   phone: "+49 123 456 7890",
   whatsapp: "491234567890",
   address: {
-    street: "Industriestraße 12",
-    city: "Offenbach am Main",
-    region: "Hessen",
-    country: "Allemagne",
-    postal: "63065",
+    street: "Z.I.7080",
+    city: "Bizerte",
+    region: "Bizerte",
+    country: "Tunisie",
+    postal: "7080",
   },
   coordinates: { lat: 50.0956, lng: 8.7761 },
 } as const;
@@ -242,6 +242,7 @@ export const TRUST_METRICS = [
   { value: "3", label: "Sites", suffix: "" },
   { value: "10", label: "Marques", suffix: "" },
   { value: "100", label: "Fabriqué en Tunisie", suffix: "%" },
+  { value: "200", label: "Références cuir & finitions", suffix: "+" },
 ] as const;
 
 export const PROCESS_STEPS = [
@@ -399,7 +400,7 @@ export const FORM_COPY = {
   privacy: "Traité en toute confidentialité.",
   submitting: "Envoi en cours…",
   errorSubmit:
-    "L'envoi a échoué. Réessayez ou écrivez-nous directement à axunt@aol.com.",
+    "L'envoi a échoué. Réessayez ou contactez-nous à Z.I.7080 BizerteTunisie - Responsable : Axel Untersteller.",
   placeholders: {
     name: "Votre nom",
     company: "Nom de la maison",

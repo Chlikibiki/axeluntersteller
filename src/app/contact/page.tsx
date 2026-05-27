@@ -70,12 +70,9 @@ export default function ContactPage() {
                   size={18}
                   strokeWidth={1}
                 />
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="body-premium text-starlight-cream hover:text-white"
-                >
+                <p className="body-premium text-starlight-cream">
                   {SITE.email}
-                </a>
+                </p>
               </li>
               <li className="flex gap-4">
                 <Phone
@@ -103,9 +100,8 @@ export default function ContactPage() {
                 </span>
               </PremiumButton>
               <PremiumButton
-                href={`mailto:${SITE.email}`}
+                href="/contact"
                 variant="secondary"
-                external
               >
                 {SECTION_COPY.cta.email}
               </PremiumButton>
