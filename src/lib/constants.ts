@@ -16,6 +16,7 @@ export const SITE = {
   tagline: "Manufacture de cuir · Europe · Depuis 1987",
   established: 1987,
   email: "Z.I.7080 BizerteTunisie - Responsable : Axel Untersteller",
+  inquiryEmail: "axunt@aol.com",
   phone: "+49 123 456 7890",
   address: {
     street: "Z.I.7080",
@@ -398,7 +399,7 @@ export const FORM_COPY = {
   privacy: "Traité en toute confidentialité.",
   submitting: "Envoi en cours…",
   errorSubmit:
-    "L'envoi a échoué. Réessayez ou contactez-nous à Z.I.7080 BizerteTunisie - Responsable : Axel Untersteller.",
+    "L'envoi a échoué. Réessayez ou écrivez-nous directement à axunt@aol.com.",
   placeholders: {
     name: "Votre nom",
     company: "Nom de la maison",

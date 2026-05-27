@@ -2,7 +2,7 @@ import { SITE } from "@/lib/constants";
 
 /** Boîte qui reçoit les messages du formulaire */
 export const CONTACT_INBOX =
-  process.env.CONTACT_TO_EMAIL?.trim() || SITE.email;
+  process.env.CONTACT_TO_EMAIL?.trim() || SITE.inquiryEmail;
 
 export const CONTACT_FROM =
   process.env.CONTACT_FROM_EMAIL?.trim() ||
