@@ -2,9 +2,37 @@ import Image from "next/image";
 import { MATERIALS_GALLERY, SECTION_COPY } from "@/lib/constants";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionShell } from "@/components/shared/SectionShell";
+import { LOCAL } from "@/lib/images";
+import { IMAGE_ALTS } from "@/lib/visual-direction";
 
 export function Materials() {
   const copy = SECTION_COPY.materials;
+
+  const MATERIALS_GALLERY_MOBILE = [
+    { src: LOCAL.leather, alt: IMAGE_ALTS.leatherTexture, label: "Cuir" },
+    { src: LOCAL.detail, alt: IMAGE_ALTS.craft.stitching, label: "Couture" },
+    { src: LOCAL.belt, alt: IMAGE_ALTS.belt, label: "Tranche" },
+    {
+      src: LOCAL.processAnalyseLeathers,
+      alt: IMAGE_ALTS.analyseLeathers,
+      label: "Finition",
+    },
+    {
+      src: LOCAL.heroPhoto,
+      alt: IMAGE_ALTS.heroPrimary,
+      label: "Quincaillerie",
+    },
+    {
+      src: LOCAL.processStitch,
+      alt: IMAGE_ALTS.trustArtisan,
+      label: "Grain",
+    },
+    {
+      src: LOCAL.processFinish,
+      alt: IMAGE_ALTS.craft.finishing,
+      label: "Contrôle",
+    },
+  ] as const;
 
   return (
     <SectionShell
@@ -28,7 +56,43 @@ export function Materials() {
         </p>
       </Reveal>
 
-      <div className="mt-10 grid grid-cols-2 gap-2 md:mt-14 md:grid-cols-3 md:gap-3">
+      {/* Mobile : grille 2 colonnes équilibrée (7 images) */}
+      <div className="mt-10 grid grid-cols-2 gap-2 md:hidden">
+        {MATERIALS_GALLERY_MOBILE.map((item, index) => (
+          <Reveal
+            key={item.src}
+            pace="fade"
+            delay={index * 0.05}
+            className={
+              index === 0
+                ? "col-span-2 row-span-2 aspect-square"
+                : "aspect-square"
+            }
+          >
+            <figure className="group relative h-full w-full overflow-hidden bg-black">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                className="object-cover object-center transition-transform duration-[2s] ease-[var(--ease-premium)] group-hover:scale-[1.03]"
+                sizes="(max-width: 768px) 50vw, 50vw"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 bg-black/20 transition-opacity duration-700 group-hover:bg-black/10"
+                aria-hidden
+              />
+              <figcaption className="absolute bottom-0 left-0 px-4 pb-3">
+                <span className="text-[0.65rem] font-light uppercase tracking-[0.18em] text-starlight-cream/75">
+                  {item.label}
+                </span>
+              </figcaption>
+            </figure>
+          </Reveal>
+        ))}
+      </div>
+
+      {/* Desktop : conserve la grille actuelle */}
+      <div className="mt-10 hidden md:grid md:grid-cols-3 md:gap-3 md:mt-14">
         {MATERIALS_GALLERY.map((item, index) => (
           <Reveal
             key={item.src}

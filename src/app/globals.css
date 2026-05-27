@@ -140,6 +140,39 @@
   --cinema-fade: 1.8s cubic-bezier(0.22, 1, 0.32, 1);
 }
 
+@media (max-width: 767px) {
+  :root {
+    /* Mobile-first : typographie plus lisible (lunettes / fatigue visuelle) */
+    --type-section: clamp(2.75rem, 8.6vw, 4.5rem); /* >= 44px */
+    --type-subsection: clamp(2.1rem, 6.3vw, 3.25rem); /* ~34px min visuel */
+    --type-lead: clamp(1.1875rem, 3.9vw, 1.375rem); /* >= 19px */
+    --type-body-lg: clamp(1.1875rem, 4vw, 1.375rem); /* >= 19px */
+    --type-body: clamp(1.1875rem, 3.6vw, 1.25rem); /* >= 19px */
+    --type-readable: clamp(1.1rem, 3.2vw, 1.25rem); /* pour les labels texte */
+
+    --leading-body: 1.7;
+    --leading-body-tight: 1.58;
+    --leading-readable: 1.6;
+  }
+
+  /* Paragraphe éditorial : contraste renforcé et respiration */
+  .body-editorial,
+  .body-premium {
+    color: rgba(245, 242, 235, 0.9);
+    line-height: 1.7;
+  }
+
+  .type-readable {
+    color: rgba(196, 168, 130, 0.88);
+  }
+
+  /* Mobile : augmenter la taille des blocs utilisant Tailwind `text-sm` */
+  .text-sm {
+    font-size: 1.1875rem !important; /* >= 19px */
+    line-height: 1.7;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -666,6 +699,16 @@
       padding: 1rem 2.5rem;
       font-size: 0.75rem;
       letter-spacing: 0.2em;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .premium-btn {
+      /* Mobile : boutons plus hauts / plus présents */
+      padding: 1rem 1.6rem;
+      font-size: 0.75rem;
+      min-height: 48px;
+      letter-spacing: 0.22em;
     }
   }
 
@@ -1585,6 +1628,18 @@
 
   .film-rhythm-contemplation {
     --film-pad-y: clamp(3rem, 12vh, 7.5rem);
+  }
+
+  @media (max-width: 767px) {
+    /* Mobile : réduction du “vide noir” vertical (sans toucher la DA desktop) */
+    .film-rhythm-silence,
+    .film-rhythm-breath,
+    .film-rhythm-tension,
+    .film-rhythm-crescendo,
+    .film-rhythm-contrast,
+    .film-rhythm-contemplation {
+      --film-pad-y: clamp(2.25rem, 7.5vh, 4.25rem);
+    }
   }
 
   .film-section.section-padding.section-y,

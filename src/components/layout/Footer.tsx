@@ -48,7 +48,8 @@ export function Footer() {
           data-cine-y="20"
           data-cine-start="top 94%"
         >
-          <div className="film-fin-brand lg:col-span-5">
+          {/* Desktop : brand + navigation + contact */}
+          <div className="film-fin-brand hidden lg:block lg:col-span-5">
             <Logo size="lg" />
             <p className="body-editorial prose-measure mt-8 text-starlight-metal/90 md:mt-10">
               {copy.body}
@@ -60,26 +61,25 @@ export function Footer() {
             </div>
           </div>
 
-          <nav
-            className="film-fin-nav lg:col-span-3 lg:col-start-7"
-            aria-label={copy.navigation}
-          >
-            <p className="label-caps mb-5 text-starlight-muted/85">{copy.navigation}</p>
-            <ul className="space-y-3.5">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="link-premium text-sm font-light text-starlight-metal"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <nav className="hidden lg:block">
+            <div className="film-fin-nav lg:col-span-3 lg:col-start-7" aria-label={copy.navigation}>
+              <p className="label-caps mb-5 text-starlight-muted/85">{copy.navigation}</p>
+              <ul className="space-y-3.5">
+                {NAV_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="link-premium text-sm font-light text-starlight-metal"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </nav>
 
-          <div className="film-fin-contact lg:col-span-3">
+          <div className="hidden lg:block film-fin-contact lg:col-span-3">
             <p className="label-caps mb-5 text-starlight-muted/85">{copy.contact}</p>
             <address className="space-y-2 text-sm font-light not-italic leading-[1.7] text-starlight-metal">
               <p>{SITE.address.street}</p>
@@ -95,18 +95,51 @@ export function Footer() {
               </a>
             </address>
           </div>
+
+          {/* Mobile : 2 colonnes Navigation / Contact */}
+          <div className="lg:hidden col-span-12 grid grid-cols-2 gap-x-10 gap-y-10">
+            <nav aria-label={copy.navigation}>
+              <p className="label-caps mb-5 text-starlight-muted/85">{copy.navigation}</p>
+              <ul className="space-y-4">
+                {NAV_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="link-premium text-base font-light text-starlight-metal"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div>
+              <p className="label-caps mb-5 text-starlight-muted/85">{copy.contact}</p>
+              <address className="space-y-2 text-base font-light not-italic leading-[1.7] text-starlight-metal">
+                <p>{SITE.address.street}</p>
+                <p>
+                  {SITE.address.postal} {SITE.address.city}
+                </p>
+                <p>{SITE.address.country}</p>
+                <a
+                  href={`mailto:${SITE.email}`}
+                  className="link-premium mt-4 inline-block text-starlight-cream/90"
+                >
+                  {SITE.email}
+                </a>
+              </address>
+            </div>
+          </div>
         </div>
 
         {/* Générique */}
         <div
-          className="film-fin-credits"
+          className="film-fin-credits text-center"
           data-cine-reveal
           data-cine-y="12"
           data-cine-start="top 96%"
         >
-          <p className="film-fin-mark font-display uppercase">
-            {SITE.name}
-          </p>
           <p className="film-fin-legal mt-4 md:mt-0">
             © {year} {SITE.legalName}. {copy.rights}
           </p>

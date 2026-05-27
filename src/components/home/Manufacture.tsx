@@ -12,6 +12,15 @@ import { SectionShell } from "@/components/shared/SectionShell";
 export function Manufacture() {
   const copy = SECTION_COPY.manufacture;
 
+  const MOBILE_TRUST_METRICS = [
+    { value: 40, label: "ANNÉES", suffix: "+" },
+    { value: 150, label: "EMPLOYÉS", suffix: "" },
+    { value: 3, label: "SITES", suffix: "" },
+    { value: 10, label: "PAYS D’EXPORT", suffix: "+" },
+    { value: 10000, label: "PIÈCES / JOUR", suffix: "+" },
+    { value: 5000, label: "ATELIER & STOCKAGE", suffix: "m²" },
+  ] as const;
+
   return (
     <SectionShell
       id="manufacture"
@@ -79,7 +88,22 @@ export function Manufacture() {
       </div>
 
       <div className="mt-10 border-t border-starlight-border/50 pt-8 md:mt-16 md:pt-12">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-5 md:gap-6">
+        {/* Mobile : grille parfaitement symétrique (3x2) */}
+        <div className="grid grid-cols-3 gap-x-6 gap-y-8 md:hidden">
+          {MOBILE_TRUST_METRICS.map((metric) => (
+            <div key={metric.label} className="text-center">
+              <p className="font-display text-4xl font-extralight tracking-wide text-starlight-cream/92">
+                <CounterMetric value={metric.value} suffix={metric.suffix} />
+              </p>
+              <p className="type-readable mt-2 uppercase tracking-[0.1em]">
+                {metric.label}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop : conserve le layout actuel */}
+        <div className="hidden grid-cols-2 gap-x-6 gap-y-8 md:grid md:grid-cols-5 md:gap-6">
           {TRUST_METRICS.map((metric) => (
             <div key={metric.label} className="text-center md:text-left">
               <p className="font-display text-3xl font-extralight tracking-wide text-starlight-cream/92 md:text-4xl">
