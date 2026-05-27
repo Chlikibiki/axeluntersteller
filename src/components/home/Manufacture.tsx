@@ -88,7 +88,13 @@ export function Manufacture() {
                   suffix={metric.suffix}
                 />
               </p>
-              <p className="type-readable mt-2 uppercase tracking-[0.1em]">
+              <p
+                className={
+                  metric.label === "RÉF. CUIR & FINITIONS"
+                    ? "type-readable mt-2 whitespace-nowrap text-[0.62rem] uppercase tracking-[0.08em] sm:text-[0.65rem] md:text-inherit md:tracking-[0.1em]"
+                    : "type-readable mt-2 uppercase tracking-[0.1em]"
+                }
+              >
                 {metric.label}
               </p>
             </div>

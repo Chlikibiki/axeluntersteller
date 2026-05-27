@@ -1,9 +1,9 @@
-import { SITE, SECTION_COPY } from "@/lib/constants";
+import { SECTION_COPY } from "@/lib/constants";
 import { InquiryForm } from "@/components/shared/InquiryForm";
 import { PremiumButton } from "@/components/shared/PremiumButton";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionShell } from "@/components/shared/SectionShell";
-import { Mail, MessageCircle } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export function FinalCTA() {
   const { cta } = SECTION_COPY;
@@ -30,7 +30,7 @@ export function FinalCTA() {
             {cta.body}
           </p>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <div className="mt-10">
             <PremiumButton
               href="/contact"
               variant="secondary"
@@ -39,17 +39,6 @@ export function FinalCTA() {
               <span className="flex items-center justify-center gap-2">
                 <Mail size={16} strokeWidth={1} />
                 {cta.email}
-              </span>
-            </PremiumButton>
-            <PremiumButton
-              href={`https://wa.me/${SITE.whatsapp}`}
-              variant="ghost"
-              external
-              className="w-full sm:w-auto"
-            >
-              <span className="flex items-center justify-center gap-2">
-                <MessageCircle size={16} strokeWidth={1} />
-                {cta.whatsapp}
               </span>
             </PremiumButton>
           </div>

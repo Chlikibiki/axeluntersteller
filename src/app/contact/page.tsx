@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { SITE, SECTION_COPY, META_DESCRIPTION, UI } from "@/lib/constants";
 import { CONTACT_HERO_IMAGE } from "@/lib/images";
 import { InquiryForm } from "@/components/shared/InquiryForm";
@@ -89,20 +89,8 @@ export default function ContactPage() {
               </li>
             </ul>
 
-            <div className="mt-14 flex flex-col gap-4 sm:flex-row">
-              <PremiumButton
-                href={`https://wa.me/${SITE.whatsapp}`}
-                external
-              >
-                <span className="flex items-center gap-2">
-                  <MessageCircle size={16} strokeWidth={1} />
-                  {SECTION_COPY.cta.whatsapp}
-                </span>
-              </PremiumButton>
-              <PremiumButton
-                href="/contact"
-                variant="secondary"
-              >
+            <div className="mt-14">
+              <PremiumButton href="/contact" variant="secondary">
                 {SECTION_COPY.cta.email}
               </PremiumButton>
             </div>

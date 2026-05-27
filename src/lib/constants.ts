@@ -17,7 +17,6 @@ export const SITE = {
   established: 1987,
   email: "Z.I.7080 BizerteTunisie - Responsable : Axel Untersteller",
   phone: "+49 123 456 7890",
-  whatsapp: "491234567890",
   address: {
     street: "Z.I.7080",
     city: "Bizerte",
@@ -113,7 +112,6 @@ export const SECTION_COPY = {
     guarantee:
       "Nous répondons sous vingt-quatre heures. Les premiers échanges sont sans engagement.",
     email: "Écrire",
-    whatsapp: "WhatsApp",
   },
   contact: {
     label: "Contact",
@@ -242,7 +240,7 @@ export const TRUST_METRICS = [
   { value: "3", label: "Sites", suffix: "" },
   { value: "10", label: "Marques", suffix: "" },
   { value: "100", label: "Fabriqué en Tunisie", suffix: "%" },
-  { value: "200", label: "Références cuir & finitions", suffix: "+" },
+  { value: "200", label: "RÉF. CUIR & FINITIONS", suffix: "+" },
 ] as const;
 
 export const PROCESS_STEPS = [
