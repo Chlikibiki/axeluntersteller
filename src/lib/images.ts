@@ -14,7 +14,7 @@ export const LOCAL = {
   belt: `${base}/belts/belt.jpg`,
   beltCeinture: `${base}/belts/ceinture.jpg`,
   leather: `${base}/leather/leather01.jpg`,
-  workshop: `${base}/workshop/manifacture.jpg`,
+  workshop: `${base}/workshop/starlight_usine.jpg`,
   detail: `${base}/details/detail.jpg`,
   pochettes: `${base}/pochettes/pochettes.jpg`,
   sangles: `${base}/sangles/sangles.jpg`,
