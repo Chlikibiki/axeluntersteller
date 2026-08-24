@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { SITE, SECTION_COPY, META_DESCRIPTION, UI } from "@/lib/constants";
-import { CONTACT_HERO_IMAGE } from "@/lib/images";
+import { CONTACT_HERO_IMAGE, LOCAL } from "@/lib/images";
+import { IMAGE_ALTS } from "@/lib/visual-direction";
 import { InquiryForm } from "@/components/shared/InquiryForm";
 import { PremiumButton } from "@/components/shared/PremiumButton";
 import { Grain } from "@/components/shared/Grain";
@@ -106,6 +107,51 @@ export default function ContactPage() {
             <div className="border border-starlight-border bg-starlight-surface p-8 md:p-12">
               <InquiryForm variant="full" showFileUpload />
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section
+        className="section-padding -mt-2 bg-starlight-bg pt-6 pb-16 md:-mt-12 md:pt-8 md:pb-28 lg:-mt-24 lg:pt-8 lg:pb-36"
+        aria-labelledby="contact-story-heading"
+      >
+        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-16 xl:gap-20">
+          <Reveal className="order-2 lg:order-1 lg:col-span-7">
+            <figure className="relative h-[380px] w-full overflow-hidden bg-starlight-surface md:h-[500px] lg:h-[620px]">
+              <Image
+                src={LOCAL.workshopDevant}
+                alt={IMAGE_ALTS.workshopTeam}
+                fill
+                className="object-cover object-[center_40%]"
+                sizes="(max-width: 1024px) 100vw, 58vw"
+              />
+            </figure>
+          </Reveal>
+
+          <Reveal
+            delay={0.08}
+            className="order-1 lg:order-2 lg:col-span-5 lg:pl-8 xl:pl-12"
+          >
+            <h2
+              id="contact-story-heading"
+              className="heading-md text-starlight-cream"
+            >
+              {SECTION_COPY.contact.storyTitle}
+            </h2>
+            <div className="mt-8 max-w-md space-y-6 lg:max-w-[28rem]">
+              <p className="body-editorial text-starlight-metal/88">
+                {SECTION_COPY.contact.storyP1}
+              </p>
+              <p className="body-editorial text-starlight-metal/88">
+                {SECTION_COPY.contact.storyP2}
+              </p>
+              <p className="body-editorial text-starlight-metal/88">
+                {SECTION_COPY.contact.storyP3}
+              </p>
+            </div>
+            <p className="mt-10 text-[0.68rem] uppercase tracking-[0.22em] text-starlight-metal/80">
+              {SECTION_COPY.contact.storySignature}
+            </p>
           </Reveal>
         </div>
       </section>

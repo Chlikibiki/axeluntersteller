@@ -102,6 +102,10 @@ export const IMAGE_ALTS = {
     "Couture sellier en gros plan sur cuir pleine fleur, lumière chaude d'atelier",
   workshop:
     "Usine Starlight Leather Manufacturing depuis 1987, établis, machines à coudre et rouleaux de cuir",
+  workshopExterior:
+    "Bâtiment de la manufacture Starlight, vue extérieure",
+  workshopTeam:
+    "L'équipe Starlight devant la manufacture, avec les Range Rover — Allemagne · Tunisie · Depuis 1987",
   workshopFloor:
     "Artisans Starlight en atelier, assemblage d'accessoires cuir et quincaillerie",
   workshopMachine:

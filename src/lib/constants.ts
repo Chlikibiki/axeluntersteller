@@ -120,6 +120,14 @@ export const SECTION_COPY = {
     body: HERO_STATEMENT,
     subtitle: "Ligne directe",
     formTitle: "Votre message",
+    storyTitle: "Notre histoire",
+    storyP1:
+      "Depuis 1987, Starlight construit son savoir-faire entre l'Allemagne et la Tunisie.",
+    storyP2:
+      "Derrière chaque projet, il y a une équipe, un atelier, des années d'expérience et une exigence partagée : créer des accessoires en cuir qui répondent aux standards des plus grandes marques.",
+    storyP3:
+      "L'esprit Starlight : une entreprise familiale, authentique et profondément attachée à son histoire.",
+    storySignature: "Starlight · Allemagne · Tunisie · Depuis 1987",
   },
   footer: {
     act: "Phase IV · Fin",
