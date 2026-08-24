@@ -375,6 +375,16 @@
     border-top: 1px solid rgba(245, 242, 235, 0.05);
   }
 
+  #contact-form {
+    scroll-margin-top: 6.5rem;
+  }
+
+  @media (min-width: 768px) {
+    #contact-form {
+      scroll-margin-top: 7.5rem;
+    }
+  }
+
   .cinema-experience .section-separator {
     border-top-color: rgba(245, 242, 235, 0.04);
   }
@@ -1743,21 +1753,46 @@
   }
 
   .partner-wall-grid {
+    align-items: stretch;
+  }
+
+  .partner-wall-slot {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    height: 5.25rem;
   }
 
   .partner-logo-cell {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    --logo-size: 0.9;
     transition: transform 1.5s var(--ease-premium);
   }
 
   .partner-logo-mark {
-    transform: scale(var(--logo-scale, 1));
+    display: flex;
+    aspect-ratio: var(--logo-ar);
+    width: min(
+      calc(var(--logo-max-n) * 100%),
+      calc(var(--logo-h) * var(--logo-size) * var(--logo-ar))
+    );
+    height: auto;
+    align-items: center;
+    justify-content: center;
     transition: transform 1.5s var(--ease-premium);
   }
 
-  .partner-logo-mark img {
-    filter: brightness(0) invert(86%);
-    opacity: 0.72;
+  .partner-logo-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    filter: brightness(0) invert(96%);
+    opacity: 0.94;
     transition:
       opacity 1.5s var(--ease-premium),
       filter 1.5s var(--ease-premium);
@@ -1768,12 +1803,32 @@
   }
 
   .partner-logo-cell:hover .partner-logo-mark {
-    transform: scale(calc(var(--logo-scale, 1) * 1.015)) translateY(-1px);
+    transform: translateY(-1px);
   }
 
-  .partner-logo-cell:hover .partner-logo-mark img {
-    opacity: 0.94;
-    filter: brightness(0) invert(91%);
+  .partner-logo-cell:hover .partner-logo-svg {
+    opacity: 1;
+    filter: brightness(0) invert(98%);
+  }
+
+  @media (min-width: 768px) {
+    .partner-wall-slot {
+      height: 5.75rem;
+    }
+
+    .partner-logo-cell {
+      --logo-size: 0.96;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .partner-wall-slot {
+      height: 6.25rem;
+    }
+
+    .partner-logo-cell {
+      --logo-size: 1;
+    }
   }
 
   .contact-form-panel {
@@ -1783,7 +1838,7 @@
   @media (prefers-reduced-motion: reduce) {
     .partner-logo-cell,
     .partner-logo-mark,
-    .partner-logo-mark img {
+    .partner-logo-svg {
       transition: none;
     }
 

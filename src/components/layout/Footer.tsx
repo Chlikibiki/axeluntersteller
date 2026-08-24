@@ -22,6 +22,16 @@ export function Footer() {
           <br />
           <span className="text-starlight-cream/90">{copy.contactAddress}</span>
         </p>
+        <p>
+          <span className="text-starlight-muted/85">Email :</span>
+          <br />
+          <a
+            href={`mailto:${SITE.email}`}
+            className="text-starlight-cream/90"
+          >
+            {SITE.email}
+          </a>
+        </p>
       </address>
     </>
   );
@@ -73,7 +83,7 @@ export function Footer() {
               {copy.body}
             </p>
             <div className="mt-10 md:mt-12">
-              <PremiumButton href="/contact" variant="secondary">
+              <PremiumButton href="#contact-form" variant="secondary">
                 {HERO_COPY.ctaPrimary}
               </PremiumButton>
             </div>

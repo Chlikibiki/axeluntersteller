@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, HERO_COPY, UI } from "@/lib/constants";
+import { CONTACT_FORM_HASH, CONTACT_FORM_HREF } from "@/lib/anchor-scroll";
 import { useFilmNavActive } from "@/hooks/useFilmNavActive";
 import { cn } from "@/lib/utils";
 import { PremiumButton } from "@/components/shared/PremiumButton";
@@ -13,7 +14,11 @@ import { Logo } from "@/components/shared/Logo";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { isLinkActive } = useFilmNavActive();
+  const { isLinkActive, pathname } = useFilmNavActive();
+  const projectHref =
+    pathname === "/" || pathname === "/contact"
+      ? CONTACT_FORM_HASH
+      : CONTACT_FORM_HREF;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
@@ -57,7 +62,7 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:block">
-            <PremiumButton href="/contact" variant="secondary">
+            <PremiumButton href={projectHref} variant="secondary">
               {HERO_COPY.ctaPrimary}
             </PremiumButton>
           </div>
@@ -106,7 +111,7 @@ export function Header() {
                 </motion.div>
               ))}
               <div onClick={() => setMenuOpen(false)} className="mt-8">
-                <PremiumButton href="/contact" className="w-full max-w-xs">
+                <PremiumButton href={projectHref} className="w-full max-w-xs">
                   {HERO_COPY.ctaPrimary}
                 </PremiumButton>
               </div>

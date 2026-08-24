@@ -47,7 +47,7 @@ export function useFilmNavActive() {
 
   const isLinkActive = useCallback(
     (href: string) => {
-      if (href === "/contact") return pathname === "/contact";
+      if (href.startsWith("/contact")) return pathname === "/contact";
       if (href.startsWith("/#")) {
         const id = href.slice(2);
         return pathname === "/" && activeSection === id;

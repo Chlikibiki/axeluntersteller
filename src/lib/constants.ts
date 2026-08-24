@@ -13,9 +13,9 @@ import { PARTNER_LOGOS } from "./partner-logos";
 export const SITE = {
   name: "ST★RLIGHT",
   legalName: "Starlight, Manufacture de cuir",
-  tagline: "Manufacture de cuir · Europe · Depuis 1987",
+  tagline: "Premium Leather Manufacturing · B2B · Depuis 1987",
   established: 1987,
-  email: "Z.I.7080 BizerteTunisie - Responsable : Axel Untersteller",
+  email: "axunt@aol.com",
   inquiryEmail: "axunt@aol.com",
   phone: "+49 123 456 7890",
   address: {
@@ -29,19 +29,19 @@ export const SITE = {
 } as const;
 
 export const HERO_STATEMENT =
-  "Depuis 1987, Starlight transforme les plus belles peaux en cuirs d'exception pour les maisons internationales." as const;
+  "Depuis 1987, Starlight conçoit et fabrique des accessoires en cuir pour les marques : du prototype à la production en série. Design en Allemagne, fabrication en Tunisie." as const;
 
 export { HERO_IMAGES, CONTACT_HERO_IMAGE, LOGO, TRUST_IMAGE };
 export { PARTNER_LOGOS } from "./partner-logos";
 
 export const HERO_COPY = {
-  eyebrow: "Manufacture de cuir · Europe",
+  eyebrow: "Premium Leather Manufacturing",
   established: "Depuis 1987 · Design en Allemagne · Fabrication en Tunisie",
-  headline: ["LE CUIR,", "NOTRE HÉRITAGE,", "VOTRE SIGNATURE."],
+  headline: ["ACCESSOIRES CUIR", "POUR LES MARQUES.", "DEPUIS 1987."],
   manifesto:
-    "Notre héritage façonne la matière. Votre vision en devient la signature.",
+    "Starlight accompagne les marques de la conception du prototype jusqu'à la production en série.",
   subhead:
-    "Depuis 1987, nous sélectionnons les plus belles peaux et les transformons en cuirs d'exception. Pour les maisons qui exigent l'excellence.",
+    "Manufacture B2B d'accessoires et d'articles en cuir pour entreprises et marques. Développement produit, prototype, fabrication et contrôle qualité — en Allemagne et en Tunisie.",
   ctaPrimary: "Démarrer un projet",
   ctaSecondary: "Nos partenaires",
   trust: [
@@ -60,13 +60,13 @@ export const HERO_COPY = {
 export const SECTION_COPY = {
   manufacture: {
     label: "Manufacture",
-    title: "Starlight, manufacture de cuir.",
-    body: "Depuis 1987, nous développons et produisons des accessoires cuir pour les maisons internationales. Deux sites, une exigence : prototype validé, série tenue, qualité contrôlée.",
+    title: "Une manufacture B2B, au service des marques.",
+    body: "Depuis 1987, nous développons et fabriquons des accessoires en cuir pour les entreprises et les marques. Design et accompagnement en Allemagne, fabrication en Tunisie : prototype validé, production en série, qualité contrôlée.",
   },
   capabilities: {
     label: "Produits",
     title: "Ce que nous fabriquons.",
-    body: "Cinq familles de produits, une même discipline de fabrication.",
+    body: "Accessoires et articles en cuir pour marques et entreprises — cinq familles de produits, une même discipline de fabrication.",
   },
   materials: {
     label: "Matières",
@@ -80,11 +80,11 @@ export const SECTION_COPY = {
   },
   process: {
     label: "Méthode",
-    title: "Cinq étapes. Un même niveau d'exigence.",
+    title: "Développement, prototype, série.",
   },
   partners: {
-    title: "Des maisons qui exigent la constance.",
-    body: "Références internationales en marque blanche et sous licence.",
+    title: "Des marques qui nous font confiance",
+    body: "Depuis 1987, Starlight accompagne des marques internationales dans le développement et la fabrication de leurs accessoires en cuir.",
     disclaimer:
       "Noms cités à titre de référence. Toutes les marques appartiennent à leurs propriétaires.",
   },
@@ -107,7 +107,7 @@ export const SECTION_COPY = {
   cta: {
     label: "Contact",
     title: "Parler à l'atelier.",
-    body: "Décrivez votre projet, vos volumes et vos contraintes. Nous répondons avec précision.",
+    body: "Présentez votre marque, le produit, les volumes et le planning. Nous accompagnons le développement du prototype jusqu'à la série.",
     formTitle: "Votre message",
     guaranteeLabel: "Réponse",
     guarantee:
@@ -125,7 +125,7 @@ export const SECTION_COPY = {
     act: "Phase IV · Fin",
     closing: "Le cuir continue.",
     subline: "Starlight · Allemagne · Tunisie",
-    body: "Manufacture de cuir pour les maisons internationales. Depuis 1987.",
+    body: "Manufacture B2B d'accessoires en cuir pour les marques. Design en Allemagne, fabrication en Tunisie. Depuis 1987.",
     navigation: "Navigation",
     contact: "Contact",
     contactManager: "Axel Untersteller",
@@ -170,7 +170,7 @@ export const NAV_LINKS = [
   { label: "Produits", href: "/#products" },
   { label: "Méthode", href: "/#process" },
   { label: "Partenaires", href: "/#partners" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact#contact-form" },
 ] as const;
 
 export const MANUFACTURE_PILLARS = [
@@ -415,9 +415,10 @@ export const FORM_COPY = {
 } as const;
 
 export const META_DESCRIPTION =
-  "Manufacture de cuir allemande depuis 1987. Ceintures, pochettes et accessoires pour les maisons internationales. Ateliers en Allemagne et en Tunisie." as const;
+  "Manufacture B2B d'accessoires en cuir depuis 1987. Starlight accompagne les marques du prototype à la production en série. Design en Allemagne, fabrication en Tunisie." as const;
 
 export const SEO_KEYWORDS = [
+  "fabricant cuir b2b",
   "fabricant cuir allemagne",
   "manufacture cuir europe",
   "maroquinerie luxe oem",

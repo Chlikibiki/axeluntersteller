@@ -2,6 +2,11 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import {
+  isSamePageHref,
+  parseHashId,
+  scrollToAnchor,
+} from "@/lib/anchor-scroll";
 
 interface PremiumButtonProps {
   href: string;
@@ -32,6 +37,19 @@ export function PremiumButton({
 
   const inner = <span className="premium-btn-label">{children}</span>;
 
+  const handleAnchorClick = (
+    event: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    const id = parseHashId(href);
+    if (!id || !isSamePageHref(href)) return;
+
+    event.preventDefault();
+    window.history.replaceState(null, "", `#${id}`);
+    window.requestAnimationFrame(() => {
+      window.setTimeout(() => scrollToAnchor(id), 40);
+    });
+  };
+
   if (external) {
     return (
       <a
@@ -45,8 +63,16 @@ export function PremiumButton({
     );
   }
 
+  if (href.startsWith("#")) {
+    return (
+      <a href={href} className={classes} onClick={handleAnchorClick}>
+        {inner}
+      </a>
+    );
+  }
+
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} onClick={handleAnchorClick}>
       {inner}
     </Link>
   );

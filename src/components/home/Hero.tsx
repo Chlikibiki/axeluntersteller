@@ -221,7 +221,7 @@ export function Hero() {
           <div className="hero-actions mt-9 flex w-full flex-col gap-3 sm:mt-12 sm:flex-row sm:items-center sm:gap-5 md:mt-14">
             <div className="hero-cta flex w-full opacity-0 sm:w-auto">
               <PremiumButton
-                href="/contact"
+                href="#contact-form"
                 breathe
                 className="w-full sm:w-auto"
               >

@@ -1,16 +1,19 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CinematicMotion } from "@/components/motion/CinematicMotion";
 import { CINEMA_TIME } from "@/lib/motion";
+import { setLenisInstance, scrollToAnchor } from "@/lib/anchor-scroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const isMobile = window.matchMedia("(max-width: 767px)").matches;
@@ -26,6 +29,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     });
 
     lenisRef.current = lenis;
+    setLenisInstance(lenis);
     lenis.on("scroll", ScrollTrigger.update);
 
     const raf = (time: number) => {
@@ -57,11 +61,24 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     document.documentElement.classList.add("lenis", "lenis-smooth");
 
     return () => {
+      setLenisInstance(null);
       lenis.destroy();
       document.documentElement.classList.remove("lenis", "lenis-smooth");
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
+
+  useEffect(() => {
+    const scrollToHash = () => {
+      const id = window.location.hash.replace(/^#/, "");
+      if (!id) return;
+      window.setTimeout(() => scrollToAnchor(id), 220);
+    };
+
+    scrollToHash();
+    window.addEventListener("hashchange", scrollToHash);
+    return () => window.removeEventListener("hashchange", scrollToHash);
+  }, [pathname]);
 
   return (
     <>

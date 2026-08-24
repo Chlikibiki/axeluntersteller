@@ -39,7 +39,10 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section-padding section-y bg-starlight-bg section-separator">
+      <section
+        id="contact-form"
+        className="section-padding section-y bg-starlight-bg section-separator"
+      >
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-20">
           <Reveal className="lg:col-span-5">
             <h2 className="heading-md text-starlight-cream">
@@ -70,9 +73,12 @@ export default function ContactPage() {
                   size={18}
                   strokeWidth={1}
                 />
-                <p className="body-premium text-starlight-cream">
+                <a
+                  href={`mailto:${SITE.email}`}
+                  className="body-premium text-starlight-cream hover:text-white"
+                >
                   {SITE.email}
-                </p>
+                </a>
               </li>
               <li className="flex gap-4">
                 <Phone
@@ -90,7 +96,7 @@ export default function ContactPage() {
             </ul>
 
             <div className="mt-14">
-              <PremiumButton href="/contact" variant="secondary">
+              <PremiumButton href="#contact-form" variant="secondary">
                 {SECTION_COPY.cta.email}
               </PremiumButton>
             </div>

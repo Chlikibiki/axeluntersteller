@@ -42,20 +42,20 @@ export function PartnerTrust() {
       aria-labelledby="partners-heading"
     >
       <div className="section-padding relative py-20 md:py-28 lg:py-36">
-        <Reveal pace="silence" className="partner-wall-header mx-auto max-w-xl text-center">
+        <Reveal pace="silence" className="partner-wall-header mx-auto max-w-2xl text-center">
           <h2
             id="partners-heading"
             className="heading-md font-display font-extralight tracking-[0.02em] text-starlight-cream/88"
           >
             {copy.title}
           </h2>
-          <p className="type-readable mx-auto mt-4 max-w-md normal-case tracking-normal text-starlight-metal/75">
+          <p className="type-readable mx-auto mt-5 max-w-xl normal-case tracking-normal text-starlight-metal/75">
             {copy.body}
           </p>
         </Reveal>
 
         <motion.ul
-          className="partner-wall-grid mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-x-12 gap-y-16 sm:gap-x-14 sm:gap-y-20 md:mt-20 md:grid-cols-3 md:gap-x-16 md:gap-y-24 lg:grid-cols-5 lg:gap-x-14 lg:gap-y-[5.5rem]"
+          className="partner-wall-grid mx-auto mt-12 grid w-full max-w-[90rem] grid-cols-2 gap-x-8 gap-y-6 sm:mt-14 sm:gap-x-10 sm:gap-y-7 md:mt-16 md:grid-cols-3 md:gap-x-12 md:gap-y-8 lg:grid-cols-5 lg:gap-x-10 lg:gap-y-8"
           role="list"
           initial="hidden"
           whileInView="visible"
@@ -66,14 +66,9 @@ export function PartnerTrust() {
             <motion.li
               key={partner.id}
               variants={itemReveal}
-              className="flex items-center justify-center px-2 sm:px-3"
+              className="partner-wall-slot"
             >
-              <PartnerLogo
-                src={partner.src}
-                name={partner.name}
-                scale={partner.scale}
-                maxWidth={partner.maxWidth}
-              />
+              <PartnerLogo partner={partner} />
             </motion.li>
           ))}
         </motion.ul>
