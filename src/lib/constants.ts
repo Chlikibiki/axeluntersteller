@@ -120,8 +120,6 @@ export const SECTION_COPY = {
     body: HERO_STATEMENT,
     subtitle: "Ligne directe",
     formTitle: "Votre message",
-    facilityLabel: "Atelier",
-    facility: "Offenbach am Main · Allemagne",
   },
   footer: {
     act: "Phase IV · Fin",
@@ -142,14 +140,12 @@ export const UI = {
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
     craftGallery: "Détails de fabrication",
-    facilityMap: "Localisation de l'atelier",
     prevTestimonial: "Témoignage précédent",
     nextTestimonial: "Témoignage suivant",
     home: "Accueil",
   },
   contact: {
     pageTitle: "Contact",
-    mapTitle: "Atelier Starlight, Offenbach am Main, Allemagne",
     heroAlt: IMAGE_ALTS.contact,
     since: "Depuis",
   },
@@ -192,12 +188,12 @@ export const MANUFACTURE_GALLERY = [
     alt: IMAGE_ALTS.workshop,
   },
   {
-    src: LOCAL.processCut,
-    alt: IMAGE_ALTS.craft.cutting,
+    src: LOCAL.starlightProcessDev,
+    alt: IMAGE_ALTS.starlightProcessDev,
   },
   {
-    src: LOCAL.processStitch,
-    alt: IMAGE_ALTS.craft.stitching,
+    src: LOCAL.hero02,
+    alt: IMAGE_ALTS.heroPrimary,
   },
 ] as const;
 
@@ -207,7 +203,7 @@ export const MATERIALS_GALLERY = [
   { src: LOCAL.belt, alt: IMAGE_ALTS.belt, label: "Tranche" },
   { src: LOCAL.processFinish, alt: IMAGE_ALTS.craft.finishing, label: "Finition" },
   { src: LOCAL.heroPhoto, alt: IMAGE_ALTS.heroPrimary, label: "Quincaillerie" },
-  { src: LOCAL.processStitch, alt: IMAGE_ALTS.trustArtisan, label: "Grain" },
+  { src: LOCAL.accessoires, alt: IMAGE_ALTS.accessories, label: "Accessoires" },
 ] as const;
 
 export const ATELIER_SCENES = [
@@ -218,20 +214,20 @@ export const ATELIER_SCENES = [
     caption: "Organisation rigoureuse, production en série maîtrisée.",
   },
   {
-    src: LOCAL.processCut,
-    alt: IMAGE_ALTS.craft.cutting,
-    title: "Découpe",
-    caption: "Tables de coupe, gabarits et précision millimétrique.",
-  },
-  {
-    src: LOCAL.processStitch,
-    alt: IMAGE_ALTS.craft.stitching,
+    src: LOCAL.starlightProcessDev,
+    alt: IMAGE_ALTS.starlightProcessDev,
     title: "Couture & assemblage",
     caption: "Machines et main, selon l'exigence du produit.",
   },
   {
-    src: LOCAL.detail,
-    alt: IMAGE_ALTS.craft.stitching,
+    src: LOCAL.starlightProcessMachine,
+    alt: IMAGE_ALTS.workshopMachine,
+    title: "Machines de production",
+    caption: "Fendage, finition des bords et cadence de série.",
+  },
+  {
+    src: LOCAL.starlightProcessLoops,
+    alt: IMAGE_ALTS.workshopDetail,
     title: "Contrôle qualité",
     caption: "Vérification manuelle de chaque série avant expédition.",
   },
@@ -252,32 +248,32 @@ export const PROCESS_STEPS = [
     title: "Analyse",
     description:
       "Usages, contraintes techniques, matières et objectifs de fabrication sont étudiés avec précision.",
-    image: LOCAL.processAnalyseLeathers,
-    imageAlt: IMAGE_ALTS.analyseLeathers,
+    image: LOCAL.starlightProcessAnalyse,
+    imageAlt: IMAGE_ALTS.starlightProcessAnalyse,
   },
   {
     step: "02",
     title: "Développement",
     description:
       "Prototype et échantillons jusqu'à validation complète du produit, des finitions et du comportement matière.",
-    image: LOCAL.processFinish,
-    imageAlt: IMAGE_ALTS.craft.finishing,
+    image: LOCAL.processStitch,
+    imageAlt: IMAGE_ALTS.trustArtisan,
   },
   {
     step: "03",
     title: "Fabrication",
     description:
       "Production artisanale ou mécanisée selon les volumes, les délais et le niveau de finition recherché.",
-    image: LOCAL.processStitch,
-    imageAlt: IMAGE_ALTS.craft.stitching,
+    image: LOCAL.starlightProcessMachine,
+    imageAlt: IMAGE_ALTS.workshopMachine,
   },
   {
     step: "04",
     title: "Contrôle",
     description:
       "Régularité, couture, tenue, précision et qualité d'exécution vérifiées sur chaque série.",
-    image: LOCAL.detail,
-    imageAlt: IMAGE_ALTS.craft.stitching,
+    image: LOCAL.starlightProcessControl,
+    imageAlt: IMAGE_ALTS.starlightProcessControl,
   },
   {
     step: "05",
@@ -387,8 +383,9 @@ export const TESTIMONIALS = [
 ] as const;
 
 export const FORM_COPY = {
-  successTitle: "Reçu.",
-  successBody: "Nous vous répondrons sous vingt-quatre heures.",
+  successTitle: "Message envoyé.",
+  successBody:
+    "Votre demande a bien été envoyée. L'atelier vous répondra rapidement.",
   name: "Nom",
   company: "Maison / Marque",
   email: "Courriel",
@@ -401,7 +398,7 @@ export const FORM_COPY = {
   privacy: "Traité en toute confidentialité.",
   submitting: "Envoi en cours…",
   errorSubmit:
-    "L'envoi a échoué. Réessayez ou écrivez-nous directement à axunt@aol.com.",
+    "Impossible d'envoyer le message actuellement. Veuillez réessayer ou nous écrire directement à axunt@aol.com.",
   placeholders: {
     name: "Votre nom",
     company: "Nom de la maison",

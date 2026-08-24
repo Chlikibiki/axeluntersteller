@@ -17,24 +17,24 @@ export function Manufacture() {
       id="manufacture"
       film="trust"
       filmTransition="soft"
-      atmosphere="depth"
+      tone="paper"
       spacing="editorial"
       aria-labelledby="manufacture-heading"
     >
-      <div className="lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16">
+      <div className="lg:grid lg:grid-cols-12 lg:gap-16 xl:gap-20">
         <Reveal pace="fade" className="lg:col-span-5">
           <p className="eyebrow">{copy.label}</p>
           <h2
             id="manufacture-heading"
-            className="heading-lg mt-4 text-starlight-cream"
+            className="heading-lg mt-6 text-starlight-cream"
           >
             {copy.title}
           </h2>
-          <p className="body-editorial prose-measure mt-6 text-starlight-metal/90">
+          <p className="body-editorial prose-measure mt-8 text-starlight-metal/90">
             {copy.body}
           </p>
 
-          <ul className="mt-8 space-y-3 border-t border-starlight-border/50 pt-8 md:mt-10">
+          <ul className="mt-10 space-y-4 border-t border-starlight-border/50 pt-10 md:mt-14">
             {MANUFACTURE_PILLARS.map((item) => (
               <li
                 key={item}
@@ -47,7 +47,7 @@ export function Manufacture() {
           </ul>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-2 gap-3 md:gap-4 lg:col-span-7 lg:mt-0">
+        <div className="mt-14 grid grid-cols-2 gap-4 md:mt-0 md:gap-5 lg:col-span-7 lg:mt-0 lg:gap-6">
           {MANUFACTURE_GALLERY.map((item, index) => (
             <Reveal
               key={item.src}
@@ -78,7 +78,7 @@ export function Manufacture() {
         </div>
       </div>
 
-      <div className="mt-10 border-t border-starlight-border/50 pt-8 md:mt-16 md:pt-12">
+      <div className="mt-14 border-t border-starlight-border/50 pt-12 md:mt-20 md:pt-16">
         <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 md:gap-6 lg:grid-cols-6">
           {TRUST_METRICS.map((metric) => (
             <div key={metric.label} className="text-center md:text-left">

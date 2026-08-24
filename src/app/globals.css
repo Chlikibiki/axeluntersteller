@@ -11,6 +11,8 @@
   --font-display: var(--font-outfit);
   --font-mono: var(--font-geist-mono);
   --color-starlight-bg: #000000;
+  --color-starlight-paper: #f3efe6;
+  --color-starlight-ink: #1a1612;
   --color-starlight-surface: #0a0a0a;
   --color-starlight-elevated: #111111;
   --color-starlight-leather: #a68b6a;
@@ -134,9 +136,9 @@
   --tracking-body: 0.012em;
   --tracking-caps: 0.3em;
   --tracking-caps-sm: 0.26em;
-  --stack-after-eyebrow: 2rem;
-  --stack-after-title: 1.75rem;
-  --stack-after-title-lg: 2.5rem;
+  --stack-after-eyebrow: 2.5rem;
+  --stack-after-title: 2.25rem;
+  --stack-after-title-lg: 3.25rem;
   --cinema-fade: 1.8s cubic-bezier(0.22, 1, 0.32, 1);
 }
 
@@ -296,23 +298,77 @@
   }
 
   .section-padding {
-    @apply px-5 md:px-12 lg:px-16 xl:px-24 2xl:px-32;
+    @apply px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40;
   }
 
   .section-y {
-    @apply py-11 md:py-28 lg:py-32;
+    @apply py-16 md:py-32 lg:py-40;
   }
 
   .section-y-spacious {
-    @apply py-14 md:py-36 lg:py-44;
+    @apply py-20 md:py-40 lg:py-52;
   }
 
   .section-y-tight {
-    @apply py-8 md:py-20 lg:py-24;
+    @apply py-12 md:py-24 lg:py-28;
   }
 
   .section-y-editorial {
-    @apply py-10 md:py-28 lg:py-32;
+    @apply py-16 md:py-36 lg:py-44;
+  }
+
+  /* Bandes ivoire — respiration éditoriale entre les plans sombres */
+  .section-paper {
+    background-color: var(--color-starlight-paper);
+    color: var(--color-starlight-ink);
+  }
+
+  .section-paper :is(.heading-lg, .heading-md, .heading-statement, .heading-monument) {
+    color: var(--color-starlight-ink);
+  }
+
+  .section-paper :is(.body-editorial, .body-premium) {
+    color: rgba(26, 22, 18, 0.72);
+  }
+
+  .section-paper .eyebrow,
+  .section-paper .type-readable,
+  .section-paper .type-index,
+  .section-paper .label-caps {
+    color: rgba(122, 101, 80, 0.92);
+  }
+
+  .section-paper [class*="text-starlight-cream"] {
+    color: var(--color-starlight-ink) !important;
+  }
+
+  .section-paper [class*="text-starlight-metal"] {
+    color: rgba(42, 36, 28, 0.7) !important;
+  }
+
+  .section-paper [class*="text-starlight-muted"] {
+    color: rgba(90, 78, 64, 0.82) !important;
+  }
+
+  .section-paper [class*="border-starlight-border"] {
+    border-color: rgba(26, 22, 18, 0.1) !important;
+  }
+
+  .section-paper .film-section-aura {
+    display: none;
+  }
+
+  .section-paper.film-transition-soft::before {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(26, 22, 18, 0.12) 50%,
+      transparent
+    );
+  }
+
+  .section-paper .bg-starlight-surface {
+    background-color: #ebe6db;
   }
 
   .section-separator {
@@ -1607,38 +1663,37 @@
 
   /* Rythmes émotionnels */
   .film-rhythm-silence {
-    --film-pad-y: clamp(3.5rem, 14vh, 8rem);
+    --film-pad-y: clamp(5.5rem, 18vh, 11rem);
   }
 
   .film-rhythm-breath {
-    --film-pad-y: clamp(2.75rem, 10vh, 6.5rem);
+    --film-pad-y: clamp(5rem, 16vh, 10rem);
   }
 
   .film-rhythm-tension {
-    --film-pad-y: clamp(2rem, 7vh, 4.5rem);
+    --film-pad-y: clamp(4rem, 12vh, 8rem);
   }
 
   .film-rhythm-crescendo {
-    --film-pad-y: clamp(2.5rem, 9vh, 5.5rem);
+    --film-pad-y: clamp(4.5rem, 14vh, 9rem);
   }
 
   .film-rhythm-contrast {
-    --film-pad-y: clamp(2.25rem, 8vh, 5rem);
+    --film-pad-y: clamp(4.5rem, 13vh, 8.5rem);
   }
 
   .film-rhythm-contemplation {
-    --film-pad-y: clamp(3rem, 12vh, 7.5rem);
+    --film-pad-y: clamp(5.5rem, 17vh, 11rem);
   }
 
   @media (max-width: 767px) {
-    /* Mobile : réduction du “vide noir” vertical (sans toucher la DA desktop) */
     .film-rhythm-silence,
     .film-rhythm-breath,
     .film-rhythm-tension,
     .film-rhythm-crescendo,
     .film-rhythm-contrast,
     .film-rhythm-contemplation {
-      --film-pad-y: clamp(2.25rem, 7.5vh, 4.25rem);
+      --film-pad-y: clamp(3.75rem, 11vh, 6.5rem);
     }
   }
 

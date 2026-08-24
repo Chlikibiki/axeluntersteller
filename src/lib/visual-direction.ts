@@ -101,7 +101,21 @@ export const IMAGE_ALTS = {
   heroPrimary:
     "Couture sellier en gros plan sur cuir pleine fleur, lumière chaude d'atelier",
   workshop:
-    "Intérieur d'atelier cuir silencieux, établis, outils de coupe et rouleaux de peau, lumière chaude à travers les fenêtres industrielles",
+    "Usine Starlight Leather Manufacturing depuis 1987, établis, machines à coudre et rouleaux de cuir",
+  workshopFloor:
+    "Artisans Starlight en atelier, assemblage d'accessoires cuir et quincaillerie",
+  workshopMachine:
+    "Machine industrielle de fendage du cuir dans l'atelier Starlight",
+  workshopDetail:
+    "Boucles cuir et caisse Starlight Leather Manufacture, travail à la main",
+  starlightProcessAnalyse:
+    "Pièces cuir noir en série dans l'atelier Starlight, machine OMAC et logo manufacture",
+  starlightProcessDev:
+    "Ceintures et boucles en cours d'assemblage sur établi Starlight",
+  starlightProcessMake:
+    "Finition de sangles cuir sur machine OMAC dans l'atelier Starlight",
+  starlightProcessControl:
+    "Mains d'artisan contrôlant une pièce cuir et anneau métal à l'établi",
   trustArtisan:
     "Mains d'artisan cousant une sangle en cuir, lumière ambrée et contraste cinématographique",
   belt: "Ceinture en cuir pleine fleur, tranche brunie et quincaillerie",

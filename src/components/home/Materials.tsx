@@ -28,9 +28,9 @@ export function Materials() {
       label: "Grain",
     },
     {
-      src: LOCAL.processFinish,
-      alt: IMAGE_ALTS.craft.finishing,
-      label: "Contrôle",
+      src: LOCAL.accessoires,
+      alt: IMAGE_ALTS.accessories,
+      label: "Accessoires",
     },
   ] as const;
 
@@ -39,25 +39,25 @@ export function Materials() {
       id="materials"
       film="materials"
       filmTransition="soft"
-      atmosphere="ink"
+      tone="paper"
       spacing="editorial"
       aria-labelledby="materials-heading"
     >
       <Reveal pace="fade">
         <p className="eyebrow">{copy.label}</p>
-        <h2
-          id="materials-heading"
-          className="heading-lg mt-4 max-w-2xl text-starlight-cream"
-        >
+          <h2
+            id="materials-heading"
+            className="heading-lg mt-6 max-w-2xl text-starlight-cream"
+          >
           {copy.title}
         </h2>
-        <p className="body-editorial prose-measure mt-5 max-w-xl text-starlight-metal/88">
+        <p className="body-editorial prose-measure mt-7 max-w-xl text-starlight-metal/88">
           {copy.body}
         </p>
       </Reveal>
 
       {/* Mobile : grille 2 colonnes équilibrée (7 images) */}
-      <div className="mt-10 grid grid-cols-2 gap-2 md:hidden">
+      <div className="mt-14 grid grid-cols-2 gap-3 md:hidden">
         {MATERIALS_GALLERY_MOBILE.map((item, index) => (
           <Reveal
             key={item.src}
@@ -92,7 +92,7 @@ export function Materials() {
       </div>
 
       {/* Desktop : conserve la grille actuelle */}
-      <div className="mt-10 hidden md:grid md:grid-cols-3 md:gap-3 md:mt-14">
+      <div className="mt-16 hidden md:mt-20 md:grid md:grid-cols-3 md:gap-5">
         {MATERIALS_GALLERY.map((item, index) => (
           <Reveal
             key={item.src}

@@ -20,16 +20,16 @@ export function Atelier() {
         <p className="eyebrow">{copy.label}</p>
         <h2
           id="atelier-heading"
-          className="heading-lg mt-4 max-w-2xl text-starlight-cream"
+          className="heading-lg mt-6 max-w-2xl text-starlight-cream"
         >
           {copy.title}
         </h2>
-        <p className="body-editorial prose-measure mt-5 max-w-xl text-starlight-metal/88">
+        <p className="body-editorial prose-measure mt-7 max-w-xl text-starlight-metal/88">
           {copy.body}
         </p>
       </Reveal>
 
-      <div className="mt-10 space-y-3 md:mt-14 md:space-y-4">
+      <div className="mt-14 space-y-4 md:mt-20 md:space-y-5">
         <Reveal pace="fade">
           <figure className="relative aspect-[16/10] w-full overflow-hidden md:aspect-[21/9]">
             <Image
@@ -53,7 +53,7 @@ export function Atelier() {
           </figure>
         </Reveal>
 
-        <div className="grid gap-3 md:grid-cols-3 md:gap-4">
+        <div className="grid gap-4 md:grid-cols-3 md:gap-5">
           {scenes.map((scene, index) => (
             <Reveal key={scene.src} pace="fade" delay={index * 0.05}>
               <figure className="relative aspect-[4/5] overflow-hidden bg-black md:aspect-[3/4]">

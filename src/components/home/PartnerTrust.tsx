@@ -41,7 +41,7 @@ export function PartnerTrust() {
       {...filmSectionAttrs("partners")}
       aria-labelledby="partners-heading"
     >
-      <div className="section-padding relative py-14 md:py-20 lg:py-24">
+      <div className="section-padding relative py-20 md:py-28 lg:py-36">
         <Reveal pace="silence" className="partner-wall-header mx-auto max-w-xl text-center">
           <h2
             id="partners-heading"
@@ -55,7 +55,7 @@ export function PartnerTrust() {
         </Reveal>
 
         <motion.ul
-          className="partner-wall-grid mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-x-10 gap-y-14 sm:gap-x-12 sm:gap-y-16 md:mt-16 md:grid-cols-3 md:gap-x-14 md:gap-y-20 lg:grid-cols-5 lg:gap-x-12 lg:gap-y-[4.5rem]"
+          className="partner-wall-grid mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-x-12 gap-y-16 sm:gap-x-14 sm:gap-y-20 md:mt-20 md:grid-cols-3 md:gap-x-16 md:gap-y-24 lg:grid-cols-5 lg:gap-x-14 lg:gap-y-[5.5rem]"
           role="list"
           initial="hidden"
           whileInView="visible"

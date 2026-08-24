@@ -8,7 +8,7 @@ import {
   type FilmSectionId,
 } from "@/lib/film-narrative";
 
-type SectionTone = "bg" | "surface";
+type SectionTone = "bg" | "surface" | "paper";
 type SectionSpacing = "default" | "spacious" | "tight" | "editorial";
 type FilmTransition = "soft" | "lift" | "void" | "none";
 
@@ -32,6 +32,7 @@ interface SectionShellProps {
 const toneClasses: Record<SectionTone, string> = {
   bg: "bg-starlight-bg",
   surface: "bg-starlight-surface",
+  paper: "section-paper",
 };
 
 const spacingClasses: Record<SectionSpacing, string> = {
@@ -74,7 +75,7 @@ export function SectionShell({
         filmMeta && `film-personality-${filmMeta.sense}`,
         separator && filmTransition !== "none" && "section-separator",
         separator && film && filmTransitionClasses[filmTransition],
-        atmosphere ? "bg-black" : toneClasses[tone],
+        atmosphere && tone !== "paper" ? "bg-black" : toneClasses[tone],
         !fullWidth && spacingClasses[spacing],
         !fullWidth && "section-padding",
         className
@@ -82,7 +83,7 @@ export function SectionShell({
       {...filmAttrs}
       {...aria}
     >
-      {atmosphere ? (
+      {tone === "paper" ? null : atmosphere ? (
         <Atmosphere variant={atmosphere} />
       ) : (
         <NobleSurface intensity="section" />

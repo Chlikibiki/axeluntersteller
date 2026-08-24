@@ -1,6 +1,6 @@
 /**
- * Photographies locales (/public/images)
- * Direction visuelle : src/lib/visual-direction.ts
+ * Photographies locales — uniquement /public/images
+ * (jamais /out : c’est un export statique, pas la source du site)
  */
 
 import { IMAGE_ALTS } from "./visual-direction";
@@ -9,22 +9,31 @@ const base = "/images";
 const partners = `${base}/logo/partners`;
 
 export const LOCAL = {
-  hero: `${base}/hero/leather.jpg`,
-  heroPhoto: `${base}/hero/hero.jpg`,
-  belt: `${base}/belts/belt.jpg`,
-  beltCeinture: `${base}/belts/ceinture.jpg`,
-  leather: `${base}/leather/leather01.jpg`,
-  workshop: `${base}/workshop/starlight_usine.jpg`,
-  detail: `${base}/details/detail.jpg`,
-  pochettes: `${base}/pochettes/pochettes.jpg`,
-  sangles: `${base}/sangles/sangles.jpg`,
-  maroquinerie: `${base}/maroquinerie/maroquinerie.jpg`,
-  accessoires: `${base}/accessoires/accessoires.jpg`,
-  processCut: `${base}/process/process00.jpg`,
-  processStitch: `${base}/process/process01.jpg`,
-  processFinish: `${base}/process/process02.jpg`,
-  processAnalyseLeathers: `${base}/process/analyse-leathers.jpg`,
-  impressionStarlight: `${base}/details/impression_starlight.jpg`,
+  hero: `${base}/hero/leather.png`,
+  heroPhoto: `${base}/hero/hero.png`,
+  hero02: `${base}/hero/hero02.png`,
+  belt: `${base}/belts/belt.png`,
+  beltCeinture: `${base}/belts/ceinture.png`,
+  leather: `${base}/leather/leather01.png`,
+  workshop: `${base}/workshop/starlight-03.png`,
+  detail: `${base}/details/detail.png`,
+  pochettes: `${base}/pochettes/pochettes.png`,
+  sangles: `${base}/sangles/sangles.png`,
+  maroquinerie: `${base}/maroquinerie/maroquinerie.png`,
+  accessoires: `${base}/accessoires/accessoires.png`,
+  coqTel: `${base}/accessoires/coq_tel.png`,
+  processCut: `${base}/process/process00.png`,
+  processStitch: `${base}/process/process01.png`,
+  processFinish: `${base}/process/process02.png`,
+  processAnalyseLeathers: `${base}/process/analyse-leathers.png`,
+  impressionStarlight: `${base}/details/impression_starlight.png`,
+  starlightProcessAnalyse: `${base}/process/starlight-detail.png`,
+  starlightProcessDev: `${base}/process/starlight-06.png`,
+  starlightProcessMake: `${base}/process/starlight-05.png`,
+  starlightProcessControl: `${base}/process/starlight-04.png`,
+  starlightProcessMachine: `${base}/process/starlight-07.png`,
+  starlightProcessLoops: `${base}/process/starlight-detail-02.png`,
+  starlightWorkshopFloor: `${base}/workshop/starlight-03.png`,
 } as const;
 
 export const LOGO = {
@@ -78,7 +87,7 @@ export const CAPABILITY_IMAGES = {
   pouches: LOCAL.pochettes,
   straps: LOCAL.sangles,
   goods: LOCAL.maroquinerie,
-  accessories: LOCAL.accessoires,
+  accessories: LOCAL.coqTel,
 } as const;
 
 export const CRAFT_IMAGES = {

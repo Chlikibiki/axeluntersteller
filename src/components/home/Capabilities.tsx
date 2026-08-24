@@ -21,16 +21,16 @@ export function Capabilities() {
       innerClassName="relative z-[1] overflow-x-hidden"
       aria-labelledby="products-heading"
     >
-      <div className="px-6 pt-8 md:px-12 md:pt-12">
+      <div className="section-padding pt-14 pb-10 md:pt-20 md:pb-14">
         <Reveal pace="fade">
           <p className="eyebrow">{copy.label}</p>
           <h2
             id="products-heading"
-            className="heading-lg mt-4 max-w-3xl text-starlight-cream"
+            className="heading-lg mt-6 max-w-3xl text-starlight-cream"
           >
             {copy.title}
           </h2>
-          <p className="body-editorial prose-measure mt-4 max-w-xl text-starlight-metal/88">
+          <p className="body-editorial prose-measure mt-6 max-w-xl text-starlight-metal/88">
             {copy.body}
           </p>
         </Reveal>

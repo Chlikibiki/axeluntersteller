@@ -103,24 +103,6 @@ export default function ContactPage() {
           </Reveal>
         </div>
       </section>
-
-      <section
-        className="border-t border-starlight-border bg-starlight-surface"
-        aria-label={UI.aria.facilityMap}
-      >
-        <div className="section-padding py-10">
-          <p className="label-caps">{SECTION_COPY.contact.facilityLabel}</p>
-          <p className="body-premium mt-3">{SECTION_COPY.contact.facility}</p>
-        </div>
-        <div className="relative aspect-[21/9] min-h-[260px] w-full bg-black">
-          <iframe
-            title={UI.contact.mapTitle}
-            src={`https://www.openstreetmap.org/export/embed.html?bbox=${SITE.coordinates.lng - 0.05}%2C${SITE.coordinates.lat - 0.03}%2C${SITE.coordinates.lng + 0.05}%2C${SITE.coordinates.lat + 0.03}&layer=mapnik&marker=${SITE.coordinates.lat}%2C${SITE.coordinates.lng}`}
-            className="absolute inset-0 h-full w-full border-0 opacity-60 grayscale"
-            loading="lazy"
-          />
-        </div>
-      </section>
     </>
   );
 }

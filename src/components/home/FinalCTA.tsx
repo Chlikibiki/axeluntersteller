@@ -22,11 +22,11 @@ export function FinalCTA() {
           <p className="eyebrow">{cta.label}</p>
           <h2
             id="cta-heading"
-            className="heading-lg mt-4 text-balance text-starlight-cream"
+            className="heading-lg mt-6 text-balance text-starlight-cream"
           >
             {cta.title}
           </h2>
-          <p className="body-editorial prose-measure mt-5 max-w-lg text-starlight-metal/88">
+          <p className="body-editorial prose-measure mt-7 max-w-lg text-starlight-metal/88">
             {cta.body}
           </p>
 

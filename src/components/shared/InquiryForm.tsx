@@ -12,6 +12,46 @@ interface InquiryFormProps {
   showFileUpload?: boolean;
 }
 
+type ApiErrorBody = {
+  error?: string;
+  code?: string;
+  detail?: string;
+};
+
+const CONTACT_INBOX = SITE.inquiryEmail;
+
+async function sendViaFormSubmit(fields: Record<string, unknown>) {
+  const response = await fetch(
+    `https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_INBOX)}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        _subject: fields.company
+          ? `Starlight — ${fields.company} (${fields.name})`
+          : `Starlight — ${String(fields.name ?? "")}`,
+        _replyto: fields.email,
+        _template: "table",
+        _captcha: "false",
+        ...fields,
+      }),
+    }
+  );
+
+  const body = (await response.json().catch(() => null)) as {
+    success?: string | boolean;
+    message?: string;
+  } | null;
+
+  const ok = body?.success === true || body?.success === "true";
+  if (!ok) {
+    throw new Error(body?.message ?? `FormSubmit ${response.status}`);
+  }
+}
+
 export function InquiryForm({
   variant = "full",
   showFileUpload = true,
@@ -28,31 +68,50 @@ export function InquiryForm({
 
     const form = e.currentTarget;
     const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") ?? ""),
+      company: String(data.get("company") ?? ""),
+      email: String(data.get("email") ?? ""),
+      phone: String(data.get("phone") ?? ""),
+      inquiryType: String(data.get("inquiryType") ?? ""),
+      message: String(data.get("message") ?? ""),
+      website: String(data.get("website") ?? ""),
+    };
+
+    if (payload.website.trim()) {
+      setSubmitted(true);
+      form.reset();
+      setSubmitting(false);
+      return;
+    }
 
     try {
       const response = await fetch("/api/inquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: data.get("name"),
-          company: data.get("company"),
-          email: data.get("email"),
-          phone: data.get("phone"),
-          inquiryType: data.get("inquiryType"),
-          message: data.get("message"),
-        }),
+        body: JSON.stringify(payload),
       });
 
-      if (!response.ok) {
-        const body = (await response.json().catch(() => null)) as {
-          error?: string;
-        } | null;
-        throw new Error(body?.error ?? "send_failed");
+      const body = (await response.json().catch(() => null)) as ApiErrorBody | null;
+
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+        return;
       }
 
+      console.error("[InquiryForm] API envoi échoué — fallback FormSubmit", {
+        status: response.status,
+        code: body?.code,
+        detail: body?.detail,
+        error: body?.error,
+      });
+
+      await sendViaFormSubmit(payload);
       setSubmitted(true);
       form.reset();
-    } catch {
+    } catch (err) {
+      console.error("[InquiryForm] Erreur réseau ou inattendue:", err);
       setError(copy.errorSubmit);
     } finally {
       setSubmitting(false);
@@ -72,6 +131,18 @@ export function InquiryForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Honeypot anti-spam — invisible */}
+      <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden>
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div
         className={
           variant === "full" ? "grid gap-6 md:grid-cols-2" : "grid gap-6"
@@ -146,6 +217,7 @@ export function InquiryForm({
           id="message"
           name="message"
           required
+          minLength={10}
           disabled={submitting}
           placeholder={copy.placeholders.message}
         />
@@ -166,9 +238,7 @@ export function InquiryForm({
           <p className="type-readable mt-2">{copy.filesHint}</p>
           <p className="type-readable mt-1">
             Pour les pièces jointes lourdes, écrivez à{" "}
-            <span className="text-starlight-cream/85">
-              {SITE.email}
-            </span>
+            <span className="text-starlight-cream/85">{SITE.inquiryEmail}</span>
             .
           </p>
         </div>
