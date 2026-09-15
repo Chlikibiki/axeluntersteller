@@ -136,7 +136,7 @@ export function Footer() {
           <p className="film-fin-legal mt-4 md:mt-0">
             © {year} {SITE.legalName}. {copy.rights}
           </p>
-          <p className="mt-3 text-[0.7rem] font-light tracking-[0.065em] text-starlight-muted/45 md:mt-0 md:text-[0.75rem]">
+          <p className="mt-3 text-[0.7rem] font-light tracking-[0.065em] text-white md:mt-0 md:text-[0.75rem]">
             Site conçu par{" "}
             <a
               href="https://ikibi.fr"
