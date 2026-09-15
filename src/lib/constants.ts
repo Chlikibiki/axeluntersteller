@@ -49,7 +49,7 @@ export const HERO_COPY = {
   manifesto:
     "Starlight accompagne les marques de la conception du prototype jusqu'à la production en série.",
   subhead:
-    "Manufacture B2B d'accessoires et d'articles en cuir pour entreprises et marques. Développement produit, prototype, fabrication et contrôle qualité — design en Allemagne, fabrication en Tunisie.",
+    "Manufacture B2B d'accessoires et d'articles en cuir pour entreprises et marques. Développement produit, prototype, fabrication et contrôle qualité.",
   ctaPrimary: "Démarrer un projet",
   ctaSecondary: "Nos partenaires",
   trust: [

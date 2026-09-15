@@ -602,15 +602,15 @@
     background:
       linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.88) 0%,
-        rgba(0, 0, 0, 0.45) 38%,
-        rgba(0, 0, 0, 0.18) 72%,
-        rgba(0, 0, 0, 0.08) 100%
+        rgba(0, 0, 0, 0.76) 0%,
+        rgba(0, 0, 0, 0.36) 38%,
+        rgba(0, 0, 0, 0.12) 72%,
+        rgba(0, 0, 0, 0.04) 100%
       ),
       linear-gradient(
         105deg,
-        rgba(0, 0, 0, 0.62) 0%,
-        rgba(0, 0, 0, 0.28) 48%,
+        rgba(0, 0, 0, 0.48) 0%,
+        rgba(0, 0, 0, 0.2) 48%,
         transparent 100%
       );
   }
