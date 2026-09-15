@@ -615,6 +615,38 @@
       );
   }
 
+  /* Halo local derrière le logo header : calme la texture, pas un bandeau */
+  .hero-logo-calm {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: min(68vw, 16.5rem);
+    height: 6.75rem;
+    background: radial-gradient(
+      ellipse 62% 58% at 26% 46%,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.08) 42%,
+      rgba(0, 0, 0, 0.02) 64%,
+      transparent 78%
+    );
+  }
+
+  @media (min-width: 768px) {
+    .hero-logo-calm {
+      width: min(42vw, 28rem);
+      height: 10.5rem;
+      background: radial-gradient(
+        ellipse 58% 54% at 24% 44%,
+        rgba(0, 0, 0, 0.22) 0%,
+        rgba(0, 0, 0, 0.09) 40%,
+        rgba(0, 0, 0, 0.02) 66%,
+        transparent 80%
+      );
+    }
+  }
+
   .hero-depth-haze {
     pointer-events: none;
     background:
@@ -1538,13 +1570,16 @@
 
   .film-fin-grid {
     display: grid;
-    gap: clamp(2.5rem, 6vw, 4rem);
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(2.75rem, 8vw, 4.5rem);
+    align-items: start;
   }
 
   @media (min-width: 1024px) {
     .film-fin-grid {
-      grid-template-columns: repeat(12, 1fr);
-      gap: 2.5rem 2rem;
+      grid-template-columns: minmax(0, 9fr) minmax(0, 4fr) minmax(0, 7fr);
+      column-gap: clamp(3.25rem, 5.5vw, 6.5rem);
+      row-gap: 0;
     }
   }
 

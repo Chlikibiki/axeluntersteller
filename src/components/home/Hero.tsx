@@ -185,6 +185,7 @@ export function Hero() {
         </div>
 
         <div className="absolute inset-0 hero-overlay" />
+        <div className="hero-logo-calm" />
         <div className="absolute inset-0 hero-depth-haze" />
         <div ref={lightWarmRef} className="hero-light-warm opacity-0" />
         <div ref={lightCoolRef} className="hero-light-cool opacity-0" />

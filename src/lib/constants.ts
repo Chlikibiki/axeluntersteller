@@ -69,12 +69,12 @@ export const SECTION_COPY = {
   manufacture: {
     label: "Manufacture",
     title: "Une manufacture B2B, au service des marques.",
-    body: "Depuis 1987, nous développons et fabriquons des accessoires en cuir pour les entreprises et les marques. Design et logistique Europe avec Gerald Jakoby Accessoires GmbH, fabrication en Tunisie : prototype validé, production en série, qualité contrôlée.",
+    body: "Depuis 1987, nous développons et fabriquons des accessoires en cuir pour les entreprises et les marques. Design et logistique Europe avec Gerald Jakoby Accessories GmbH, fabrication en Tunisie : prototype validé, production en série, qualité contrôlée.",
   },
   capabilities: {
     label: "Produits",
     title: "Ce que nous fabriquons.",
-    body: "Accessoires et articles en cuir pour marques et entreprises — cinq familles de produits, une même discipline de fabrication.",
+    body: "Accessoires et articles en cuir pour marques et entreprises : cinq familles de produits, une même discipline de fabrication.",
   },
   materials: {
     label: "Matières",
@@ -145,8 +145,8 @@ export const SECTION_COPY = {
     navigation: "Navigation",
     contact: "Contact",
     contactManager: "Axel Untersteller",
-    contactAddress: SITE.address.display,
-    contactPartner: "Partenaire Design – Logistique Europe",
+    contactAddress: "Z.I. Menzel Jemil, 7080 Bizerte, Tunisie",
+    contactPartner: "Partenaire Design & Logistique Europe",
     rights: "Tous droits réservés.",
   },
 } as const;
@@ -312,13 +312,13 @@ export const CAPABILITIES = [
   {
     id: "goods",
     title: "Petite maroquinerie",
-    description: "Portefeuilles, porte-cartes et pièces clés en marque blanche.",
+    description: "Portefeuilles, porte-cartes, étuis et accessoires en marque blanche.",
     image: CAPABILITY_IMAGES.goods,
   },
   {
     id: "pouches",
     title: "Pochettes & étuis",
-    description: "Protection optique et instruments — Leica et maisons exigeantes.",
+    description: "Protection optique et instruments, pour Leica et les maisons exigeantes.",
     image: CAPABILITY_IMAGES.pouches,
   },
   {

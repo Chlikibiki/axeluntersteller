@@ -105,7 +105,7 @@ export const IMAGE_ALTS = {
   workshopExterior:
     "Bâtiment de la manufacture Starlight, vue extérieure",
   workshopTeam:
-    "L'équipe Starlight devant la manufacture, avec les Range Rover — Allemagne · Tunisie · Depuis 1987",
+    "L'équipe Starlight devant la manufacture, avec les Range Rover. Allemagne, Tunisie, depuis 1987",
   workshopFloor:
     "Artisans Starlight en atelier, assemblage d'accessoires cuir et quincaillerie",
   workshopMachine:
@@ -125,7 +125,7 @@ export const IMAGE_ALTS = {
   belt: "Ceinture en cuir pleine fleur, tranche brunie et quincaillerie",
   leatherTexture: "Macro du grain de cuir pleine fleur, reflets dorés sur fond sombre",
   analyseLeathers:
-    "Échantillons de cuir haut de gamme côte à côte — lisse brun, grainé noir, camel, embossé — lumière chaude d'atelier de maroquinerie",
+    "Échantillons de cuir haut de gamme côte à côte : lisse brun, grainé noir, camel, embossé. Lumière chaude d'atelier de maroquinerie",
   impressionStarlight:
     "Impression Starlight, manufacture cuir en lumière cinématographique sombre",
   belts:
