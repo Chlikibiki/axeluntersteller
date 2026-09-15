@@ -10,6 +10,7 @@ interface PartnerLogoProps {
 
 export function PartnerLogo({ partner, className }: PartnerLogoProps) {
   const { src, name, canvas, crop, opticalH, maxWidthPct } = partner;
+  const isRaster = /\.(png|jpe?g|webp)$/i.test(src);
 
   return (
     <div
@@ -23,15 +24,26 @@ export function PartnerLogo({ partner, className }: PartnerLogoProps) {
       }
     >
       <div className="partner-logo-mark">
-        <svg
-          className="partner-logo-svg"
-          viewBox={`${crop.x} ${crop.y} ${crop.w} ${crop.h}`}
-          role="img"
-          aria-label={UI.images.partnerLogo(name)}
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <image href={src} width={canvas.w} height={canvas.h} />
-        </svg>
+        {isRaster ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={src}
+            alt={UI.images.partnerLogo(name)}
+            width={canvas.w}
+            height={canvas.h}
+            className="partner-logo-svg partner-logo-raster"
+          />
+        ) : (
+          <svg
+            className="partner-logo-svg"
+            viewBox={`${crop.x} ${crop.y} ${crop.w} ${crop.h}`}
+            role="img"
+            aria-label={UI.images.partnerLogo(name)}
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <image href={src} width={canvas.w} height={canvas.h} />
+          </svg>
+        )}
       </div>
     </div>
   );

@@ -42,7 +42,7 @@ export const LOCAL = {
 export const LOGO = {
   starlight: "/images/logo/starlight-logo.png",
   starlightHeader: "/images/logo/Logo_starlight.png",
-  boss: "/images/logo/boss.png",
+  boss: "/images/logo/boss_logo.png",
   leica: "/images/logo/Leica_Camera_logo.png",
   freitag: "/images/logo/freitag_logo-01.jpg",
   partners: {
@@ -52,7 +52,7 @@ export const LOGO = {
     olsen: `${partners}/olsen.svg`,
     passeport: `${partners}/passeport.svg`,
     leica: `${partners}/leica.svg`,
-    boss: `${partners}/boss.svg`,
+    boss: "/images/logo/boss_logo.png",
     minox: `${partners}/minox.svg`,
     fossil: `${partners}/fossil.svg`,
     hauerGolf: `${partners}/hauer-golf.svg`,

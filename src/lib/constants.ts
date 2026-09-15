@@ -21,11 +21,12 @@ export const SITE = {
   inquiryEmail: "axunt@aol.com",
   phone: "+216 72 44 10 10",
   address: {
-    street: "Z.I. Menzel Jemil",
+    street: "Z.I Menzel Jemil",
     city: "Bizerte",
     region: "Bizerte",
     country: "Tunisie",
     postal: "7080",
+    display: "Z.I Menzel Jemil Bizerte-tunisie 7080",
   },
   coordinates: { lat: 37.236, lng: 9.914 },
   europePartner: {
@@ -44,7 +45,7 @@ export { PARTNER_LOGOS } from "./partner-logos";
 export const HERO_COPY = {
   eyebrow: "Premium Leather Manufacturing",
   established: "Depuis 1987 · Design en Allemagne · Fabrication en Tunisie",
-  headline: ["ACCESSOIRES CUIR", "POUR LES MARQUES.", "DEPUIS 1987."],
+  headline: ["ACCESSOIRES CUIR", "POUR LES MARQUES"],
   manifesto:
     "Starlight accompagne les marques de la conception du prototype jusqu'à la production en série.",
   subhead:
@@ -144,7 +145,7 @@ export const SECTION_COPY = {
     navigation: "Navigation",
     contact: "Contact",
     contactManager: "Axel Untersteller",
-    contactAddress: "Z.I. Menzel Jemil, 7080 Bizerte, Tunisie",
+    contactAddress: SITE.address.display,
     contactPartner: "Partenaire Design – Logistique Europe",
     rights: "Tous droits réservés.",
   },

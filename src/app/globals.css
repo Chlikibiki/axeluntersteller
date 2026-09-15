@@ -1798,6 +1798,11 @@
       filter 1.5s var(--ease-premium);
   }
 
+  .partner-logo-svg.partner-logo-raster {
+    object-fit: contain;
+    filter: none;
+  }
+
   .partner-logo-cell:hover {
     transform: translateY(-2px);
   }
@@ -1809,6 +1814,10 @@
   .partner-logo-cell:hover .partner-logo-svg {
     opacity: 1;
     filter: brightness(0) invert(98%);
+  }
+
+  .partner-logo-cell:hover .partner-logo-svg.partner-logo-raster {
+    filter: none;
   }
 
   @media (min-width: 768px) {

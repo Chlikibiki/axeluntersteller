@@ -60,12 +60,8 @@ export default function ContactPage() {
                   size={18}
                   strokeWidth={1}
                 />
-                <address className="not-italic body-premium text-starlight-metal">
-                  <span className="block text-starlight-cream">
-                    {SITE.address.street}
-                  </span>
-                  {SITE.address.postal} {SITE.address.city},{" "}
-                  {SITE.address.country}
+                <address className="not-italic body-premium text-starlight-cream">
+                  {SITE.address.display}
                 </address>
               </li>
               <li className="flex gap-4">

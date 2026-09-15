@@ -27,7 +27,7 @@ export const PARTNER_LOGOS: readonly PartnerLogoEntry[] = [
   { id: "olsen", name: "Olsen", src: `${p}/olsen.svg`, canvas: { w: 180, h: 56 }, crop: { x: 16, y: 8, w: 148, h: 40 }, opticalH: 2.52, maxWidthPct: 66 },
   { id: "passeport", name: "Passeport", src: `${p}/passeport.svg`, canvas: { w: 240, h: 56 }, crop: { x: 36, y: 16, w: 168, h: 26 }, opticalH: 2.42, maxWidthPct: 82 },
   { id: "leica", name: "Leica Camera AG", src: `${p}/leica.svg`, canvas: { w: 200, h: 52 }, crop: { x: 36, y: 2, w: 128, h: 48 }, opticalH: 2.5, maxWidthPct: 56 },
-  { id: "boss", name: "BOSS", src: `${p}/boss.svg`, canvas: { w: 160, h: 52 }, crop: { x: 12, y: 6, w: 136, h: 42 }, opticalH: 2.48, maxWidthPct: 54 },
+  { id: "boss", name: "BOSS", src: "/images/logo/boss_logo.png", canvas: { w: 2060, h: 780 }, crop: { x: 0, y: 0, w: 2060, h: 780 }, opticalH: 2.72, maxWidthPct: 72 },
   { id: "minox", name: "Minox", src: `${p}/minox.svg`, canvas: { w: 180, h: 56 }, crop: { x: 8, y: 8, w: 164, h: 40 }, opticalH: 2.46, maxWidthPct: 72 },
   { id: "fossil", name: "Fossil", src: `${p}/fossil.svg`, canvas: { w: 200, h: 56 }, crop: { x: 12, y: 8, w: 176, h: 40 }, opticalH: 2.46, maxWidthPct: 72 },
   { id: "hauer-golf", name: "Hauer Golf", src: `${p}/hauer-golf.svg`, canvas: { w: 260, h: 56 }, crop: { x: 48, y: 16, w: 164, h: 24 }, opticalH: 2.52, maxWidthPct: 94 },
