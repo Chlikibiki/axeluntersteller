@@ -95,22 +95,12 @@ export function Footer() {
                   {copy.contactAddress}
                 </span>
               </p>
-              <p>
-                <span className="text-starlight-muted/85">Email :</span>
-                <br />
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="text-starlight-cream/90"
-                >
-                  {SITE.email}
-                </a>
-              </p>
-              <p className="pt-1">
-                <span className="label-caps text-starlight-muted/85">
+              <p className="border-t border-starlight-border/40 pt-5">
+                <span className="label-caps text-starlight-muted/70">
                   {SITE.europePartner.role}
                 </span>
                 <br />
-                <span className="mt-1 inline-block text-starlight-cream/90 lg:whitespace-nowrap">
+                <span className="mt-2.5 inline-block font-light tracking-[0.04em] text-starlight-cream/92 lg:whitespace-nowrap">
                   {SITE.europePartner.name}
                 </span>
                 <br />
@@ -118,9 +108,9 @@ export function Footer() {
                   href={SITE.europePartner.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-0.5 inline-block whitespace-nowrap text-starlight-cream/90"
+                  className="link-premium mt-2 inline-block whitespace-nowrap text-sm text-starlight-metal"
                 >
-                  www.gerald-jakoby.de
+                  gerald-jakoby.de
                 </a>
               </p>
             </address>
