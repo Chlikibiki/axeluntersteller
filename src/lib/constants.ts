@@ -15,17 +15,24 @@ export const SITE = {
   legalName: "Starlight, Manufacture de cuir",
   tagline: "Premium Leather Manufacturing · B2B · Depuis 1987",
   established: 1987,
+  copyrightYear: 2026,
+  url: "https://www.starlightleather.de",
   email: "axunt@aol.com",
   inquiryEmail: "axunt@aol.com",
-  phone: "+49 123 456 7890",
+  phone: "+216 72 44 10 10",
   address: {
-    street: "Z.I.7080",
+    street: "Z.I. Menzel Jemil",
     city: "Bizerte",
     region: "Bizerte",
     country: "Tunisie",
     postal: "7080",
   },
-  coordinates: { lat: 50.0956, lng: 8.7761 },
+  coordinates: { lat: 37.236, lng: 9.914 },
+  europePartner: {
+    name: "Gerald Jakoby Accessories GmbH",
+    role: "Partenaire Design & Logistique Europe",
+    url: "https://www.gerald-jakoby.de",
+  },
 } as const;
 
 export const HERO_STATEMENT =
@@ -41,13 +48,13 @@ export const HERO_COPY = {
   manifesto:
     "Starlight accompagne les marques de la conception du prototype jusqu'à la production en série.",
   subhead:
-    "Manufacture B2B d'accessoires et d'articles en cuir pour entreprises et marques. Développement produit, prototype, fabrication et contrôle qualité — en Allemagne et en Tunisie.",
+    "Manufacture B2B d'accessoires et d'articles en cuir pour entreprises et marques. Développement produit, prototype, fabrication et contrôle qualité — design en Allemagne, fabrication en Tunisie.",
   ctaPrimary: "Démarrer un projet",
   ctaSecondary: "Nos partenaires",
   trust: [
     { label: "Depuis", value: "1987" },
     { label: "Pour", value: "Maisons du monde" },
-    { label: "Atelier", value: "Europe" },
+    { label: "Atelier", value: "Tunisie" },
   ],
   referencesLabel: "Aux côtés de",
   references: PARTNER_LOGOS.map((p) => p.name),
@@ -61,7 +68,7 @@ export const SECTION_COPY = {
   manufacture: {
     label: "Manufacture",
     title: "Une manufacture B2B, au service des marques.",
-    body: "Depuis 1987, nous développons et fabriquons des accessoires en cuir pour les entreprises et les marques. Design et accompagnement en Allemagne, fabrication en Tunisie : prototype validé, production en série, qualité contrôlée.",
+    body: "Depuis 1987, nous développons et fabriquons des accessoires en cuir pour les entreprises et les marques. Design et logistique Europe avec Gerald Jakoby Accessoires GmbH, fabrication en Tunisie : prototype validé, production en série, qualité contrôlée.",
   },
   capabilities: {
     label: "Produits",
@@ -111,7 +118,7 @@ export const SECTION_COPY = {
     formTitle: "Votre message",
     guaranteeLabel: "Réponse",
     guarantee:
-      "Nous répondons sous vingt-quatre heures. Les premiers échanges sont sans engagement.",
+      "Nous revenons vers vous rapidement. Les premiers échanges sont sans engagement.",
     email: "Écrire",
   },
   contact: {
@@ -122,7 +129,7 @@ export const SECTION_COPY = {
     formTitle: "Votre message",
     storyTitle: "Notre histoire",
     storyP1:
-      "Depuis 1987, Starlight construit son savoir-faire entre l'Allemagne et la Tunisie.",
+      "Depuis 1987, Starlight construit son savoir-faire entre le design en Allemagne et la fabrication en Tunisie.",
     storyP2:
       "Derrière chaque projet, il y a une équipe, un atelier, des années d'expérience et une exigence partagée : créer des accessoires en cuir qui répondent aux standards des plus grandes marques.",
     storyP3:
@@ -137,7 +144,8 @@ export const SECTION_COPY = {
     navigation: "Navigation",
     contact: "Contact",
     contactManager: "Axel Untersteller",
-    contactAddress: "Z.I.7080 Bizerte Tunisie",
+    contactAddress: "Z.I. Menzel Jemil, 7080 Bizerte, Tunisie",
+    contactPartner: "Partenaire Design – Logistique Europe",
     rights: "Tous droits réservés.",
   },
 } as const;
@@ -427,13 +435,13 @@ export const META_DESCRIPTION =
 
 export const SEO_KEYWORDS = [
   "fabricant cuir b2b",
-  "fabricant cuir allemagne",
-  "manufacture cuir europe",
-  "maroquinerie luxe oem",
+  "manufacture cuir tunisie",
+  "fabricant cuir bizerte",
+  "oem cuir europe",
   "marque blanche cuir",
   "accessoires cuir sur mesure",
   "fabricant ceintures cuir",
-  "fabricant poches cuir",
-  "fabrication cuir europe",
+  "fabricant pochettes cuir",
   "production cuir haut de gamme",
+  "starlight leather",
 ] as const;

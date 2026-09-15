@@ -8,6 +8,7 @@ import {
   validateInquiryPayload,
   type InquiryPayload,
 } from "@/lib/contact";
+import { SITE } from "@/lib/constants";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -46,7 +47,7 @@ async function sendWithResend(payload: InquiryPayload) {
 
 async function sendWithFormSubmit(payload: InquiryPayload) {
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://starlight-leather.com";
+    process.env.NEXT_PUBLIC_SITE_URL?.trim() || SITE.url;
   const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_INBOX)}`;
   const response = await fetch(endpoint, {
     method: "POST",

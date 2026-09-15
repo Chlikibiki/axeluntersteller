@@ -75,7 +75,7 @@ export function validateInquiryPayload(
 
 export function formatInquiryEmail(payload: InquiryPayload) {
   const lines = [
-    "Nouveau message depuis starlight-leather.com",
+    "Nouveau message depuis www.starlightleather.de",
     "",
     `Nom : ${payload.name}`,
     `Maison / Marque : ${payload.company}`,

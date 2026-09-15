@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SITE, SEO_KEYWORDS, META_DESCRIPTION } from "./constants";
 import { LOGO } from "./images";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://starlight-leather.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? SITE.url;
 const logoPath = LOGO.starlight;
 
 export const defaultMetadata: Metadata = {
@@ -59,7 +59,7 @@ export const organizationSchema = {
     addressLocality: SITE.address.city,
     addressRegion: SITE.address.region,
     postalCode: SITE.address.postal,
-    addressCountry: "DE",
+    addressCountry: "TN",
   },
   contactPoint: {
     "@type": "ContactPoint",
@@ -89,7 +89,7 @@ export const localBusinessSchema = {
     streetAddress: SITE.address.street,
     addressLocality: SITE.address.city,
     postalCode: SITE.address.postal,
-    addressCountry: "DE",
+    addressCountry: "TN",
   },
   geo: {
     "@type": "GeoCoordinates",

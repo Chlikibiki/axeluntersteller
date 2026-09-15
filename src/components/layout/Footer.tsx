@@ -5,7 +5,7 @@ import { NobleSurface } from "@/components/shared/NobleSurface";
 import { PremiumButton } from "@/components/shared/PremiumButton";
 
 export function Footer() {
-  const year = new Date().getFullYear();
+  const year = SITE.copyrightYear;
   const { footer: copy } = SECTION_COPY;
 
   const contactBlock = (
@@ -30,6 +30,24 @@ export function Footer() {
             className="text-starlight-cream/90"
           >
             {SITE.email}
+          </a>
+        </p>
+        <p>
+          <span className="label-caps text-starlight-muted/85">
+            {SITE.europePartner.role}
+          </span>
+          <br />
+          <span className="text-starlight-cream/90">
+            {SITE.europePartner.name}
+          </span>
+          <br />
+          <a
+            href={SITE.europePartner.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-starlight-cream/90"
+          >
+            www.gerald-jakoby.de
           </a>
         </p>
       </address>
